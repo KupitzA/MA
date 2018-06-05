@@ -16,9 +16,9 @@ class Simulation:
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
     #               prob)           prob)        methyl prob)       prob)
-    probabilities = [[0.1,          0.8,          0.8,              0.05],  #DNMT1
-                     [0.5,          0.5,          0.5,              0.5],   #DNMT3d (daughter strand)
-                     [0.5,          0.5,          1,                1]]     #DNMT3p (parent strand)
+    probabilities = [[0.1,          0.8,          0.8,              0],  #DNMT1
+                     [0.5,          0.5,          0,              1],   #DNMT3d (daughter strand)
+                     [0.5,          0.5,          0,                1]]     #DNMT3p (parent strand)
 
     def __init__(self, filename, DNMT1=True, DNMT3=True):
         self.DNMT1 = DNMT1
@@ -27,7 +27,9 @@ class Simulation:
         distribution, self.L = createDistri(filename) #distribution of methylation patterns
         self.create_initial_distr(distribution)
 
-        self.simulate(self.probabilities)
+        for i in range(7):
+            print("iteration " + str(i+1) + ":")
+            self.simulate(self.probabilities)
 
     def create_initial_distr(self, distribution):
         """
@@ -37,7 +39,7 @@ class Simulation:
         """
         #select pattern randomly
         randomdistribution = random.random()
-        print(randomdistribution)
+        #print(randomdistribution)
         #start with last pattern with highest probability
         for index, item in reversed(list(enumerate(distribution))):
             if randomdistribution <= item:
@@ -74,7 +76,6 @@ class Simulation:
         self.lowerStrand = [0]*self.L
         print(self.upperStrand)
         print(self.lowerStrand)
-        # which one to do first?
         if self.DNMT1:
             self.upperStrand, self.lowerStrand = self.simulateDNMT(allProbs[0], self.upperStrand, self.lowerStrand)
         if self.DNMT3:
@@ -91,21 +92,21 @@ class Simulation:
         :param daughterS: strand to which enzyme is bound
         :return: both strands after methylation
         '''
-        bound = True
         rho = probs[0]
         tau = probs[1]
         mhy = probs[2]
         delta = probs[3]
+        bound = True if random.random() <= 1-rho else False
         for pos in range(self.L):
-            # which first - methylation or disassociation? can DNMT disassociate before methylation
             #if enzyme stays associated
-            if bound and random.random() <= 1-rho:
+            if bound:
                 #probabilty for de novo or maintenance methylation
                 if (parentS[pos] and random.random() <= mhy) or (not parentS[pos] and random.random() <= delta):
                     daughterS[pos] = 1
+                bound = True if random.random() <= 1-rho else False
             else:
                 bound = True if random.random() <= tau else False
         return parentS, daughterS
 
 
-Simulation("Daten\IAPWTJ1C.txt")
+Simulation("Daten/IAPWTJ1C.txt")
