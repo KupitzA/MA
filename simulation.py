@@ -1,5 +1,7 @@
+import math
 import random
 
+from scipy.optimize import minimize
 from distribution import createDistri
 
 
@@ -10,26 +12,21 @@ class Simulation:
     upperStrand = []
     lowerStrand = []
     # if DNMT true, no knock out
-    DNMT1 = True
-    DNMT3 = True
     L = 0 #number of CpGs
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
     #               prob)           prob)        methyl prob)       prob)
-    probabilities = [[0.1,          0.8,          0.8,              0],  #DNMT1
+    probabilities = [[0.9,          0.2,          0.2,              1],  #DNMT1
                      [0.5,          0.5,          0,              1],   #DNMT3d (daughter strand)
                      [0.5,          0.5,          0,                1]]     #DNMT3p (parent strand)
 
     def __init__(self, filename, DNMT1=True, DNMT3=True):
-        self.DNMT1 = DNMT1
-        self.DNMT3 = DNMT3
-
-        distribution, self.L = createDistri(filename) #distribution of methylation patterns
+        distribution, self.L, numOfPatterns = createDistri(filename) #distribution of methylation patterns
         self.create_initial_distr(distribution)
+        dist = [i*numOfPatterns for i in distribution]
 
-        for i in range(7):
-            print("iteration " + str(i+1) + ":")
-            self.simulate(self.probabilities)
+        self.minimizeLH(self.probabilities[0], dist, False)
+        self.minimizeLH(self.probabilities[1], dist, True)
 
     def create_initial_distr(self, distribution):
         """
@@ -37,6 +34,8 @@ class Simulation:
         :param distribution: methylation pattern distribution
         :return:
         """
+        upperStrand = []
+        lowerStrand = []
         #select pattern randomly
         randomdistribution = random.random()
         #print(randomdistribution)
@@ -50,39 +49,41 @@ class Simulation:
         for i in range(self.L):
             mod = randomdistribution % 4
             if mod == 0:
-                self.upperStrand.append(0)
-                self.lowerStrand.append(0)
+                upperStrand.append(0)
+                lowerStrand.append(0)
             elif mod == 1:
-                self.upperStrand.append(1)
-                self.lowerStrand.append(0)
+                upperStrand.append(1)
+                lowerStrand.append(0)
             elif mod == 2:
-                self.upperStrand.append(0)
-                self.lowerStrand.append(1)
+                upperStrand.append(0)
+                lowerStrand.append(1)
             elif mod == 3:
-                self.upperStrand.append(1)
-                self.lowerStrand.append(1)
+                upperStrand.append(1)
+                lowerStrand.append(1)
             randomdistribution = (randomdistribution-mod) / 4
-        print(self.upperStrand)
-        print(self.lowerStrand)
+        self.upperStrand = upperStrand
+        self.lowerStrand = lowerStrand
 
-    def simulate(self, allProbs):
+    def simulate(self, allProbs, DNMT1=True, DNMT3=True):
         '''
-        simulate one cell division with methylation
+        simulate celldivision with methylation
         :param allProbs: methylation probabilities
-        :return: 
+        :return: strsnds after celldivisions
         '''
         #select random strand
-        self.upperStrand = self.upperStrand if random.random() <= 0.5 else self.lowerStrand
-        self.lowerStrand = [0]*self.L
-        print(self.upperStrand)
-        print(self.lowerStrand)
-        if self.DNMT1:
-            self.upperStrand, self.lowerStrand = self.simulateDNMT(allProbs[0], self.upperStrand, self.lowerStrand)
-        if self.DNMT3:
-            self.upperStrand, self.lowerStrand = self.simulateDNMT(allProbs[1], self.upperStrand, self.lowerStrand)
-            self.lowerStrand, self.upperStrand = self.simulateDNMT(allProbs[2], self.lowerStrand, self.upperStrand)
-        print(self.upperStrand)
-        print(self.lowerStrand)
+        upperStrand = self.upperStrand if random.random() <= 0.5 else self.lowerStrand
+        celldivisions = 1 if DNMT1 and DNMT3 else 41 if DNMT3 else 26
+
+        for c in range(celldivisions):
+            lowerStrand = [0]*self.L
+            if DNMT1:
+                upperStrand, lowerStrand = self.simulateDNMT(allProbs[0], upperStrand, lowerStrand)
+            if DNMT3:
+                upperStrand, lowerStrand = self.simulateDNMT(allProbs[1], upperStrand, lowerStrand)
+                lowerStrand, upperStrand = self.simulateDNMT(allProbs[2], lowerStrand, upperStrand)
+            upperStrand = upperStrand if random.random() <= 0.5 else lowerStrand
+
+        return upperStrand, lowerStrand
 
     def simulateDNMT(self, probs, parentS, daughterS):
         '''
@@ -108,5 +109,44 @@ class Simulation:
                 bound = True if random.random() <= tau else False
         return parentS, daughterS
 
+    def computeLH(self, probabilities, distribution, DNMT1KO, iterations=1000000):
+        allProbs = [] * 3
+        if DNMT1KO:
+            #prob DNMT3p = DNMT3d???
+            allProbs.append([])
+            allProbs.append(probabilities)
+            allProbs.append(probabilities)
+        else:
+           allProbs.append(probabilities)
+        patterns = dict()
+        likelihood = 0
 
-Simulation("Daten/IAPWTJ1C.txt")
+        for i in range(iterations):
+            upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not DNMT1KO, DNMT3=DNMT1KO)
+            pattern = 0
+            for l in range(self.L):
+                pattern += 4 ** (self.L - l - 1) * (upperStrand[l] + lowerStrand[l]*2)
+            patterns[pattern] = patterns.get(pattern, 0) + 1
+        patterns = {k: float(v/iterations) for k, v in patterns.items()}
+
+        for k, v in patterns.items():
+        #if v is 1.0 here, likelihood is 0?!
+            if distribution[k] != 0:
+                likelihood += distribution[k] * math.log(v)
+        if likelihood == 0:
+            print(probabilities)
+        print(-likelihood, probabilities)
+        return -likelihood #minimize negative log-Likelihood <=> maximize (log)Likelihood
+
+    def minimizeLH(self, probabilities, distribution, DNMT1KO):
+        #extra arguments passed to the objective function and its derivatives
+        args = (distribution, DNMT1KO)
+        #bounds for parameter space
+        bnds = ((0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
+        sol = minimize(self.computeLH, probabilities, args=args, bounds=bnds, options={'disp': True})
+        #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', args=args, bounds=bnds, options={'disp': True})
+        #sol = minimize(self.computeLH, probabilities, method='SLSQP', args=args, bounds=bnds, options={'disp': True})
+        print(sol)
+
+
+Simulation("Daten/IAPDnmt1KO.txt", DNMT1=False)

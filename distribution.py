@@ -37,7 +37,7 @@ def dataconv_general(file):
 def createDistri(file1):
 
     #convert data
-    [ig1, cod]  = dataconv_general(file1)   
+    [ig1, cod]  = dataconv_general(file1)
 
     L=len(ig1[0])
     #initialize distribution
@@ -52,4 +52,4 @@ def createDistri(file1):
     #normalization of distribution
     distribution=distribution/len(cod)
     
-    return distribution, L
+    return distribution, L, len(cod)
