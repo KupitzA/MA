@@ -16,7 +16,7 @@ class Simulation:
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
     #               prob)           prob)        methyl prob)       prob)
-    probabilities = [[0.9,          0.2,          0.2,              1],  #DNMT1
+    probabilities = [[0.1,          0.8,          0.8,              0],  #DNMT1
                      [0.5,          0.5,          0,              1],   #DNMT3d (daughter strand)
                      [0.5,          0.5,          0,                1]]     #DNMT3p (parent strand)
 
@@ -68,10 +68,13 @@ class Simulation:
         '''
         simulate celldivision with methylation
         :param allProbs: methylation probabilities
+        :param DNMT1: True if no DNMT1KO
+        :param DNMT3: True if no DNMT3KO
         :return: strsnds after celldivisions
         '''
         #select random strand
         upperStrand = self.upperStrand if random.random() <= 0.5 else self.lowerStrand
+        #decide about number of cell divisions
         celldivisions = 1 if DNMT1 and DNMT3 else 41 if DNMT3 else 26
 
         for c in range(celldivisions):
@@ -109,7 +112,15 @@ class Simulation:
                 bound = True if random.random() <= tau else False
         return parentS, daughterS
 
-    def computeLH(self, probabilities, distribution, DNMT1KO, iterations=1000000):
+    def computeLH(self, probabilities, distribution, DNMT1KO, iterations=10000):
+        '''
+        perform multiple iterations of simulation and compute likelihood
+        :param probabilities: parameters for simulation
+        :param distribution: original pattern distribution
+        :param DNMT1KO: True if DNMT1KO, False if DNMT3KO
+        :param iterations: number of iterations of simulation
+        :return: negative likelihood
+        '''
         allProbs = [] * 3
         if DNMT1KO:
             #prob DNMT3p = DNMT3d???
@@ -121,6 +132,7 @@ class Simulation:
         patterns = dict()
         likelihood = 0
 
+        #perform multiple iterations and store resulting patterns
         for i in range(iterations):
             upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not DNMT1KO, DNMT3=DNMT1KO)
             pattern = 0
@@ -129,16 +141,20 @@ class Simulation:
             patterns[pattern] = patterns.get(pattern, 0) + 1
         patterns = {k: float(v/iterations) for k, v in patterns.items()}
 
+        #compute likelihood
         for k, v in patterns.items():
         #if v is 1.0 here, likelihood is 0?!
-            if distribution[k] != 0:
-                likelihood += distribution[k] * math.log(v)
-        if likelihood == 0:
-            print(probabilities)
-        print(-likelihood, probabilities)
+            likelihood += distribution[k] * math.log(v)
+        #print(-likelihood, probabilities)
         return -likelihood #minimize negative log-Likelihood <=> maximize (log)Likelihood
 
     def minimizeLH(self, probabilities, distribution, DNMT1KO):
+        '''
+        use parameter optimization to minimize likelihood
+        :param probabilities: initial parameters
+        :param distribution: original pattern distribution
+        :param DNMT1KO: True if DNMT1KO, False if DNMT3KO
+        '''
         #extra arguments passed to the objective function and its derivatives
         args = (distribution, DNMT1KO)
         #bounds for parameter space
