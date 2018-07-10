@@ -23,13 +23,15 @@ class Simulation:
                      [0.5,          0.5,          0,              1],   #DNMT3d (daughter strand)
                      [0.5,          0.5,          0,                1]]     #DNMT3p (parent strand)
 
-    def __init__(self, filename, distances, DNMT1=True, DNMT3=True):
-        distribution, self.L, numOfPatterns = createDistri(filename) #distribution of methylation patterns
-        self.create_initial_distr(distribution)
-        dist = [i*numOfPatterns for i in distribution]
-        self.distances = distances
+    def __init__(self, WTfile, KOfile, distances, DNMT1KO=True):
+        distributionWT, self.L, numOfPatterns = createDistri(WTfile) # distribution of methylation patterns for wildtype
+        distributionKO, self.L, numOfPatterns = createDistri(KOfile) # distribution of methylation patterns after DNMT KO
+        self.create_initial_distr(distributionWT) # create initial distribution from WT
+        # number of occurrences of each pattern in DNMT KO data for comparison with outcome of simulation
+        dist = [i*numOfPatterns for i in distributionKO]
+        self.distances = distances # distances between CpGs
 
-        self.minimizeLH(self.probabilities[0], dist, False)
+        self.minimizeLH(self.probabilities[0], dist, DNMT1KO)
     def create_initial_distr(self, distribution):
         """
         choose an initial distribution
@@ -139,34 +141,37 @@ class Simulation:
             allProbs.append(probabilities)
         else:
            allProbs.append(probabilities)
-        lhs = []
-        error = 1
-        threshold = 0
+        #lhs = []
+        #error = 1
+        #threshold = 0
 
-        while error > threshold:
-            for i in range(10):
-                patterns = dict()
-                likelihood = 1.0
-                #perform multiple iterations and store resulting patterns
-                for i in range(10000):
-                    upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not DNMT1KO, DNMT3=DNMT1KO)
-                    pattern = 0
-                    for l in range(self.L):
-                        pattern += 4 ** (self.L - l - 1) * (upperStrand[l] + lowerStrand[l]*2)
-                    patterns[pattern] = patterns.get(pattern, 0) + 1
-                patterns = {k: float(v/10000) for k, v in patterns.items()}
+        #while error > threshold:
+            #for i in range(10):
+        patterns = dict()
+        likelihood = 1.0
+        #perform multiple iterations and store resulting patterns
+        for i in range(10000):
+            upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not DNMT1KO, DNMT3=DNMT1KO)
+            pattern = 0
+            for l in range(self.L):
+                pattern += 4 ** (self.L - l - 1) * (upperStrand[l] + lowerStrand[l]*2)
+            patterns[pattern] = patterns.get(pattern, 0) + 1
+        patterns = {k: float(v/10000) for k, v in patterns.items()}
 
-                #compute likelihood
-                epsilon = 0.000001  # add epsilon to all distribution values which are 0
-                for k, v in enumerate(distribution):
-                    simDistri = patterns[k] if k in patterns else epsilon
-                    likelihood += v * math.log(simDistri)
-                print(likelihood, probabilities)
-                lhs.append(-likelihood)
-            mean, error = self.mean_confidence_interval(lhs)
-            threshold = mean*0.005
-            print(error, threshold)
-        return -mean #minimize negative log-Likelihood <=> maximize (log)Likelihood
+        #compute likelihood
+        epsilon = 0.000001  # add epsilon to all distribution values which are 0
+        for k, v in enumerate(distribution):
+            if v != 0:
+                simDistri = patterns[k] if k in patterns else epsilon
+                #likelihood += v * math.log(simDistri)
+                likelihood *= v ** simDistri
+        print(likelihood, probabilities)
+        #lhs.append(-likelihood)
+        #mean, error = self.mean_confidence_interval(lhs)
+        #threshold = mean*0.005
+        #print(error, threshold)
+        #return -mean #minimize negative log-Likelihood <=> maximize (log)Likelihood
+        return -likelihood
 
     def mean_confidence_interval(self, data, confidence=0.95):
         a = 1.0*np.array(data)
@@ -182,18 +187,20 @@ class Simulation:
         :param distribution: original pattern distribution
         :param DNMT1KO: True if DNMT1KO, False if DNMT3KO
         '''
-        #extra arguments passed to the objective function and its derivatives
+        # extra arguments passed to the objective function and its derivatives
         args = (distribution, DNMT1KO)
-        #bounds for parameter space
+        # bounds for parameter space
         bnds = ((0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
         #sol = minimize(self.computeLH, probabilities, args=args, bounds=bnds, options={'disp': True})
         #sol = minimize(self.computeLH, probabilities, method='Nelder-Mead', args=args, bounds=bnds, options={'disp': True})
         #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', args=args, bounds=bnds, options={'disp': True})
         # use method L-BFGS-B because the problem is smooth and bounded
-        minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, args=args)
+        minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, args=args, options={'disp': True})
         sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
         print(sol)
 
 
 #do we consider the bps in front of first CpG?
-Simulation("Daten/IAPDnmt1KO.txt", [2, 6, 3, 35, 7], True, False)
+Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
+#Simulation("Daten/ySatWTJ1C.txt", "Daten/IAPDNMT1KO.txt", [2, 6, 3, 35, 7])
+#Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)

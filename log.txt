@@ -1,0 +1,7 @@
+success: True
+        x: array([0.55205687, 0.38795602, 0.20951777, 0.        ])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 8
+                       nfev: 6235
+                        nit: 100
+                          x: array([0.55205687, 0.38795602, 0.20951777, 0.        ])
