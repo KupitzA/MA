@@ -32,6 +32,7 @@ class Simulation:
         self.distances = distances # distances between CpGs
 
         self.minimizeLH(self.probabilities[0], dist, DNMT1KO)
+        #self.minimizeLH([0,0,0.5,0.5], dist, DNMT1KO)
     def create_initial_distr(self, distribution):
         """
         choose an initial distribution
@@ -148,7 +149,8 @@ class Simulation:
         #while error > threshold:
             #for i in range(10):
         patterns = dict()
-        likelihood = 1.0
+        #likelihood = 1.0
+        likelihood = 0.0 #for log-likelihood
         #perform multiple iterations and store resulting patterns
         for i in range(10000):
             upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not DNMT1KO, DNMT3=DNMT1KO)
@@ -159,12 +161,12 @@ class Simulation:
         patterns = {k: float(v/10000) for k, v in patterns.items()}
 
         #compute likelihood
-        epsilon = 0.000001  # add epsilon to all distribution values which are 0
+        epsilon = 0.0000001  # add epsilon to all distribution values which are 0
         for k, v in enumerate(distribution):
             if v != 0:
                 simDistri = patterns[k] if k in patterns else epsilon
-                #likelihood += v * math.log(simDistri)
-                likelihood *= v ** simDistri
+                likelihood += simDistri * math.log(v) #for log-likelihood
+                #likelihood *= simDistri ** v
         print(likelihood, probabilities)
         #lhs.append(-likelihood)
         #mean, error = self.mean_confidence_interval(lhs)
@@ -192,15 +194,13 @@ class Simulation:
         # bounds for parameter space
         bnds = ((0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
         #sol = minimize(self.computeLH, probabilities, args=args, bounds=bnds, options={'disp': True})
-        #sol = minimize(self.computeLH, probabilities, method='Nelder-Mead', args=args, bounds=bnds, options={'disp': True})
-        #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', args=args, bounds=bnds, options={'disp': True})
+        sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', args=args, bounds=bnds, options={'disp': True})
         # use method L-BFGS-B because the problem is smooth and bounded
-        minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, args=args, options={'disp': True})
-        sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
+        #minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, args=args, options={'disp': True})
+        #sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
         print(sol)
 
 
-#do we consider the bps in front of first CpG?
 Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #Simulation("Daten/ySatWTJ1C.txt", "Daten/IAPDNMT1KO.txt", [2, 6, 3, 35, 7])
 #Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)

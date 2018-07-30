@@ -1,3 +1,5 @@
+DNMT1KO 1 Datei
+
 success: True
         x: array([0.55205687, 0.38795602, 0.20951777, 0.        ])
                     message: ['requested number of basinhopping iterations completed successfully']
@@ -5,3 +7,28 @@ success: True
                        nfev: 6235
                         nit: 100
                           x: array([0.55205687, 0.38795602, 0.20951777, 0.        ])
+
+
+DNMT3KO
+
+message: b'ABNORMAL_TERMINATION_IN_LNSRCH'
+     nfev: 105
+      nit: 0
+   status: 2
+  success: False
+        x: array([1.        , 0.99152697, 0.8790408 , 0.2926698 ])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 21
+                       nfev: 13990
+                        nit: 100
+                          x: array([1.        , 0.99152697, 0.8790408 , 0.2926698 ])
+
+DNMT1KO
+
+success: True
+        x: array([0.38719026, 0.56099693, 0.55693545, 0.        ])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 8
+                       nfev: 9230
+                        nit: 100
+                          x: array([0.38719026, 0.56099693, 0.55693545, 0.        ])
