@@ -1,12 +1,15 @@
 import math
 import random
 import scipy.stats
+import os
+import tempfile
 
 import numpy as np
 from scipy.optimize import minimize, basinhopping
 from distribution import createDistri
-from abcpmc import Sampler, ConstEps
-#from matplotlib import plot
+from abcpmc import Sampler, ConstEps,weighted_avg_and_std
+import matplotlib.pyplot as plt
+from pyabc import ABCSMC, Distribution, RV
 
 class Prior(object):
     def __init__(self):
@@ -152,12 +155,6 @@ class Simulation:
             allProbs.append(probabilities)
         else:
            allProbs.append(probabilities)
-        #lhs = []
-        #error = 1
-        #threshold = 0
-
-        #while error > threshold:
-            #for i in range(10):
         patterns = dict()
         #perform multiple iterations and store resulting patterns
         for i in range(10000):
@@ -181,30 +178,12 @@ class Simulation:
         epsilon = 0.0000001  # add epsilon to all distribution values which are 0
         patterns = self.computePatternDistribution(probabilities)
         for k, v in enumerate(self.distributionKO):
-            if v != 0:
+            #if v != 0:
                 simDistri = patterns[k] if k in patterns else epsilon
-                likelihood += simDistri * math.log(v) #for log-likelihood
-                #likelihood *= simDistri ** v
+                likelihood += v * math.log(simDistri) #for log-likelihood
+                #likelihood *= simDisrtri ** v
         print(likelihood, probabilities)
-        #lhs.append(-likelihood)
-        #mean, error = self.mean_confidence_interval(lhs)
-        #threshold = mean*0.005
-        #print(error, threshold)
-        #return -mean #minimize negative log-Likelihood <=> maximize (log)Likelihood
         return -likelihood
-
-    def mean_confidence_interval(self, data, confidence=0.95):
-        '''
-        computes confidence interval for given data and confidence level
-        :param data:
-        :param confidence: confidence level
-        :return: mean, confidence interval
-        '''
-        a = 1.0*np.array(data)
-        n = len(a)
-        m, se = np.mean(data), scipy.stats.sem(a)
-        h = se * scipy.stats.t._ppf((1+confidence)/2., n-1)
-        return m, h
 
     def distanceFunction(self, patterns):
         '''
@@ -226,11 +205,10 @@ class Simulation:
         # extra arguments passed to the objective function and its derivatives
         # bounds for parameter space
         bnds = ((0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
-        #sol = minimize(self.computeLH, probabilities, bounds=bnds, options={'disp': True})
         # use method L-BFGS-B because the problem is smooth and bounded
-        sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', bounds=bnds, options={'disp': True})
-        #minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, options={'disp': True})
-        #sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
+        #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', bounds=bnds, options={'disp': True})
+        minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, options={'disp': True})
+        sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
         print(sol)
 
     def ABC(self, probabilities):
@@ -239,18 +217,53 @@ class Simulation:
         :param probabilities: initial parameters
         :return:
         '''
+        abc = ABCSMC(self.computePatternDistribution, Distribution(x=RV("norm", 0, 1)), self.distanceFunction)
+        db_path = ("sqlite:///" + os.path.join(tempfile.gettempdir(), "test.db"))
+        abc_id = abc.new(db_path)
+        history = abc.run(minimum_epsilon=100, max_nr_populations=1000)
+        model_probabilities = history.get_model_probabilities()
+        print(model_probabilities)
+        #patterns = self.computePatternDistribution(probabilities)
+        #sampler = Sampler(1000, patterns, self.computePatternDistribution, self.distanceFunction)
+        #eps = ConstEps(100, len(patterns))
+        #pools = sampler.sample(Prior(), eps)
+        #print(len(pools))
+        #for pool in pools: print(pool.thetas)
+        #thetas = np.array([pool.thetas for pool in pools])
+        #plt.plot(thetas)
+        #pools = sim.sample(100, len(patterns), 100, probabilities)
+
+    def sample(self, T, eps_val, eps_min, probabilities):
         patterns = self.computePatternDistribution(probabilities)
-        sampler = Sampler(1000, patterns, self.computePatternDistribution, self.distanceFunction)
-        eps = ConstEps(100, len(patterns))
-        pools = sampler.sample(Prior(), eps)
-        thetas = np.array([pool.thetas for pool in pools])
-        #plot(thetas)
+        abcpmc_sampler = Sampler(N=1000, Y=patterns, postfn=self.computePatternDistribution, dist=self.distanceFunction)
+        eps = ConstEps(T, eps_val)
+        pools = []
+        for pool in abcpmc_sampler.sample(Prior(), eps):
+            print("T: {0}, eps: {1:>.4f}, ratio: {2:>.4f}".format(pool.t, eps(pool.t), pool.ratio))
+            for i, (mean, std) in enumerate(zip(*weighted_avg_and_std(pool.thetas, pool.ws, axis=0))):
+                print(u"    theta[{0}]: {1:>.4f} \u00B1 {2:>.4f}".format(i, mean,std))
+
+            eps.eps = np.percentile(pool.dists, 90)
+            if eps.eps < eps_min:
+                eps.eps = eps_min
+
+        pools.append(pool)
+
+        abcpmc_sampler.close()
+
+        return pools
 
 
 #DNMT1KO:
 sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
-#sim.minimizeLH(sim.probabilities[0])
 #DNMT3KO:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
+
+#likelihood computation
+sim.minimizeLH(sim.probabilities[0])
 #sim.minimizeLH(sim.probabilities[1])
-sim.minimizeLH([0,0.5,0.5,0.5])
+#sim.minimizeLH([0,0.5,0.5,0])
+
+#ABC
+#sim.ABC([0.1, 0.8, 0,8, 0])
+#sim.ABC({"a": 0.1, "b": 0.8, "c": 0.8, "d": 0})
