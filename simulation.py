@@ -7,19 +7,7 @@ import tempfile
 import numpy as np
 from scipy.optimize import minimize, basinhopping
 from distribution import createDistri
-from abcpmc import Sampler, ConstEps,weighted_avg_and_std
-import matplotlib.pyplot as plt
-from pyabc import ABCSMC, Distribution, RV
-
-class Prior(object):
-    def __init__(self):
-        self.probs = []
-
-    def __call__(self, theta=None):
-        self.probs = []
-        for i in range(5):
-            self.probs.append(random.random())
-        return self.probs
+from ABC import ABC
 
 class Simulation:
     """
@@ -30,7 +18,7 @@ class Simulation:
     # if DNMT true, no knock out
     L = 0 #number of CpGs
     distances = [] #distances between CpGs
-    distributionKO = dict() #pattern distribution in KO-file
+    distributionKO = [] #pattern distribution in KO-file
     DNMT1KO = True
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
@@ -193,8 +181,8 @@ class Simulation:
         :return: distance between pattern distribution of simulation and pattern distribution of KO-file
         '''
         dist = 0
-        for k,v in self.distributionKO.items():
-            dist += abs(patterns[k]-v)
+        for k, v in enumerate(self.distributionKO):
+            dist += abs(patterns[k]-v) if k in patterns else v
         return dist
 
     def minimizeLH(self, probabilities):
@@ -211,48 +199,6 @@ class Simulation:
         sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
         print(sol)
 
-    def ABC(self, probabilities):
-        '''
-        approximate bayesian computation
-        :param probabilities: initial parameters
-        :return:
-        '''
-        abc = ABCSMC(self.computePatternDistribution, Distribution(x=RV("norm", 0, 1)), self.distanceFunction)
-        db_path = ("sqlite:///" + os.path.join(tempfile.gettempdir(), "test.db"))
-        abc_id = abc.new(db_path)
-        history = abc.run(minimum_epsilon=100, max_nr_populations=1000)
-        model_probabilities = history.get_model_probabilities()
-        print(model_probabilities)
-        #patterns = self.computePatternDistribution(probabilities)
-        #sampler = Sampler(1000, patterns, self.computePatternDistribution, self.distanceFunction)
-        #eps = ConstEps(100, len(patterns))
-        #pools = sampler.sample(Prior(), eps)
-        #print(len(pools))
-        #for pool in pools: print(pool.thetas)
-        #thetas = np.array([pool.thetas for pool in pools])
-        #plt.plot(thetas)
-        #pools = sim.sample(100, len(patterns), 100, probabilities)
-
-    def sample(self, T, eps_val, eps_min, probabilities):
-        patterns = self.computePatternDistribution(probabilities)
-        abcpmc_sampler = Sampler(N=1000, Y=patterns, postfn=self.computePatternDistribution, dist=self.distanceFunction)
-        eps = ConstEps(T, eps_val)
-        pools = []
-        for pool in abcpmc_sampler.sample(Prior(), eps):
-            print("T: {0}, eps: {1:>.4f}, ratio: {2:>.4f}".format(pool.t, eps(pool.t), pool.ratio))
-            for i, (mean, std) in enumerate(zip(*weighted_avg_and_std(pool.thetas, pool.ws, axis=0))):
-                print(u"    theta[{0}]: {1:>.4f} \u00B1 {2:>.4f}".format(i, mean,std))
-
-            eps.eps = np.percentile(pool.dists, 90)
-            if eps.eps < eps_min:
-                eps.eps = eps_min
-
-        pools.append(pool)
-
-        abcpmc_sampler.close()
-
-        return pools
-
 
 #DNMT1KO:
 sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
@@ -260,10 +206,11 @@ sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
 
 #likelihood computation
-sim.minimizeLH(sim.probabilities[0])
+#sim.minimizeLH(sim.probabilities[0])
 #sim.minimizeLH(sim.probabilities[1])
 #sim.minimizeLH([0,0.5,0.5,0])
 
 #ABC
-#sim.ABC([0.1, 0.8, 0,8, 0])
-#sim.ABC({"a": 0.1, "b": 0.8, "c": 0.8, "d": 0})
+abc = ABC()
+abc.abc(sim.computePatternDistribution, sim.distanceFunction, 100)
+print(abc.thetas)
