@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib import pyplot as plt
 
 class ABC:
     """
@@ -8,8 +9,9 @@ class ABC:
     def __init__(self):
         self.thetas = []
         self.dists = [] #distances between distributions of simulation and given data
+        self.simData = [] #accepted simulated distributions
 
-    def abc(self, simulation, distFunc, eps, sampleSize=100, numParam=4, prior=np.random.uniform):
+    def abc(self, simulation, distFunc, eps, sampleSize=10000, numParam=4, prior=np.random.uniform):
         '''
         performs approximate bayesian computation
         :param simulation: function that takes theta/-s and outputs a distribution
@@ -24,7 +26,31 @@ class ABC:
             param = prior(size=numParam)
             simData = simulation(param)
             dist = distFunc(simData)
-            #if dist <= eps:
-            self.thetas.append(param)
-            self.dists.append(dist)
-            print(dist, param)
+            if dist <= eps:
+                self.thetas.append(param)
+                self.dists.append(dist)
+                self.simData.append(simData)
+                print(dist, param)
+        #compute mean theta and distribution if data accepted
+        if len(self.simData) != 0:
+            theta = []
+            for i in range(numParam):
+                theta.append(np.mean([t[i] for t in self.thetas]))
+            print(theta)
+            #compute mean distribution
+            accumulated = self.meanDistri()
+            lists = sorted(accumulated.items()) # sorted by key, return a list of tuples
+            x, y = zip(*lists) # unpack a list of pairs into two tuples
+            plt.plot(x, y)
+            plt.xlabel('pattern value')
+            plt.ylabel('distribution value')
+            plt.title('pattern distribution of simulation')
+            plt.show()
+
+    def meanDistri(self):
+        accumulated = dict()
+        for d in self.simData:
+            for k, v in d.items():
+                accumulated[k] = accumulated.get(k, 0) + v
+        accumulated = {x: float(y/(len(self.simData)*10000)) for x, y in accumulated.items()}
+        return accumulated

@@ -1,0 +1,19 @@
+DNMT1KO:
+ lowest_optimization_result:       fun: 4757.797145988397
+success: True
+        x: array([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 18
+                       nfev: 10590
+                        nit: 100
+                          x: array([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+
+DNMT3KO:
+lowest_optimization_result:       fun: 3496.79821357347
+success: True
+        x: array([0.23422344, 0.99999997, 0.73645811, 0.42643627])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 13
+                       nfev: 13555
+                        nit: 100
+                          x: array([0.23422344, 0.99999997, 0.73645811, 0.42643627])

@@ -1,10 +1,7 @@
 import math
 import random
-import scipy.stats
-import os
-import tempfile
 
-import numpy as np
+from matplotlib import pyplot as plt
 from scipy.optimize import minimize, basinhopping
 from distribution import createDistri
 from ABC import ABC
@@ -19,6 +16,8 @@ class Simulation:
     L = 0 #number of CpGs
     distances = [] #distances between CpGs
     distributionKO = [] #pattern distribution in KO-file
+    patternDistriKO = [] # number of occurrences of each pattern in DNMT KO data for comparison with outcome of
+    # simulation
     DNMT1KO = True
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
@@ -29,10 +28,10 @@ class Simulation:
 
     def __init__(self, WTfile, KOfile, distances, DNMT1KO=True):
         distributionWT, self.L, numOfPatterns = createDistri(WTfile) # distribution of methylation patterns for wildtype
-        distributionKO, self.L, numOfPatterns = createDistri(KOfile) # distribution of methylation patterns after DNMT KO
+        self.distributionKO, self.L, numOfPatterns = createDistri(KOfile) # distribution of methylation patterns after DNMT KO
         self.create_initial_distr(distributionWT) # create initial distribution from WT
         # number of occurrences of each pattern in DNMT KO data for comparison with outcome of simulation
-        self.distributionKO = [i*numOfPatterns for i in distributionKO]
+        self.patternDistriKO = [i*numOfPatterns for i in self.distributionKO]
         self.distances = distances # distances between CpGs
         self.DNMT1KO = DNMT1KO
 
@@ -165,7 +164,7 @@ class Simulation:
         likelihood = 0.0 #for log-likelihood
         epsilon = 0.0000001  # add epsilon to all distribution values which are 0
         patterns = self.computePatternDistribution(probabilities)
-        for k, v in enumerate(self.distributionKO):
+        for k, v in enumerate(self.patternDistriKO):
             #if v != 0:
                 simDistri = patterns[k] if k in patterns else epsilon
                 likelihood += v * math.log(simDistri) #for log-likelihood
@@ -212,5 +211,9 @@ sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 
 #ABC
 abc = ABC()
-abc.abc(sim.computePatternDistribution, sim.distanceFunction, 100)
-print(abc.thetas)
+abc.abc(sim.computePatternDistribution, sim.distanceFunction, 0.8)
+plt.plot(sim.distributionKO)
+plt.xlabel('pattern value')
+plt.ylabel('distribution value')
+plt.title('pattern distribution of data')
+plt.show()
