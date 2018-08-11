@@ -1,7 +1,11 @@
 import math
 import random
+import csv
 
+import numpy as np
 from matplotlib import pyplot as plt
+from itertools import product
+from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize, basinhopping
 from distribution import createDistri
 from ABC import ABC
@@ -198,6 +202,35 @@ class Simulation:
         sol = basinhopping(self.computeLH, probabilities, minimizer_kwargs=minimizer_kwargs)
         print(sol)
 
+    def plotLH(self, probabilities):
+        """
+        plot a three dimensional plot of likelihood depending on two variables of simulation; for each plot two
+        variables are at or supposed maximum, two are between 0 and 1
+        :param probabilities: variables of simulation at our supposed global maximum
+        """
+        #create plots for each combination of two variables fixed, two variable
+        for paramN1 in range(0, 3):
+            for paramN2 in range(paramN1+1, 4):
+                X = [] #x-axis values = y-axis values
+                Z = np.zeros((10,10)) #create matrix for z values
+                #let the two variable variables range from 0.0 to 1.0
+                for i in range(0, 10):
+                    X.append(i/10)
+                    for j in range(0, 10):
+                        probabilities[paramN1] = i/10
+                        probabilities[paramN2] = j/10
+                        likelihood = self.computeLH(probabilities)
+                        Z[i][j] = likelihood
+                fig = plt.figure()
+                ax = fig.add_subplot(111, projection='3d')
+                # Plot a basic wireframe.
+                ax.plot_wireframe(X, X, Z)
+                ax.set_xlabel('param1')
+                ax.set_ylabel('param2')
+                ax.set_zlabel('likelihood')
+                plt.title('likelihood depending on 2 param')
+                plt.show()
+
 
 #DNMT1KO:
 sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
@@ -209,11 +242,14 @@ sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #sim.minimizeLH(sim.probabilities[1])
 #sim.minimizeLH([0,0.5,0.5,0])
 
+#plot likelihood
+sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+
 #ABC
-abc = ABC()
-abc.abc(sim.computePatternDistribution, sim.distanceFunction, 0.8)
-plt.plot(sim.distributionKO)
-plt.xlabel('pattern value')
-plt.ylabel('distribution value')
-plt.title('pattern distribution of data')
-plt.show()
+#abc = ABC()
+#abc.abc(sim.computePatternDistribution, sim.distanceFunction, 0.8)
+#plt.plot(sim.distributionKO)
+#plt.xlabel('pattern value')
+#plt.ylabel('distribution value')
+#plt.title('pattern distribution of data')
+#plt.show()
