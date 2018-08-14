@@ -213,13 +213,14 @@ class Simulation:
             for paramN2 in range(paramN1+1, 4):
                 X = [] #x-axis values = y-axis values
                 Z = np.zeros((10,10)) #create matrix for z values
+                probs = probabilities[:]
                 #let the two variable variables range from 0.0 to 1.0
                 for i in range(0, 10):
                     X.append(i/10)
                     for j in range(0, 10):
-                        probabilities[paramN1] = i/10
-                        probabilities[paramN2] = j/10
-                        likelihood = self.computeLH(probabilities)
+                        probs[paramN1] = i/10
+                        probs[paramN2] = j/10
+                        likelihood = self.computeLH(probs)
                         Z[i][j] = likelihood
                 fig = plt.figure()
                 ax = fig.add_subplot(111, projection='3d')
@@ -231,11 +232,25 @@ class Simulation:
                 plt.title('likelihood depending on 2 param')
                 plt.show()
 
+    def plotParam(self, param, probabilities):
+        X = [] #param x
+        Y = [] #likelihood
+        for i in range(0, 10):
+            X.append(i/10)
+            probabilities[param] = i/10
+            likelihood = self.computeLH(probabilities)
+            Y.append(likelihood)
+        plt.plot(X, Y)
+        plt.xlabel('param value')
+        plt.ylabel('likelihood')
+        plt.title('likelihood depending on param ' + str(param))
+        plt.show()
+
 
 #DNMT1KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #DNMT3KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
 
 #likelihood computation
 #sim.minimizeLH(sim.probabilities[0])
@@ -243,7 +258,8 @@ sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #sim.minimizeLH([0,0.5,0.5,0])
 
 #plot likelihood
-sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+#sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
 
 #ABC
 #abc = ABC()
