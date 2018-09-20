@@ -1,0 +1,8 @@
+-ich teste, ob an den Rändern der neg. log-likelihood-Funktion ein Minimum ist
+-testen, ob sich die likelihood verbessert, wenn wir einen der Parameter fixen
+-Simulation für WT statt DNMT1/DNMT3 KO
+-für ABC Distanzfunktion implementieren
+-die erzeugte Patterndistribution aus der Simulation vergleichen, indem wir die Distanzfunktion von dem ABC benutzen
+-ABC validieren für Simulation, deren echte Parameter wir kennen
+-ABC iteration verbessern, indem Parameter nicht mehr zufällig gezogen werden (hier evtl. Rücksprache mit Michael halten) oder Python Pakage verwenden
+-Abstract Masterarbeit

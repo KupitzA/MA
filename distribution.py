@@ -51,5 +51,7 @@ def createDistri(file1):
     
     #normalization of distribution
     distribution=distribution/len(cod)
-    
     return distribution, L, len(cod)
+
+
+createDistri("Daten/ySatWTJ1C.txt")

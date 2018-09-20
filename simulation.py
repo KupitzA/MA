@@ -107,7 +107,7 @@ class Simulation:
         :param daughterS: strand to which enzyme is bound
         :return: both strands after methylation
         '''
-        rho = probs[0]
+        rho = 1
         tau = probs[1]
         mhy = probs[2]
         delta = probs[3]
@@ -188,6 +188,36 @@ class Simulation:
             dist += abs(patterns[k]-v) if k in patterns else v
         return dist
 
+    def dist(self, patterns):
+        """
+        distance function for ABC, distance of to distributions is sum over weighted distances of all relative distances
+        between the pairwise patterns from each ditribution
+        :param patterns: pattern distribution of simulation
+        :return: distance between pattern distribution of simulation and pattern distribution of KO-file
+        """
+        dist = 0
+        for k, v in enumerate(self.distributionKO):
+            for key, value in patterns.items():
+                dist += self.w(k, key) * (v - value)**2
+        return dist
+
+    def w(self, keyKO, keySim):
+        """
+        computes a weight relative to two patterns
+        :param keyKO: pattern from KO-file
+        :param keySim: pattern from simulation
+        :return: weight w
+        """
+        w = 0.0
+        while keyKO != 0:
+            modKO = keyKO % 4
+            modSim = keySim % 4
+            if modKO != modSim:
+                w += 1
+            keyKO = (keyKO-modKO) / 4
+            keySim = (keySim-modSim) / 4
+        return (w/self.L)
+
     def minimizeLH(self, probabilities):
         '''
         use parameter optimization to minimize likelihood
@@ -233,6 +263,11 @@ class Simulation:
                 plt.show()
 
     def plotParam(self, param, probabilities):
+        """
+        plots a two-dimensional plot of likelihood depending on parameter param
+        :param param: enumeration of alterating param starting with 0
+        :param probabilities: array of parameters for simulation
+        """
         X = [] #param x
         Y = [] #likelihood
         for i in range(0, 10):
@@ -248,18 +283,18 @@ class Simulation:
 
 
 #DNMT1KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #DNMT3KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
 
 #likelihood computation
 #sim.minimizeLH(sim.probabilities[0])
 #sim.minimizeLH(sim.probabilities[1])
-#sim.minimizeLH([0,0.5,0.5,0])
+sim.minimizeLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
 
 #plot likelihood
 #sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
-sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
+#sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
 
 #ABC
 #abc = ABC()
@@ -269,3 +304,4 @@ sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
 #plt.ylabel('distribution value')
 #plt.title('pattern distribution of data')
 #plt.show()
+#print(sim.dist(sim.computePatternDistribution([0.5,          0.5,          0,              1])))
