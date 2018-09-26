@@ -12,6 +12,38 @@ rho = 0:
 lowest_optimization_result:       fun: 4892.699877689774
 x: array([0.42794115, 1.        , 0.34952671, 0.27327682])
 
+rho=1:
+fun: 4704.37290496635
+ lowest_optimization_result:       fun: 4704.37290496635
+ hess_inv: <4x4 LbfgsInvHessProduct with dtype=float64>
+      jac: array([2.45841565e+09, 8.63864966e+08, 4.57881627e+09, 1.98314385e+09])
+  message: b'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'
+     nfev: 150
+      nit: 4
+   status: 0
+  success: True
+        x: array([1.        , 0.27518771, 0.56522245, 1.        ])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 12
+                       nfev: 10890
+                        nit: 100
+                          x: array([1.        , 0.27518771, 0.56522245, 1.        ])
+
+tau = 0:lowest_optimization_result:       fun: 15022.06514669315
+ hess_inv: <4x4 LbfgsInvHessProduct with dtype=float64>
+      jac: array([0., 0., 0., 0.])
+  message: b'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'
+     nfev: 5
+      nit: 0
+   status: 0
+  success: True
+        x: array([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+                    message: ['requested number of basinhopping iterations completed successfully']
+      minimization_failures: 0
+                       nfev: 505
+                        nit: 100
+                          x: array([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+
 
 DNMT3KO:
 lowest_optimization_result:       fun: 3496.79821357347
