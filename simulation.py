@@ -107,9 +107,9 @@ class Simulation:
         :param daughterS: strand to which enzyme is bound
         :return: both strands after methylation
         '''
-        rho = 1
+        rho = probs[0]
         tau = probs[1]
-        mhy = probs[2]
+        mhy = 0
         delta = probs[3]
         bound = False
         CpG = True #if current position is a CpG

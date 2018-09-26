@@ -1,0 +1,9 @@
+\chapter{New Read Selection}
+\label{chapter:newRS}
+\section{Iterative WhatsHap}
+\label{section:itWhatsHap}
+The first approach to improve the results of WhatsHap using Hi-C data was to run WhatsHap iteratively. WhatsHap enables the user to an iterative usage because it outputs a phased \acf{VCF} file. This phased \ac{VCF} file may be part of the input of the next iteration besides a \ac{VCF} and a \acf{BAM} file, which are used for every iteration. A \ac{VCF} file contains known hetero- and homozygous positions in the genome, whereas a phased file provides information of phased variants.  Another input was changed for every iteration, the \ac{BAM} files. These binary compressed files comprise sequence alignments in the form of mapped reads.\\
+As the main challenge of Hi-C reads are the large inserts, the idea is to consider different insert sizes and their effect on the phasing quality. Thus, reads are sorted according to the size of their gaps and BAM files created, containing reads up to or starting from a specific insert size.
+
+\section{Longest Path in Graph Algorithm}
+\label{section:longPath}

@@ -1,0 +1,288 @@
+\documentclass[10pt, a4paper, twoside]{book}
+
+% LANGUAGE DEFINITIONS
+\usepackage[british]{babel}
+\usepackage[euler]{textgreek}
+
+
+% GRAPHIC PACKAGES
+% extends the standard graphics package
+\usepackage{graphicx}
+% rotate figures, tables, captions etc.
+\usepackage{rotating}
+% rotate the page content but not the page number
+\usepackage{lscape}
+% make lscape compatible with PDF
+\usepackage{pdflscape}
+% colour management
+\usepackage[usenames, 
+			dvipsnames]{color}
+% text around figures/tables that don’t span the full width of a page
+\usepackage{floatflt}
+% allows figures/tables to have text wrapped around them
+\usepackage{wrapfig}
+% captions for figures, tables etc., bf makes the name bolded
+\usepackage[labelfont=bf]{caption}
+% colour tables
+\usepackage{colortbl}
+% text symbols
+\usepackage{textcomp}
+
+
+% GRAPHICS CONFIGURATION
+% set the path to the image folder
+\graphicspath{{images/}}
+
+% colours
+\definecolor{MyDarkGreen}{RGB}{118, 146, 61}
+\definecolor{MyLightBlue}{RGB}{75, 172, 198}
+\definecolor{MyMiddleBlue}{RGB}{79, 129, 189}
+\definecolor{MyDarkBlue}{RGB}{31, 73, 125}
+\definecolor{MyDarkRed}{RGB}{192, 80, 77}
+\definecolor{MyOrange}{RGB}{247, 150, 70}
+\definecolor{MyPurple}{RGB}{128, 100, 162}
+
+% colour section, subsection and subsubsection headings blue
+\makeatletter
+\renewcommand\section{
+\@startsection{section}{1}
+			  {\z@}
+              {-3.5ex \@plus -1ex \@minus -.2ex}
+              {2.3ex \@plus.2ex}
+              {\color{MyDarkBlue}\Large\bfseries}}
+\renewcommand\subsection{
+\@startsection{subsection}{2}
+			  {\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.5ex \@plus .2ex}
+              {\color{MyDarkBlue}\large\bfseries}}
+\renewcommand\subsubsection{
+\@startsection{subsubsection}{2}
+			  {\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.0ex \@plus .2ex}
+              {\color{MyDarkBlue}\bfseries}}
+\makeatother
+
+% influences how paragraphs are spread over multiple pages
+\clubpenalty=10000
+\widowpenalty=10000
+
+% encourage placement of figures within the text
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+
+% set the caption size and make it slanted
+\renewcommand{\captionfont}{\footnotesize\slshape}
+
+% set the default font family
+%\renewcommand{\familydefault}{\sfdefault}
+
+
+% TABLE PACKAGES
+\usepackage{multirow}
+% table cells spanning multiple columns
+\usepackage{multicol}
+% extended tabular environment
+\usepackage{tabularx}
+% tables that can span multiple pages
+\usepackage{longtable}
+% combines longtable and tabularx in one environment
+\usepackage{ltxtable}
+% extends tabular/array environments and options for column formats
+\usepackage{array}
+% allows footnotes in tables
+\usepackage{threeparttable}
+% enhanced table quality, optimisation and extra commands
+\usepackage{booktabs}
+
+
+% TABLE CONFIGURATION
+% makes double backslash work properly
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}} 
+% flexible columns in differnt sizes
+\newcolumntype{b}{>{\arraybackslash\hsize=1.4\hsize}X}
+\newcolumntype{s}{>{\raggedright\arraybackslash\hsize=0.6\hsize}X}
+
+% more space in tables
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{0.2cm}
+
+% make top and bottom rule thicker
+\setlength\heavyrulewidth{0.175em}
+\arrayrulecolor{MyDarkGreen}
+
+
+% MATH PACKAGES
+% math typesetting
+\usepackage{amsmath}
+% extended symbol collections
+\usepackage{amssymb}
+% helps to define theorem-like structures
+\usepackage{amsthm}
+% sans serif math
+%\usepackage[eulergreek, EULERGREEK]{sansmath}
+%\sansmath
+
+%argmin with subscripts
+\newcommand{\argmin}{\mathop{\mathrm{argmin}}}
+
+
+% CODE PACKAGES
+\usepackage{listings}
+
+
+% CODE CONFIGURATION
+% listing settings
+\lstset{basicstyle=\footnotesize\sffamily,
+		showstringspaces=false, 
+		tabsize=2, 
+		breaklines=true, 
+		belowcaptionskip=10pt, 
+		boxpos=c, 
+		escapeinside={(*@}{@*)},
+		xleftmargin=.05\textwidth, 
+		xrightmargin=.05\textwidth}
+
+
+% URLs AND INTERNAL LINKING PACKAGES
+% external linking
+\usepackage{url}
+
+% internal linking
+\usepackage[pdfpagemode=None, 
+			colorlinks=true, 
+			linkcolor=MyMiddleBlue, 
+			urlcolor=MyMiddleBlue, 
+			citecolor=MyMiddleBlue, 
+			plainpages=false, 
+			pdfpagelabels, 
+			unicode]{hyperref}
+
+
+% URLs AND INTERNAL LINKING CONFIGURATION
+% external linking
+\makeatletter
+	\def\url@leostyle{
+		\@ifundefined{selectfont}
+						{\def\UrlFont{\sf}}
+						{\def\UrlFont{\small\sffamily}}}
+\makeatother
+\urlstyle{leo}
+
+% uncomment for print setup, i.e. blacken links
+\hypersetup{pdftex=true,
+			colorlinks=true, 
+			breaklinks=true, 
+			linkcolor=black, 
+			pagecolor=black, 
+			urlcolor=black, 
+			citecolor=black}
+
+
+% MISC PACKAGES
+% allow longer comments in the text that are ignored
+\usepackage{comment}
+% generates text etc. for testing new packages
+\usepackage{blindtext}
+% allows LaTeX to overwrite external files
+\usepackage{filecontents}
+
+
+% PARAGRAPHS
+% Paragraph_number paragraph_title
+\newcounter{paranum}[section]
+\renewcommand{\theparanum}{\thesection.\arabic{paranum}}
+\newcommand{\mypar}[1]{\bigskip%
+\noindent%
+\refstepcounter{paranum}\textbf{\theparanum\:#1\enspace}}
+
+
+% ABBREVIATIONS SET-UP
+\usepackage[printonlyused,
+			withpage]{acronym} 
+
+
+% APPENDIX SET-UP
+\usepackage[toc,
+			page]{appendix}
+
+
+% BIBLIOGRAPHY SET-UP
+\usepackage[backend=biber, 
+			style=numeric, 
+			citestyle=numeric, 
+			sorting=none,
+			sortcites=true,
+			citestyle=numeric-comp,
+			backrefstyle=two,
+			urldate=long]{biblatex}
+\addbibresource{bib/bib.bib}
+
+
+% VARIABLES
+% define university and department
+\def\university{Universit\"{a}t des Saarlandes}
+\def\institute{Center for Bioinformatics}
+
+% define project name and type
+\def\projectname{Design and calibration of stochastic models for DNA methylation patterns} 
+\def\projectType{Master Thesis in Bioinformatics}
+
+% define names
+\def\supervisorIname{Professor Dr. Verena Wolf}
+\def\advisorIname{Alexander L\"{u}ck}
+\def\reviewerName{Professor Dr. Volkhard Helms}
+\def\authorFirstName{Andrea}
+\def\authorLastName{Kupitz}
+
+% define date and city
+\def\date{March 2019}
+\def\city{Saarbr\"{u}cken}
+
+
+
+% BEGIN DOCUMENT
+\begin{document}
+
+% title page
+\input{pre/title}
+
+% set correct double-page page margins
+\setlength{\oddsidemargin}{3.0cm}
+\setlength{\evensidemargin}{0.8cm}
+
+% preface
+\input{pre/declaration}
+\input{pre/abstract}
+\input{pre/acknowledge}
+
+% lists
+\tableofcontents
+\listoftables
+\listoffigures
+
+% list of abbreviations
+\cleardoublepage
+\pagebreak
+\phantomsection
+\input{pre/abbreviations}
+\vfill
+
+% core chapters
+\cleardoublepage
+\input{main/intro}
+\input{main/methods}
+\input{main/evaluation}
+\input{main/discussion}
+\input{post/appendix}
+
+% bibliography
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+\vfill
+
+\end{document}
+

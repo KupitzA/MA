@@ -1,0 +1,1384 @@
+% http://www.bioinformatics.org/texmed/
+
+% INTRO
+
+% -------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
+
+
+% BACKGROUND
+% Antibiotic Resistance
+@Article{guinane2013,
+   Author="Guinane, C. M.  and Cotter, P. D. ",
+   Title="{{R}ole of the gut microbiota in health and chronic gastrointestinal disease: understanding a hidden metabolic organ}",
+   Journal="Therap Adv Gastroenterol",
+   Year="2013",
+   Volume="6",
+   Number="4",
+   Pages="295--308",
+   Month="Jul"
+}
+
+@Article{aminov2010,
+   Author="Aminov, R. I. ",
+   Title="{{A} brief history of the antibiotic era: lessons learned and challenges for the future}",
+   Journal="Front Microbiol",
+   Year="2010",
+   Volume="1",
+   Pages="134"
+}
+
+@Article{levy2004,
+   Author="Levy, S. B.  and Marshall, B. ",
+   Title="{{A}ntibacterial resistance worldwide: causes, challenges and responses}",
+   Journal="Nat. Med.",
+   Year="2004",
+   Volume="10",
+   Number="12 Suppl",
+   Pages="S122--129",
+   Month="Dec"
+}
+
+@Article{putman2000,
+   Author="Putman, M.  and van Veen, H. W.  and Konings, W. N. ",
+   Title="{{M}olecular properties of bacterial multidrug transporters}",
+   Journal="Microbiol. Mol. Biol. Rev.",
+   Year="2000",
+   Volume="64",
+   Number="4",
+   Pages="672--693",
+   Month="Dec"
+}
+
+@Article{kohanski2010,
+   Author="Kohanski, M. A.  and Dwyer, D. J.  and Collins, J. J. ",
+   Title="{{H}ow antibiotics kill bacteria: from targets to networks}",
+   Journal="Nat. Rev. Microbiol.",
+   Year="2010",
+   Volume="8",
+   Number="6",
+   Pages="423--435",
+   Month="Jun"
+}
+
+@Article{blanco2016,
+	Author = "Blanco, P. and Hernando-Amado, S. and Reales-Calderon, J. A. and Corona, F. 
+	and Lira, F. and Alcalde-Rico, M. and Bernardini, A.,  and Sanchez, M. B. and Martinez, J.
+	L.",
+	Title = "{{B}acterial {M}ultidrug {E}fflux {P}umps: {M}uch {M}ore {T}han {A}ntibiotic {R}	esistance {D}eterminants}",
+	Journal = "Microorganisms",
+	Year = "2016",
+	Volume = "4",
+	Month = "Feb"
+}
+
+% origins of antibiotic resistance
+@Article{davies2010,
+   Author="Davies, J.  and Davies, D. ",
+   Title="{{O}rigins and evolution of antibiotic resistance}",
+   Journal="Microbiol. Mol. Biol. Rev.",
+   Year="2010",
+   Volume="74",
+   Number="3",
+   Pages="417--433",
+   Month="Sep"
+}
+
+% correlation increased resistance and increased efflux activity
+@Article{demarco2007,
+   Author="DeMarco, C. E.  and Cushing, L. A.  and Frempong-Manso, E.  and Seo, S. M.  and Jaravaza, T. A.  and Kaatz, G. W. ",
+   Title="{{E}fflux-related resistance to norfloxacin, dyes, and biocides in bloodstream isolates of {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2007",
+   Volume="51",
+   Number="9",
+   Pages="3235--3239",
+   Month="Sep"
+}
+
+% S. aureus Pathology
+@Article{tong2015,
+   Author="Tong, S. Y.  and Davis, J. S.  and Eichenberger, E.  and Holland, T. L.  and Fowler, V. G. ",
+   Title="{{S}taphylococcus aureus infections: epidemiology, pathophysiology, clinical manifestations, and management}",
+   Journal="Clin. Microbiol. Rev.",
+   Year="2015",
+   Volume="28",
+   Number="3",
+   Pages="603--661",
+   Month="Jul"
+}
+
+% Pneumonia caused by MRSA
+@Article{rubinstein2008,
+   Author="Rubinstein, E.  and Kollef, M. H.  and Nathwani, D. ",
+   Title="{{P}neumonia caused by methicillin-resistant {S}taphylococcus aureus}",
+   Journal="Clin. Infect. Dis.",
+   Year="2008",
+   Volume="46 Suppl 5",
+   Pages="S378--385",
+   Month="Jun"
+}
+
+% growing number of CA-MRSA
+@Article{chambers2001,
+   Author="Chambers, H. F. ",
+   Title="{{T}he changing epidemiology of {S}taphylococcus aureus?}",
+   Journal="Emerging Infect. Dis.",
+   Year="2001",
+   Volume="7",
+   Number="2",
+   Pages="178--182"
+}
+
+% S. aureus important pathogen
+@Article{chambers2009,
+   Author="Chambers, H. F.  and Deleo, F. R. ",
+   Title="{{W}aves of resistance: {S}taphylococcus aureus in the antibiotic era}",
+   Journal="Nat. Rev. Microbiol.",
+   Year="2009",
+   Volume="7",
+   Number="9",
+   Pages="629--641",
+   Month="Sep"
+}
+
+% S. aureus important pathogen
+@Article{lowy1998,
+   Author="Lowy, F. D. ",
+   Title="{{S}taphylococcus aureus infections}",
+   Journal="N. Engl. J. Med.",
+   Year="1998",
+   Volume="339",
+   Number="8",
+   Pages="520--532",
+   Month="Aug"
+}
+
+% S. aureus genetic basis antibiotic resistance
+@Article{lyon1987,
+   Author="Lyon, B. R.  and Skurray, R. ",
+   Title="{{A}ntimicrobial resistance of {S}taphylococcus aureus: genetic basis}",
+   Journal="Microbiol. Rev.",
+   Year="1987",
+   Volume="51",
+   Number="1",
+   Pages="88--134",
+   Month="Mar"
+}
+
+% [disease burden], [hospital cost], [community acquired MRSA]
+@Article{seybold2006,
+   Author="Seybold, U.  and Kourbatova, E. V.  and Johnson, J. G.  and Halvosa, S. J.  and Wang, Y. F.  and King, M. D.  and Ray, S. M.  and Blumberg, H. M. ",
+   Title="{{E}mergence of community-associated methicillin-resistant {S}taphylococcus aureus {U}{S}{A}300 genotype as a major cause of health care-associated blood stream infections}",
+   Journal="Clin. Infect. Dis.",
+   Year="2006",
+   Volume="42",
+   Number="5",
+   Pages="647--656",
+   Month="Mar"
+}
+
+% growing number CA-MRSA
+@Article{chua2001,
+   Author="Chua, K.  and Laurent, F.  and Coombs, G.  and Grayson, M. L.  and Howden, B. P. ",
+   Title="{{A}ntimicrobial resistance: {N}ot community-associated methicillin-resistant {S}taphylococcus aureus ({C}{A}-{M}{R}{S}{A})! {A} clinician's guide to community {M}{R}{S}{A} - its evolving antimicrobial resistance and implications for therapy}",
+   Journal="Clin. Infect. Dis.",
+   Year="2011",
+   Volume="52",
+   Number="1",
+   Pages="99--114",
+   Month="Jan"
+}
+
+% major nosocomial infection
+@Article{enright2002,
+   Author="Enright, M. C.  and Robinson, D. A.  and Randle, G.  and Feil, E. J.  and Grundmann, H.  and Spratt, B. G. ",
+   Title="{{T}he evolutionary history of methicillin-resistant {S}taphylococcus aureus ({M}{R}{S}{A})}",
+   Journal="Proc. Natl. Acad. Sci. U.S.A.",
+   Year="2002",
+   Volume="99",
+   Number="11",
+   Pages="7687--7692",
+   Month="May"
+}
+
+% S. aureus nasal carriage
+@Article{kluytmans1997,
+   Author="Kluytmans, J.  and van Belkum, A.  and Verbrugh, H. ",
+   Title="{{N}asal carriage of {S}taphylococcus aureus: epidemiology, underlying mechanisms, and associated risks}",
+   Journal="Clin. Microbiol. Rev.",
+   Year="1997",
+   Volume="10",
+   Number="3",
+   Pages="505--520",
+   Month="Jul"
+}
+
+% S. aureus nasal carriage
+@Article{wertheim2005,
+   Author="Wertheim, H. F.  and Melles, D. C.  and Vos, M. C.  and van Leeuwen, W.  and van Belkum, A.  and Verbrugh, H. A.  and Nouwen, J. L. ",
+   Title="{{T}he role of nasal carriage in {S}taphylococcus aureus infections}",
+   Journal="Lancet Infect Dis",
+   Year="2005",
+   Volume="5",
+   Number="12",
+   Pages="751--762",
+   Month="Dec"
+}
+
+
+% S aureus disease burden
+@Article{koeck2010,
+   Author="Kock, R.  and Becker, K.  and Cookson, B.  and van Gemert-Pijnen, J. E.  and Harbarth, S.  and Kluytmans, J.  and Mielke, M.  and Peters, G.  and Skov, R. L.  and Struelens, M. J.  and Tacconelli, E.  and Navarro Torne, A.  and Witte, W.  and Friedrich, A. W. ",
+   Title="{{M}ethicillin-resistant {S}taphylococcus aureus ({M}{R}{S}{A}): burden of disease and control challenges in {E}urope}",
+   Journal="Euro Surveill.",
+   Year="2010",
+   Volume="15",
+   Number="41",
+   Pages="19688",
+   Month="Oct"
+}
+
+% S aureus colonisation?
+@Article{lemoing2015,
+   Author="Le Moing, V.  and Alla, F.  and Doco-Lecompte, T.  and Delahaye, F.  and Piroth, L.  and Chirouze, C.  and Tattevin, P.  and Lavigne, J. P.  and Erpelding, M. L.  and Hoen, B.  and Vandenesch, F.  and Duval, X.  and Chirouze, C.  and Curlier, E.  and Descottes-Genon, C.  and Hoen, B.  and Patry, I.  and Vettoretti, L.  and Chavanet, P.  and Eicher, J. C.  and Gohier-Treuvelot, S.  and Greusard, M. C.  and Neuwirth, C.  and Pechinot, A.  and Piroth, L.  and Celard, M.  and Cornu, C.  and Delahaye, F.  and Hadid, M.  and Rausch, P.  and Coma, A.  and Galtier, F.  and Geraud, P.  and Jean-Pierre, H.  and Le Moing, V.  and Sportouch, C.  and Reynes, J.  and Aissa, N.  and Doco-Lecompte, T.  and Goehringer, F.  and Keil, N.  and Letranchant, L.  and Malela, H.  and May, T.  and Selton-Suty, C.  and Bedos, N.  and Lavigne, J. P.  and Lechiche, C.  and Sotto, A.  and Duval, X.  and Habensus, E. I.  and Iung, B.  and Leport, C.  and Longuet, P.  and Ruimy, R.  and Bellissant, E.  and Donnio, P. Y.  and Le Gac, F.  and Michelet, C.  and Revest, M.  and Tattevin, P.  and Thebault, E.  and Alla, F.  and Braquet, P.  and Erpelding, M. L.  and Minary, L.  and Tubiana, S.  and Bes, M.  and Etienne, J.  and Tristan, A.  and Vandenesch, F.  and Barbas, S.  and Delonca, C.  and Sussmuth, V.  and Verchere, A. ",
+   Title="{{S}taphylococcus aureus {B}loodstream {I}nfection and {E}ndocarditis--{A} {P}rospective {C}ohort {S}tudy}",
+   Journal="PLoS ONE",
+   Year="2015",
+   Volume="10",
+   Number="5",
+   Pages="e0127385"
+}
+
+% MUTATION EFFECTS ON EXPRESSION
+@Article{adewoye2002,
+   Author="Adewoye, L.  and Sutherland, A.  and Srikumar, R.  and Poole, K. ",
+   Title="{{T}he mex{R} repressor of the mex{A}{B}-opr{M} multidrug efflux operon in {P}seudomonas aeruginosa: characterization of mutations compromising activity}",
+   Journal="J. Bacteriol.",
+   Year="2002",
+   Volume="184",
+   Number="15",
+   Pages="4308--4312",
+   Month="Aug"
+}
+
+@Article{piddock2006a,
+   Author="Piddock, L. J. ",
+   Title="{{M}ultidrug-resistance efflux pumps - not just for resistance}",
+   Journal="Nat. Rev. Microbiol.",
+   Year="2006",
+   Volume="4",
+   Number="8",
+   Pages="629--636",
+   Month="Aug"
+}
+
+@Article{piddock2006b,
+   Author="Piddock, L. J. ",
+   Title="{{C}linically relevant chromosomally encoded multidrug resistance efflux pumps in bacteria}",
+   Journal="Clin. Microbiol. Rev.",
+   Year="2006",
+   Volume="19",
+   Number="2",
+   Pages="382--402",
+   Month="Apr"
+}
+
+% activation and expression
+@Article{alekshun1997,
+   Author="Alekshun, M. N.  and Levy, S. B. ",
+   Title="{{R}egulation of chromosomally mediated multiple antibiotic resistance: the mar regulon}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1997",
+   Volume="41",
+   Number="10",
+   Pages="2067--2075",
+   Month="Oct"
+}
+
+% MUTATION EFFECTS ON ANTIBIOTIC RESISTANCE
+@Article{ferrero1995,
+   Author="Ferrero, L.  and Cameron, B.  and Crouzet, J. ",
+   Title="{{A}nalysis of gyr{A} and grl{A} mutations in stepwise-selected ciprofloxacin-resistant mutants of {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1995",
+   Volume="39",
+   Number="7",
+   Pages="1554--1558",
+   Month="Jul"
+}
+
+% REGULATION EFFLUX PUMPS
+@Article{grkovic2001,
+   Author="Grkovic, S.  and Brown, M. H.  and Skurray, R. A. ",
+   Title="{{T}ranscriptional regulation of multidrug efflux pumps in bacteria}",
+   Journal="Semin. Cell Dev. Biol.",
+   Year="2001",
+   Volume="12",
+   Number="3",
+   Pages="225--237",
+   Month="Jun"
+}
+
+% DNA, protein, regulation etc. book
+@Book{watson2013,
+	Author = {Watson, J. D. and Baker, T. A. and Bell, S. P. and Gann, A. and Levine, M. and Losick, R. and Harrison, S. C. },
+	Title = {{M}olecular {B}iology of the {G}ene},
+	Editor = {Beth Wilbur},
+	Year = {2013},
+	Month = 2,
+	Address = {Cold Spring Harbor, New York},
+	Publisher = {Pearson Education, Inc.},
+	Edition = 7,
+	isbn = {0321905377}
+}
+
+% S. aureus operons
+@Article{broekesmits2010,
+   Author="ten Broeke-Smits, N. J.  and Pronk, T. E.  and Jongerius, I.  and Bruning, O.  and Wittink, F. R.  and Breit, T. M.  and van Strijp, J. A.  and Fluit, A. C.  and Boel, C. H. ",
+   Title="{{O}peron structure of {S}taphylococcus aureus}",
+   Journal="Nucleic Acids Res.",
+   Year="2010",
+   Volume="38",
+   Number="10",
+   Pages="3263--3274",
+   Month="Jun"
+}
+
+% DNA
+@Article{watson1953,
+   Author="WATSON, J. D.  and CRICK, F. H. ",
+   Title="{{T}he structure of {D}{N}{A}}",
+   Journal="Cold Spring Harb. Symp. Quant. Biol.",
+   Year="1953",
+   Volume="18",
+   Pages="123--131"
+}
+
+% DNA replication
+@Article{meselson1958,
+   Author="Meselson, M.  and Stahl, F. W. ",
+   Title="{{T}{H}{E} {R}{E}{P}{L}{I}{C}{A}{T}{I}{O}{N} {O}{F} {D}{N}{A} {I}{N} {E}{S}{C}{H}{E}{R}{I}{C}{H}{I}{A} {C}{O}{L}{I}}",
+   Journal="Proc. Natl. Acad. Sci. U.S.A.",
+   Year="1958",
+   Volume="44",
+   Number="7",
+   Pages="671--682",
+   Month="Jul"
+}
+
+% SNPs
+@Article{schork2000,
+   Author="Schork, N. J.  and Fallin, D.  and Lanchbury, J. S. ",
+   Title="{{S}ingle nucleotide polymorphisms and the future of genetic epidemiology}",
+   Journal="Clin. Genet.",
+   Year="2000",
+   Volume="58",
+   Number="4",
+   Pages="250--264",
+   Month="Oct"
+}
+
+
+% GRN
+@Article{dejong2002,
+   Author="de Jong, H. ",
+   Title="{{M}odeling and simulation of genetic regulatory systems: a literature review}",
+   Journal="J. Comput. Biol.",
+   Year="2002",
+   Volume="9",
+   Number="1",
+   Pages="67--103"
+}
+
+
+% IMAGES
+% DNA strands
+@online{dna_double_strand,
+ author  = "University of Leicester - Virtual Genetics Education Centre",
+ title   = "Double strand of polynucleotides",
+ urlseen = "2016-07-04",
+ url     = "http://www2.le.ac.uk/departments/genetics/vgec/diagrams/31%20polynucleotide%202.jpg/"
+}
+
+
+% -------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
+
+
+% MATERIALS
+% Data Sets
+
+% AureoWiki
+@online{AureoWiki,
+ title = "AureoWiki Download Gene Specific Information",
+ url = "http://aureowiki.med.uni-greifswald.de/download_gene_specific_information",
+ urldate = "2016-04-07"
+ }
+ 
+ % PATRIC
+@Article{wattam2014,
+   Author="Wattam, A. R.  and Abraham, D.  and Dalay, O.  and Disz, T. L.  and Driscoll, T.  and Gabbard, J. L.  and Gillespie, J. J.  and Gough, R.  and Hix, D.  and Kenyon, R.  and Machi, D.  and Mao, C.  and Nordberg, E. K.  and Olson, R.  and Overbeek, R.  and Pusch, G. D.  and Shukla, M.  and Schulman, J.  and Stevens, R. L.  and Sullivan, D. E.  and Vonstein, V.  and Warren, A.  and Will, R.  and Wilson, M. J.  and Yoo, H. S.  and Zhang, C.  and Zhang, Y.  and Sobral, B. W. ",
+   Title="{{P}{A}{T}{R}{I}{C}, the bacterial bioinformatics database and analysis resource}",
+   Journal="Nucleic Acids Res.",
+   Year="2014",
+   Volume="42",
+   Number="Database issue",
+   Pages="D581--591",
+   Month="Jan",
+   url = "https://www.patricbrc.org/portal/portal/patric/Genome?cType=genome&cId=93061.5",
+   urldate = "2016-04-07"
+}
+
+% RegPrecise
+@Article{novichkov2013,
+   Author="Novichkov, P. S.  and Kazakov, A. E.  and Ravcheev, D. A.  and Leyn, S. A.  and Kovaleva, G. Y.  and Sutormin, R. A.  and Kazanov, M. D.  and Riehl, W.  and Arkin, A. P.  and Dubchak, I.  and Rodionov, D. A. ",
+   Title="{{R}eg{P}recise 3.0--a resource for genome-scale exploration of transcriptional regulation in bacteria}",
+   Journal="BMC Genomics",
+   Year="2013",
+   Volume="14",
+   Pages="745",
+   url = "http://regprecise.lbl.gov/RegPrecise/propagated_genome.jsp?pgp_collection_id=3&genome_id=200",
+   urldate = "2015-09-04"
+}
+
+% UniProt
+@Article{bateman2015,
+   Author="Bateman, A.  and Martin, M. J.  and O'Donovan, C.  and Magrane, M.  and Apweiler, R.  and Alpi, E.  and Antunes, R.  and Arganiska, J.  and Bely, B.  and Bingley, M.  and Bonilla, C.  and Britto, R.  and Bursteinas, B.  and Chavali, G.  and Cibrian-Uhalte, E.  and Silva, A. D.  and De Giorgi, M.  and Dogan, T.  and Fazzini, F.  and Gane, P.  and Castro, L. G.  and Garmiri, P.  and Hatton-Ellis, E.  and Hieta, R.  and Huntley, R.  and Legge, D.  and Liu, W.  and Luo, J.  and MacDougall, A.  and Mutowo, P.  and Nightingale, A.  and Orchard, S.  and Pichler, K.  and Poggioli, D.  and Pundir, S.  and Pureza, L.  and Qi, G.  and Rosanoff, S.  and Saidi, R.  and Sawford, T.  and Shypitsyna, A.  and Turner, E.  and Volynkin, V.  and Wardell, T.  and Watkins, X.  and Zellner, H.  and Cowley, A.  and Figueira, L.  and Li, W.  and McWilliam, H.  and Lopez, R.  and Xenarios, I.  and Bougueleret, L.  and Bridge, A.  and Poux, S.  and Redaschi, N.  and Aimo, L.  and Argoud-Puy, G.  and Auchincloss, A.  and Axelsen, K.  and Bansal, P.  and Baratin, D.  and Blatter, M. C.  and Boeckmann, B.  and Bolleman, J.  and Boutet, E.  and Breuza, L.  and Casal-Casas, C.  and de Castro, E.  and Coudert, E.  and Cuche, B.  and Doche, M.  and Dornevil, D.  and Duvaud, S.  and Estreicher, A.  and Famiglietti, L.  and Feuermann, M.  and Gasteiger, E.  and Gehant, S.  and Gerritsen, V.  and Gos, A.  and Gruaz-Gumowski, N.  and Hinz, U.  and Hulo, C.  and Jungo, F.  and Keller, G.  and Lara, V.  and Lemercier, P.  and Lieberherr, D.  and Lombardot, T.  and Martin, X.  and Masson, P.  and Morgat, A.  and Neto, T.  and Nouspikel, N.  and Paesano, S.  and Pedruzzi, I.  and Pilbout, S.  and Pozzato, M.  and Pruess, M.  and Rivoire, C.  and Roechert, B.  and Schneider, M.  and Sigrist, C.  and Sonesson, K.  and Staehli, S.  and Stutz, A.  and Sundaram, S.  and Tognolli, M.  and Verbregue, L.  and Veuthey, A. L.  and Wu, C. H.  and Arighi, C. N.  and Arminski, L.  and Chen, C.  and Chen, Y.  and Garavelli, J. S.  and Huang, H.  and Laiho, K.  and McGarvey, P.  and Natale, D. A.  and Suzek, B. E.  and Vinayaka, C.  and Wang, Q.  and Wang, Y.  and Yeh, L. S.  and Yerramalla, M. S.  and Zhang, J. ",
+   Title="{{U}ni{P}rot: a hub for protein information}",
+   Journal="Nucleic Acids Res.",
+   Year="2015",
+   Volume="43",
+   Number="Database issue",
+   Pages="D204--212",
+   Month="Jan",
+   url = "http://www.uniprot.org/",
+   urldate = "2016-04-16"
+}
+
+% SNP database
+@Article{hamed2015,
+   Author="Hamed, M.  and Nitsche-Schmitz, D. P.  and Ruffing, U.  and Steglich, M.  and Dordel, J.  and Nguyen, D.  and Brink, J. H.  and Chhatwal, G. S.  and Herrmann, M.  and Nubel, U.  and Helms, V.  and von Muller, L. ",
+   Title="{{W}hole genome sequence typing and microarray profiling of nasal and blood stream methicillin-resistant {S}taphylococcus aureus isolates: {C}lues to phylogeny and invasiveness}",
+   Journal="Infect. Genet. Evol.",
+   Year="2015",
+   Volume="36",
+   Pages="475--482",
+   Month="Dec"
+}
+
+% MicrobesOnline
+@Article{dehal2010,
+   Author="Dehal, P. S.  and Joachimiak, M. P.  and Price, M. N.  and Bates, J. T.  and Baumohl, J. K.  and Chivian, D.  and Friedland, G. D.  and Huang, K. H.  and Keller, K.  and Novichkov, P. S.  and Dubchak, I. L.  and Alm, E. J.  and Arkin, A. P. ",
+   Title="{{M}icrobes{O}nline: an integrated portal for comparative and functional genomics}",
+   Journal="Nucleic Acids Res.",
+   Year="2010",
+   Volume="38",
+   Number="Database issue",
+   Pages="396--400",
+   Month="Jan"
+}
+
+% NCBI Genbank
+@Article{benson2015,
+   Author="Benson, D. A.  and Clark, K.  and Karsch-Mizrachi, I.  and Lipman, D. J.  and Ostell, J.  and Sayers, E. W. ",
+   Title="{{G}en{B}ank}",
+   Journal="Nucleic Acids Res.",
+   Year="2015",
+   Volume="43",
+   Number="Database issue",
+   Pages="D30--35",
+   Month="Jan"
+}
+
+% ARDB
+@Article{liu2009,
+   Author="Liu, B.  and Pop, M. ",
+   Title="{{A}{R}{D}{B}--{A}ntibiotic {R}esistance {G}enes {D}atabase}",
+   Journal="Nucleic Acids Res.",
+   Year="2009",
+   Volume="37",
+   Number="Database issue",
+   Pages="D443--447",
+   Month="Jan"
+}
+
+% CARD
+@Article{mcarthur2013,
+   Author="McArthur, A. G.  and Waglechner, N.  and Nizam, F.  and Yan, A.  and Azad, M. A.  and Baylay, A. J.  and Bhullar, K.  and Canova, M. J.  and De Pascale, G.  and Ejim, L.  and Kalan, L.  and King, A. M.  and Koteva, K.  and Morar, M.  and Mulvey, M. R.  and O'Brien, J. S.  and Pawlowski, A. C.  and Piddock, L. J.  and Spanogiannopoulos, P.  and Sutherland, A. D.  and Tang, I.  and Taylor, P. L.  and Thaker, M.  and Wang, W.  and Yan, M.  and Yu, T.  and Wright, G. D. ",
+   Title="{{T}he comprehensive antibiotic resistance database}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2013",
+   Volume="57",
+   Number="7",
+   Pages="3348--3357",
+   Month="Jul"
+}
+
+% PFAM
+@Article{finn2016,
+   Author="Finn, R. D.  and Coggill, P.  and Eberhardt, R. Y.  and Eddy, S. R.  and Mistry, J.  and Mitchell, A. L.  and Potter, S. C.  and Punta, M.  and Qureshi, M.  and Sangrador-Vegas, A.  and Salazar, G. A.  and Tate, J.  and Bateman, A. ",
+   Title="{{T}he {P}fam protein families database: towards a more sustainable future}",
+   Journal="Nucleic Acids Res.",
+   Year="2016",
+   Volume="44",
+   Number="D1",
+   Pages="D279--285",
+   Month="Jan"
+}
+
+% -------------------------------------------------------------------------------------------
+
+% Literature Search
+
+% MDR efflux pumps in S. aureus: An Update  --  Overview
+% not included genes: qacA-qacJ, smr, mdcA, sdrM, lmrS
+% genes and regulation: norA. norB, norC, norG, mepA, mepR, mgrA, sepA
+@Article{costa2013,
+   Author="Costa, S. S.  and Viveiros, M.  and Amaral, L.  and Couto, I. ",
+   Title="{{M}ultidrug {E}fflux {P}umps in {S}taphylococcus aureus: an {U}pdate}",
+   Journal="Open Microbiol J",
+   Year="2013",
+   Volume="7",
+   Pages="59--71"
+}
+
+% Big Gene Table
+% gyrA, gyrB, norA, vga, ileS, rpoB, mepA, dfrA
+% genetic nature of antibiotic resistance
+@Article{jensen2009,
+   Author="Jensen, S. O.  and Lyon, B. R. ",
+   Title="{{G}enetics of antimicrobial resistance in {S}taphylococcus aureus}",
+   Journal="Future Microbiol",
+   Year="2009",
+   Volume="4",
+   Number="5",
+   Pages="565--582",
+   Month="Jun"
+}
+
+% gyrA/B and Quinolone Resistance
+@Article{yamagishi1996,
+   Author="Yamagishi, J.  and Kojima, T.  and Oyamada, Y.  and Fujimoto, K.  and Hattori, H.  and Nakamura, S.  and Inoue, M. ",
+   Title="{{A}lterations in the {D}{N}{A} topoisomerase {I}{V} grl{A} gene responsible for quinolone resistance in {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1996",
+   Volume="40",
+   Number="5",
+   Pages="1157--1163",
+   Month="May"
+}
+
+% norA, mgrA regulation
+@Article{truongbolduc2003,
+   Author="Truong-Bolduc, Q. C.  and Zhang, X.  and Hooper, D. C. ",
+   Title="{{C}haracterization of {N}or{R} protein, a multifunctional regulator of nor{A} expression in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2003",
+   Volume="185",
+   Number="10",
+   Pages="3127--3138",
+   Month="May"
+}
+
+
+% not much use, but mentions lots of AR genes that are not in the database:
+% mecA, mecR1, blaZ, blaI, blaR1, dgrB, ermA-ermC, vat, vatB
+@Article{lowy2004,
+   Author="Lowy, F. D. ",
+   Title="{{A}ntimicrobial resistance: the example of {S}taphylococcus aureus}",
+   Journal="J. Clin. Invest.",
+   Year="2003",
+   Volume="111",
+   Number="9",
+   Pages="1265--1273",
+   Month="May"
+}
+
+@Article{sun2014,
+   Author="Sun, J.  and Deng, Z.  and Yan, A. ",
+   Title="{{B}acterial multidrug efflux pumps: mechanisms, physiology and pharmacological exploitations}",
+   Journal="Biochem. Biophys. Res. Commun.",
+   Year="2014",
+   Volume="453",
+   Number="2",
+   Pages="254--267",
+   Month="Oct"
+}
+
+% mepA, mepR, regulation, mutations
+@Article{kumaraswami2009,
+   Author="Kumaraswami, M.  and Schuman, J. T.  and Seo, S. M.  and Kaatz, G. W.  and Brennan, R. G. ",
+   Title="{{S}tructural and biochemical characterization of {M}ep{R}, a multidrug binding transcription regulator of the {S}taphylococcus aureus multidrug efflux pump {M}ep{A}}",
+   Journal="Nucleic Acids Res.",
+   Year="2009",
+   Volume="37",
+   Number="4",
+   Pages="1211--1224",
+   Month="Mar"
+}
+
+@Article{webber2003,
+   Author="Webber, M. A.  and Piddock, L. J. ",
+   Title="{{T}he importance of efflux pumps in bacterial antibiotic resistance}",
+   Journal="J. Antimicrob. Chemother.",
+   Year="2003",
+   Volume="51",
+   Number="1",
+   Pages="9--11",
+   Month="Jan"
+}
+
+% mepA
+@Article{mcaleese2005,
+   Author="McAleese, F.  and Petersen, P.  and Ruzin, A.  and Dunman, P. M.  and Murphy, E.  and Projan, S. J.  and Bradford, P. A. ",
+   Title="{{A} novel {M}{A}{T}{E} family efflux pump contributes to the reduced susceptibility of laboratory-derived {S}taphylococcus aureus mutants to tigecycline}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2005",
+   Volume="49",
+   Number="5",
+   Pages="1865--1871",
+   Month="May"
+}
+
+% mepA, mepR, mepRAB, overexpression mepA, mutations in mepR truncated mepR
+@Article{kaatz2005b,
+   Author="Kaatz, G. W.  and McAleese, F.  and Seo, S. M. ",
+   Title="{{M}ultidrug resistance in {S}taphylococcus aureus due to overexpression of a novel multidrug and toxin extrusion ({M}{A}{T}{E}) transport protein}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2005",
+   Volume="49",
+   Number="5",
+   Pages="1857--1864",
+   Month="May"
+}
+
+% genes: tet38
+@Article{handzlik2013,
+   Author="Handzlik, J.  and Matys, A.  and Kie?-Kononowicz, K. ",
+   Title="{{R}ecent {A}dvances in {M}ulti-{D}rug {R}esistance ({M}{D}{R}) {E}fflux {P}ump {I}nhibitors of {G}ram-{P}ositive {B}acteria {S}. aureus}",
+   Journal="Antibiotics (Basel)",
+   Year="2013",
+   Volume="2",
+   Number="1",
+   Pages="28--45"
+}
+
+
+% norC, mgrA regulation
+@Article{truongbolduc2006,
+   Author="Truong-Bolduc, Q. C.  and Strahilevitz, J.  and Hooper, D. C. ",
+   Title="{{N}or{C}, a new efflux pump regulated by {M}gr{A} of {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2006",
+   Volume="50",
+   Number="3",
+   Pages="1104--1107",
+   Month="Mar"
+}
+
+% norA
+@Article{yoshida1990,
+   Author="Yoshida, H.  and Bogaki, M.  and Nakamura, S.  and Ubukata, K.  and Konno, M. ",
+   Title="{{N}ucleotide sequence and characterization of the {S}taphylococcus aureus nor{A} gene, which confers resistance to quinolones}",
+   Journal="J. Bacteriol.",
+   Year="1990",
+   Volume="172",
+   Number="12",
+   Pages="6942--6949",
+   Month="Dec"
+}
+
+@Article{kwak2013,
+   Author="Kwak, Y. G.  and Truong-Bolduc, Q. C.  and Bin Kim, H.  and Song, K. H.  and Kim, E. S.  and Hooper, D. C. ",
+   Title="{{A}ssociation of nor{B} overexpression and fluoroquinolone resistance in clinical isolates of {S}taphylococcus aureus from {K}orea}",
+   Journal="J. Antimicrob. Chemother.",
+   Year="2013",
+   Volume="68",
+   Number="12",
+   Pages="2766--2772",
+   Month="Dec"
+}
+
+@Article{reynolds2005,
+   Author="Reynolds, E. D.  and Cove, J. H. ",
+   Title="{{R}esistance to telithromycin is conferred by msr({A}), msr{C} and msr({D}) in {S}taphylococcus aureus}",
+   Journal="J. Antimicrob. Chemother.",
+   Year="2005",
+   Volume="56",
+   Number="6",
+   Pages="1179--1180",
+   Month="Dec"
+}
+
+@Article{reynolds2003,
+   Author="Reynolds, E.  and Ross, J. I.  and Cove, J. H. ",
+   Title="{{M}sr({A}) and related macrolide/streptogramin resistance determinants: incomplete transporters?}",
+   Journal="Int. J. Antimicrob. Agents",
+   Year="2003",
+   Volume="22",
+   Number="3",
+   Pages="228--236",
+   Month="Sep"
+}
+
+
+% msrA, msrB
+@Article{schmitz2000,
+   Author="Schmitz, F. J.  and Sadurski, R.  and Kray, A.  and Boos, M.  and Geisel, R.  and Kohrer, K.  and Verhoef, J.  and Fluit, A. C. ",
+   Title="{{P}revalence of macrolide-resistance genes in {S}taphylococcus aureus and {E}nterococcus faecium isolates from 24 {E}uropean university hospitals}",
+   Journal="J. Antimicrob. Chemother.",
+   Year="2000",
+   Volume="45",
+   Number="6",
+   Pages="891--894",
+   Month="Jun"
+}
+
+% mepA, mepR, regulation
+@Article{kaatz2006,
+   Author="Kaatz, G. W.  and DeMarco, C. E.  and Seo, S. M. ",
+   Title="{{M}ep{R}, a repressor of the {S}taphylococcus aureus {M}{A}{T}{E} family multidrug efflux pump {M}ep{A}, is a substrate-responsive regulatory protein}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2006",
+   Volume="50",
+   Number="4",
+   Pages="1276--1281",
+   Month="Apr"
+}
+
+% norA, mgrA, mutations, overexpression
+@Article{kaatz2005a,
+   Author="Kaatz, G. W.  and Thyagarajan, R. V.  and Seo, S. M. ",
+   Title="{{E}ffect of promoter region mutations and mgr{A} overexpression on transcription of nor{A}, which encodes a {S}taphylococcus aureus multidrug efflux transporter}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2005",
+   Volume="49",
+   Number="1",
+   Pages="161--169",
+   Month="Jan"
+}
+
+% [norG], [norC], [regulation], [MDR efflux transporter], [norG repressor norC, abcA], [norG activates mgrA, arlS, sarZ]
+@Article{truongbolduc2011,
+   Author="Truong-Bolduc, Q. C.  and Dunman, P. M.  and Eidem, T.  and Hooper, D. C. ",
+   Title="{{T}ranscriptional profiling analysis of the global regulator {N}or{G}, a {G}nt{R}-like protein of {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2011",
+   Volume="193",
+   Number="22",
+   Pages="6207--6214",
+   Month="Nov"
+}
+
+% sepA
+@Article{narui2002,
+   Author="Narui, K.  and Noguchi, N.  and Wakasugi, K.  and Sasatsu, M. ",
+   Title="{{C}loning and characterization of a novel chromosomal drug efflux gene in {S}taphylococcus aureus}",
+   Journal="Biol. Pharm. Bull.",
+   Year="2002",
+   Volume="25",
+   Number="12",
+   Pages="1533--1536",
+   Month="Dec"
+}
+
+@Article{neyfakh1993,
+   Author="Neyfakh, A. A.  and Borsch, C. M.  and Kaatz, G. W. ",
+   Title="{{F}luoroquinolone resistance protein {N}or{A} of {S}taphylococcus aureus is a multidrug efflux transporter}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1993",
+   Volume="37",
+   Number="1",
+   Pages="128--129",
+   Month="Jan"
+}
+
+
+% mgrA, tet38, sepA, norB
+@Article{truongbolduc2005,
+   Author="Truong-Bolduc, Q. C.  and Dunman, P. M.  and Strahilevitz, J.  and Projan, S. J.  and Hooper, D. C. ",
+   Title="{{M}gr{A} is a multiple regulator of two new efflux pumps in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2005",
+   Volume="187",
+   Number="7",
+   Pages="2395--2405",
+   Month="Apr"
+}
+
+% arlS
+@Article{fournier2000,
+   Author="Fournier, B.  and Aras, R.  and Hooper, D. C. ",
+   Title="{{E}xpression of the multidrug resistance transporter {N}or{A} from {S}taphylococcus aureus is modified by a two-component regulatory system}",
+   Journal="J. Bacteriol.",
+   Year="2000",
+   Volume="182",
+   Number="3",
+   Pages="664--671",
+   Month="Feb"
+}
+
+@Article{ballal2009,
+   Author="Ballal, A.  and Ray, B.  and Manna, A. C. ",
+   Title="{sar{Z}, a sar{A} family gene, is transcriptionally activated by {M}gr{A} and is involved in the regulation of genes encoding exoproteins in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2009",
+   Volume="191",
+   Number="5",
+   Pages="1656--1665",
+   Month="Mar"
+}
+
+% lots of regulation
+@Article{dunman2001,
+   Author="Dunman, P. M.  and Murphy, E.  and Haney, S.  and Palacios, D.  and Tucker-Kellogg, G.  and Wu, S.  and Brown, E. L.  and Zagursky, R. J.  and Shlaes, D.  and Projan, S. J. ",
+   Title="{{T}ranscription profiling-based identification of {S}taphylococcus aureus genes regulated by the agr and/or sar{A} loci}",
+   Journal="J. Bacteriol.",
+   Year="2001",
+   Volume="183",
+   Number="24",
+   Pages="7341--7353",
+   Month="Dec"
+}
+
+% abcA
+@Article{schraderfischer2001,
+   Author="Schrader-Fischer, G.  and Berger-Bachi, B. ",
+   Title="{{T}he {A}bc{A} transporter of {S}taphylococcus aureus affects cell autolysis}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2001",
+   Volume="45",
+   Number="2",
+   Pages="407--412",
+   Month="Feb"
+}
+
+% [norA], [norB] [norG],  [mgrA], [regulation], [MDR efflux transporter], [norG activating norB], [mgrA effecting norG], [norG effecting norG, norA, norB, norC, abcA]
+@Article{truongbolduc2007,
+   Author="Truong-Bolduc, Q. C.  and Hooper, D. C. ",
+   Title="{{T}he transcriptional regulators {N}or{G} and {M}gr{A} modulate resistance to both quinolones and beta-lactams in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2007",
+   Volume="189",
+   Number="8",
+   Pages="2996--3005",
+   Month="Apr"
+}
+
+% [norA], [norB], [mgrA], [regulation], [MDR efflux transporter] , [mgrA repressor norB, norA]
+@Article{truongbolduc2010,
+   Author="Truong-Bolduc, Q. C.  and Hooper, D. C. ",
+   Title="{{P}hosphorylation of {M}gr{A} and its effect on expression of the {N}or{A} and {N}or{B} efflux pumps of {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2010",
+   Volume="192",
+   Number="10",
+   Pages="2525--2534",
+   Month="May"
+}
+
+% abcA regulation
+@Article{villet2014,
+   Author="Villet, R. A.  and Truong-Bolduc, Q. C.  and Wang, Y.  and Estabrooks, Z.  and Medeiros, H.  and Hooper, D. C. ",
+   Title="{{R}egulation of expression of abc{A} and its response to environmental conditions}",
+   Journal="J. Bacteriol.",
+   Year="2014",
+   Volume="196",
+   Number="8",
+   Pages="1532--1539",
+   Month="Apr"
+}
+
+% sarT represses hla
+@Article{schmidt2001,
+   Author="Schmidt, K. A.  and Manna, A. C.  and Gill, S.  and Cheung, A. L. ",
+   Title="{{S}ar{T}, a repressor of alpha-hemolysin in {S}taphylococcus aureus}",
+   Journal="Infect. Immun.",
+   Year="2001",
+   Volume="69",
+   Number="8",
+   Pages="4749--4758",
+   Month="Aug"
+}
+
+
+% mgrA regulation
+@Article{luong2006,
+   Author="Luong, T. T.  and Dunman, P. M.  and Murphy, E.  and Projan, S. J.  and Lee, C. Y. ",
+   Title="{{T}ranscription {P}rofiling of the mgr{A} {R}egulon in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2006",
+   Volume="188",
+   Number="5",
+   Pages="1899--1910",
+   Month="Mar"
+}
+
+
+% 
+@Article{cheung2004,
+   Author="Cheung, A. L.  and Bayer, A. S.  and Zhang, G.  and Gresham, H.  and Xiong, Y. Q. ",
+   Title="{{R}egulation of virulence determinants in vitro and in vivo in {S}taphylococcus aureus}",
+   Journal="FEMS Immunol. Med. Microbiol.",
+   Year="2004",
+   Volume="40",
+   Number="1",
+   Pages="1--9",
+   Month="Jan"
+}
+
+% abcA 
+@Article{yoshikai2016,
+   Author="Yoshikai, H.  and Kizaki, H.  and Saito, Y.  and Omae, Y.  and Sekimizu, K.  and Kaito, C. ",
+   Title="{{M}ultidrug-{R}esistance {T}ransporter {A}bc{A} {S}ecretes {S}taphylococcus aureus {C}ytolytic {T}oxins}",
+   Journal="J. Infect. Dis.",
+   Year="2016",
+   Volume="213",
+   Number="2",
+   Pages="295--304",
+   Month="Jan"
+}
+
+% msrA, msrB
+@Article{ross1990,
+   Author="Ross, J. I.  and Eady, E. A.  and Cove, J. H.  and Cunliffe, W. J.  and Baumberg, S.  and Wootton, J. C. ",
+   Title="{{I}nducible erythromycin resistance in staphylococci is encoded by a member of the {A}{T}{P}-binding transport super-gene family}",
+   Journal="Mol. Microbiol.",
+   Year="1990",
+   Volume="4",
+   Number="7",
+   Pages="1207--1214",
+   Month="Jul"
+}
+
+% rot regulation
+@Article{mootz2015,
+   Author="Mootz, J. M.  and Benson, M. A.  and Heim, C. E.  and Crosby, H. A.  and Kavanaugh, J. S.  and Dunman, P. M.  and Kielian, T.  and Torres, V. J.  and Horswill, A. R. ",
+   Title="{{R}ot is a key regulator of {S}taphylococcus aureus biofilm formation}",
+   Journal="Mol. Microbiol.",
+   Year="2015",
+   Volume="96",
+   Number="2",
+   Pages="388--404",
+   Month="Apr"
+}
+
+% rot regulation
+@Article{hsieh2008,
+   Author="Hsieh, H. Y.  and Tseng, C. W.  and Stewart, G. C. ",
+   Title="{{R}egulation of {R}ot expression in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2008",
+   Volume="190",
+   Number="2",
+   Pages="546--554",
+   Month="Jan"
+}
+
+% rot regulation
+@Article{saidsalim2003,
+   Author="Said-Salim, B.  and Dunman, P. M.  and McAleese, F. M.  and Macapagal, D.  and Murphy, E.  and McNamara, P. J.  and Arvidson, S.  and Foster, T. J.  and Projan, S. J.  and Kreiswirth, B. N. ",
+   Title="{{G}lobal regulation of {S}taphylococcus aureus genes by {R}ot}",
+   Journal="J. Bacteriol.",
+   Year="2003",
+   Volume="185",
+   Number="2",
+   Pages="610--619",
+   Month="Jan"
+}
+
+% pbp4, beta lactam resistance
+@Article{henze1995,
+   Author="Henze, U. U.  and Berger-Bachi, B. ",
+   Title="{{S}taphylococcus aureus penicillin-binding protein 4 and intrinsic beta-lactam resistance}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1995",
+   Volume="39",
+   Number="11",
+   Pages="2415--2422",
+   Month="Nov"
+}
+
+% pbp4 beta lactam resistance
+@Article{memmi2008,
+   Author="Memmi, G.  and Filipe, S. R.  and Pinho, M. G.  and Fu, Z.  and Cheung, A. ",
+   Title="{{S}taphylococcus aureus {P}{B}{P}4 is essential for beta-lactam resistance in community-acquired methicillin-resistant strains}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2008",
+   Volume="52",
+   Number="11",
+   Pages="3955--3966",
+   Month="Nov"
+}
+
+% pbp2, mutations, resistance
+@Article{hackbarth1995,
+   Author="Hackbarth, C. J.  and Kocagoz, T.  and Kocagoz, S.  and Chambers, H. F. ",
+   Title="{{P}oint mutations in {S}taphylococcus aureus {P}{B}{P} 2 gene affect penicillin-binding kinetics and are associated with resistance}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1995",
+   Volume="39",
+   Number="1",
+   Pages="103--106",
+   Month="Jan"
+}
+
+% pbp2, pbp4
+@Article{lesky2005,
+   Author="Leski, T. A.  and Tomasz, A. ",
+   Title="{{R}ole of penicillin-binding protein 2 ({P}{B}{P}2) in the antibiotic susceptibility and cell wall cross-linking of {S}taphylococcus aureus: evidence for the cooperative functioning of {P}{B}{P}2, {P}{B}{P}4, and {P}{B}{P}2{A}}",
+   Journal="J. Bacteriol.",
+   Year="2005",
+   Volume="187",
+   Number="5",
+   Pages="1815--1824",
+   Month="Mar"
+}
+
+% fur, perR, regulation
+@Article{horsburgh2001,
+   Author="Horsburgh, M. J.  and Ingham, E.  and Foster, S. J. ",
+   Title="{{I}n {S}taphylococcus aureus, fur is an interactive regulator with {P}er{R}, contributes to virulence, and {I}s necessary for oxidative stress resistance through positive regulation of catalase and iron homeostasis}",
+   Journal="J. Bacteriol.",
+   Year="2001",
+   Volume="183",
+   Number="2",
+   Pages="468--475",
+   Month="Jan"
+}
+
+% [norA], [fur], [regulation]
+@Article{deng2012,
+   Author="Deng, X.  and Sun, F.  and Ji, Q.  and Liang, H.  and Missiakas, D.  and Lan, L.  and He, C. ",
+   Title="{{E}xpression of multidrug resistance efflux pump gene nor{A} is iron responsive in {S}taphylococcus aureus}",
+   Journal="J. Bacteriol.",
+   Year="2012",
+   Volume="194",
+   Number="7",
+   Pages="1753--1762",
+   Month="Apr"
+}
+
+@Article{xiong2000,
+   Author="Xiong, A.  and Singh, V. K.  and Cabrera, G.  and Jayaswal, R. K. ",
+   Title="{{M}olecular characterization of the ferric-uptake regulator, fur, from {S}taphylococcus aureus}",
+   Journal="Microbiology (Reading, Engl.)",
+   Year="2000",
+   Volume="146 ( Pt 3)",
+   Pages="659--668",
+   Month="Mar"
+}
+
+@Article{huovinen2001,
+   Author="Huovinen, P. ",
+   Title="{{R}esistance to trimethoprim-sulfamethoxazole}",
+   Journal="Clin. Infect. Dis.",
+   Year="2001",
+   Volume="32",
+   Number="11",
+   Pages="1608--1614",
+   Month="Jun"
+}
+
+% ileS
+@Article{lee2014,
+   Author="Lee, A. S.  and Gizard, Y.  and Empel, J.  and Bonetti, E. J.  and Harbarth, S.  and Francois, P. ",
+   Title="{{M}upirocin-induced mutations in ile{S} in various genetic backgrounds of methicillin-resistant {S}taphylococcus aureus}",
+   Journal="J. Clin. Microbiol.",
+   Year="2014",
+   Volume="52",
+   Number="10",
+   Pages="3749--3754",
+   Month="Oct"
+}
+
+% gyrB, parE, mutations
+@Article{fujimoto2005,
+   Author="Fujimoto-Nakamura, M.  and Ito, H.  and Oyamada, Y.  and Nishino, T.  and Yamagishi, J. ",
+   Title="{{A}ccumulation of mutations in both gyr{B} and par{E} genes is associated with high-level resistance to novobiocin in {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="2005",
+   Volume="49",
+   Number="9",
+   Pages="3810--3815",
+   Month="Sep"
+}
+
+% fmtC
+@Article{komatsuzawa2001,
+   Author="Komatsuzawa, H.  and Ohta, K.  and Fujiwara, T.  and Choi, G. H.  and Labischinski, H.  and Sugai, M. ",
+   Title="{{C}loning and sequencing of the gene, fmt{C}, which affects oxacillin resistance in methicillin-resistant {S}taphylococcus aureus}",
+   Journal="FEMS Microbiol. Lett.",
+   Year="2001",
+   Volume="203",
+   Number="1",
+   Pages="49--54",
+   Month="Sep"
+}
+
+% gyrA, gyrB
+@Article{ng1996,
+   Author="Ng, E. Y.  and Trucksis, M.  and Hooper, D. C. ",
+   Title="{{Q}uinolone resistance mutations in topoisomerase {I}{V}: relationship to the flq{A} locus and genetic evidence that topoisomerase {I}{V} is the primary target and {D}{N}{A} gyrase is the secondary target of fluoroquinolones in {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1996",
+   Volume="40",
+   Number="8",
+   Pages="1881--1888",
+   Month="Aug"
+}
+
+% fusB
+@Article{oneill2006,
+   Author="O'Neill, A. J.  and Chopra, I. ",
+   Title="{{M}olecular basis of fus{B}-mediated resistance to fusidic acid in {S}taphylococcus aureus}",
+   Journal="Mol. Microbiol.",
+   Year="2006",
+   Volume="59",
+   Number="2",
+   Pages="664--676",
+   Month="Jan"
+}
+
+
+% sigB, mgrA regulation
+@Article{bischoff2004,
+   Author="Bischoff, M.  and Dunman, P.  and Kormanec, J.  and Macapagal, D.  and Murphy, E.  and Mounts, W.  and Berger-Bachi, B.  and Projan, S. ",
+   Title="{{M}icroarray-based analysis of the {S}taphylococcus aureus sigma{B} regulon}",
+   Journal="J. Bacteriol.",
+   Year="2004",
+   Volume="186",
+   Number="13",
+   Pages="4085--4099",
+   Month="Jul"
+}
+
+% [sarZ], [regulation], [sarZ repressor norB, tet38], [norB], [tet38]
+@Article{chen2008,
+   Author="Chen, P. R.  and Nishida, S.  and Poor, C. B.  and Cheng, A.  and Bae, T.  and Kuechenmeister, L.  and Dunman, P. M.  and Missiakas, D.  and He, C. ",
+   Title="{{A} new oxidative sensing and regulation pathway mediated by the {M}gr{A} homologue {S}ar{Z} in {S}taphylococcus aureus}",
+   Journal="Mol. Microbiol.",
+   Year="2009",
+   Volume="71",
+   Number="1",
+   Pages="198--211",
+   Month="Jan"
+}
+
+% sarA, mgrA regulation
+@Article{cheung2008,
+   Author="Cheung, A. L.  and Nishina, K. A.  and Trotonda, M. P.  and Tamber, S. ",
+   Title="{{T}he {S}ar{A} protein family of {S}taphylococcus aureus}",
+   Journal="Int. J. Biochem. Cell Biol.",
+   Year="2008",
+   Volume="40",
+   Number="3",
+   Pages="355--361"
+}
+
+% gyrA, gyrB mutations and resistance
+@Article{ito1994,
+   Author="Ito, H.  and Yoshida, H.  and Bogaki-Shonai, M.  and Niga, T.  and Hattori, H.  and Nakamura, S. ",
+   Title="{{Q}uinolone resistance mutations in the {D}{N}{A} gyrase gyr{A} and gyr{B} genes of {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1994",
+   Volume="38",
+   Number="9",
+   Pages="2014--2023",
+   Month="Sep"
+}
+
+% norA
+@Article{kaatz1993,
+   Author="Kaatz, G. W.  and Seo, S. M.  and Ruble, C. A. ",
+   Title="{{E}fflux-mediated fluoroquinolone resistance in {S}taphylococcus aureus}",
+   Journal="Antimicrob. Agents Chemother.",
+   Year="1993",
+   Volume="37",
+   Number="5",
+   Pages="1086--1094",
+   Month="May"
+}
+
+% sarZ
+@Article{kaito2006,
+   Author="Kaito, C.  and Morishita, D.  and Matsumoto, Y.  and Kurokawa, K.  and Sekimizu, K. ",
+   Title="{{N}ovel {D}{N}{A} binding protein {S}ar{Z} contributes to virulence in {S}taphylococcus aureus}",
+   Journal="Mol. Microbiol.",
+   Year="2006",
+   Volume="62",
+   Number="6",
+   Pages="1601--1617",
+   Month="Dec"
+}
+
+
+
+% -------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
+
+
+% METHODS
+% Implementation
+@Misc{Python,
+  author = {{Python Software Foundation}},
+  title = {Python},
+  url = {https://www.python.org/},
+  version = {3.4.3},
+  date = {2015-02-25},
+}
+
+
+% BEDTools 2014
+@Article{quinlan2014,
+   Author="Quinlan, A. R. ",
+   Title="{{B}{E}{D}{T}ools: {T}he {S}wiss-{A}rmy {T}ool for {G}enome {F}eature {A}nalysis}",
+   Journal="Curr Protoc Bioinformatics",
+   Year="2014",
+   Volume="47",
+   Pages="1--34"
+}
+
+% BEDTools 2010
+@Article{quinlan2010,
+   Author="Quinlan, A. R.  and Hall, I. M. ",
+   Title="{{B}{E}{D}{T}ools: a flexible suite of utilities for comparing genomic features}",
+   Journal="Bioinformatics",
+   Year="2010",
+   Volume="26",
+   Number="6",
+   Pages="841--842",
+   Month="Mar"
+}
+
+% -------------------------------------------------------------------------------------------
+
+% Coding region
+@Misc{PAM30,
+	author = {National Center for Biotechnology Information},
+	title = {PAM30},
+	url = {http://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/data/PAM30},
+	date = {2016-07-01}
+}
+
+@Misc{PAM10,
+	author = {University of Michigan},
+	title = {PAM10},
+	url = {http://www.math.lsa.umich.edu/~dburns/matrices/PAM10},
+	date = {2016-07-12}
+}
+
+@Article{pearson2013,
+   Author="Pearson, W. R. ",
+   Title="{{S}electing the {R}ight {S}imilarity-{S}coring {M}atrix}",
+   Journal="Curr Protoc Bioinformatics",
+   Year="2013",
+   Volume="43",
+   Pages="1--9"
+}
+
+@Book{dayhoff1978,
+	Author = {Dayhoff, M. O. and Schwartz, R. M. and Orcutt, B. C.},
+	Title = {{A}tlas of {P}rotein {S}equence and {S}tructure},
+	Editor = {M. O. Dayhoff},
+	Year = {1978},
+	Address = {Washington DC},
+	Publisher = {National Biochemical Research Foundation},
+	Volume = 5,
+	Pages = {345-352},
+}
+
+@Article{needleman1970,
+   Author="Needleman, S. B.  and Wunsch, C. D. ",
+   Title="{{A} general method applicable to the search for similarities in the amino acid sequence of two proteins}",
+   Journal="J. Mol. Biol.",
+   Year="1970",
+   Volume="48",
+   Number="3",
+   Pages="443--453",
+   Month="Mar"
+}
+
+% -------------------------------------------------------------------------------------------
+
+% Transcription Factor Binding Sites
+@Article{melton2015,
+   Author="Melton, C.  and Reuter, J. A.  and Spacek, D. V.  and Snyder, M. ",
+   Title="{{R}ecurrent somatic mutations in regulatory regions of human cancer genomes}",
+   Journal="Nat. Genet.",
+   Year="2015",
+   Volume="47",
+   Number="7",
+   Pages="710--716",
+   Month="Jul"
+}
+
+% MATCH
+@Article{kel2003,
+   Author="Kel, A. E.  and Gossling, E.  and Reuter, I.  and Cheremushkin, E.  and Kel-Margoulis, O. V.  and Wingender, E. ",
+   Title="{{M}{A}{T}{C}{H}: {A} tool for searching transcription factor binding sites in {D}{N}{A} sequences}",
+   Journal="Nucleic Acids Res.",
+   Year="2003",
+   Volume="31",
+   Number="13",
+   Pages="3576--3579",
+   Month="Jul"
+}
+
+% TFBS pseudocounts
+@Article{nishida2009,
+   Author="Nishida, K.  and Frith, M. C.  and Nakai, K. ",
+   Title="{{P}seudocounts for transcription factor binding sites}",
+   Journal="Nucleic Acids Res.",
+   Year="2009",
+   Volume="37",
+   Number="3",
+   Pages="939--944",
+   Month="Feb"
+}
+
+% --------------------------------------------------------------------------------------------
+
+% GRN
+% Cytoscape
+@Article{smoot2011,
+   Author="Smoot, M. E.  and Ono, K.  and Ruscheinski, J.  and Wang, P. L.  and Ideker, T. ",
+   Title="{{C}ytoscape 2.8: new features for data integration and network visualization}",
+   Journal="Bioinformatics",
+   Year="2011",
+   Volume="27",
+   Number="3",
+   Pages="431--432",
+   Month="Feb"
+}
+
+% --------------------------------------------------------------------------------------------
+
+% Statistical Tests
+@Article{wilcoxon1945,
+	Author="Wilcoxon, F.",
+	Title="{I}ndividual {C}omparisons by {R}anking {M}ethods",
+	Journal="Biometrics Bulletin",
+	Year="1945",
+	Volume="1",
+	Number="6",
+	Pages="80--83",
+	Month="Dec"
+}
+
+% --------------------------------------------------------------------------------------------
+
+% RESULTS
+% HAMP domain
+@Article{hamp,
+   Author="Aravind, L.  and Ponting, C. P. ",
+   Title="{{T}he cytoplasmic helical linker domain of receptor histidine kinase and methyl-accepting proteins is common to many prokaryotic signalling proteins}",
+   Journal="FEMS Microbiol. Lett.",
+   Year="1999",
+   Volume="176",
+   Number="1",
+   Pages="111--116",
+   Month="Jul"
+}
+

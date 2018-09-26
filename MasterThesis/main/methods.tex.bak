@@ -1,0 +1,462 @@
+\chapter{Methods}
+\label{chapter:methods}
+
+The purpose of this thesis was to analyse the impact of mutations on the antibiotic resistance of bacteria with computational methods instead of experimental ones, and then apply these methods to \textit{Staphylococcus aureus}. To reach this goal, a command-line tool was designed that automatically performs various analysis steps on a set of mutations that consider the mutations' location in coding or regulatory regions, as well as the type of the gene they occur in and its role in the regulatory network.
+\par
+Chapter~\ref{chapter:background} introduced background information on the mechanisms of antibiotic resistance with a focus on multidrug resistance efflux pumps, and outlined the potential impact of mutations on antibiotic resistance depending on their location within  a gene, the type of the gene and the replaced DNA bases. It further explained the importance of understanding the causes of antibiotic resistance in \textit{S. aureus}. Chapter~\ref{chapter:materials} described the data sets used to this end, namely the genome of \textit{S. aureus} strain NCTC 8325 as reference and data sets on antibiotic resistance genes, gene regulation, transcription factor binding sites, mutations, and protein domains. This chapter serves to detail the methodology and different analysis steps underlying the developed tool.
+\par
+First, the data sets described in Chapter~\ref{chapter:materials} (see Table \ref{table:material_overview}) were processed in order to make them available as a unified data base that can be studied. In a second step, the effect of SNPs and indels in coding regions was assessed using amino acid substitution matrices as well as protein domain information. Then, SNPs and indels in transcription factor binding sites were analysed by using a score based on \acp{PWM} to estimate their impact. To figure out if there are notable differences between SNPs and indels in antibiotic resistant and non-antibiotic resistant genes, a variety of general statistics were computed and compared. Furthermore, the \ac{GRN} was built to investigate the potential impact of SNPs and indels in the larger regulatory context. In the last step all results were compiled into a comprehensive table. Figure~\ref{figure:flowchart} shows an overview of the program work flow.
+\par
+The following sections first explain the different analyses performed by the tool in general, and then address what we did to investigate mutations in \textit{S. aureus} specifically. The last section desribes the Python 3.4.3 \cite{Python} implementation in detail, including the input and output specifications.
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{flowchart.png}
+	\caption{Overview of the program work flow.}
+	\label{figure:flowchart}
+\end{figure}
+
+
+
+\section{Manual Preprocessing}
+\label{section:MPP_methods}
+In general the format of data sets can differ depending on their source and the type of content. The command-line tool was designed to work on genomes with a similar gene model, not limited to the \textit{S. aureus} strain NCTC 8325 or the specific data sets used in this thesis. It therefore accepts only simple tab separated (\textit{.tsv}) files as input (see Subsection \ref{subsection:input} for further details). However, the data sets described in Chapter~\ref{chapter:materials} originated from multiple sources and were provided in different formats and with additional information that was not needed for this analysis. Thus, they had to be manually merged and converted to the appropriate format such that they could be used as input.
+
+
+
+\section{Automated Preprocessing}
+\label{section:APP_methods}
+The program input consists of multiple files with different types of information (see Subsection \ref{subsection:input}). The tool performs automated preprocessing to build a single, streamlined database from these files that is suitable for further analysis. 
+\vspace{1em}
+\par\noindent
+First, a database for the genes aas well as the SNPs and indels is built. This database is internally represented by multiple classes with functions that allow easier and faster data handling and analyses. At the end, this database is presented as a SQLite database (see Section~\ref{section:O_methods} for more details on the output). 
+\par
+In a second step, the \textit{.tsv} file with the general gene data is processed and used to integrate the genes into the database. Information on antibiotic resistance, regulation, transcription factor binding sites and protein domains is then extracted from the other \textit{.tsv} files and added to the corresponding genes.
+\par 
+Similarly, the mutation \textit{.tsv} file is processed and the mutations are added to the database. During this step the reference and alternative DNA bases are used to compute the type of the mutations, i.e. whether they are an indel or in the case of SNPs a transversion or transition. 
+\vspace{1em}
+\par\noindent
+The following list specifies several adjustments that are automatically applied to the input (see Subsection \ref{subsection:input}) in the course of the preprocessing:
+
+\begin{enumerate}
+	\item In the case of promoter region, it is possible to set the start and end position either from the absolute start and end position in the genome, or from the start position relative to the transcription start of the gene. In the latter case, the promoter region is assumed to range from the given relative start position to the transcription start. The tool first tries to set the promoter start and end via the absolute positions. If that fails because the absolute positions are not given in the input, it tries to set the start and end via the relative start positions. If that also fails, it uses a default relative start that can be set in a configuration file. For \textit{S. aureus}, we choose -100 as the default promoter start (see Section \ref{section:Reg_mat}), meaning that the promoter regions all started 100 bases upstream of the gene start and ended at the gene start.
+	\item The start and end positions of the coding regions, promoter regions and transcription factor binding sites are automatically adjusted for the strand on which the gene is located. For genes on the plus strand this means that $start < end$ and for genes on the minus strand that $start > end$ since the positions in the input are given on the plus strand. 
+	\item Operons are gene clusters under the control of a single promoter region. Therefore, the promoter regions of genes in an operon are set to that of the first gene in the operon. 
+	\item Descriptions of regulation are handled as follows: Unknown types of regulation are marked with \textit{?}. If a particular regulation is labelled as both activation and repression, it is summarised as \textit{effector}. If it is labelled as \textit{transcription}, \textit{transcription factor} or \textit{?}, it is replaced by more specific information such as \textit{activator}, \textit{repressor} or \textit{effector}, if available.
+	\item If a mutation has several alternatives, i.e. $C \rightarrow A/T$, a mutation is added for each alternative, in the example $C \rightarrow A$ and $C \rightarrow T$, because different alternatives can have different effects on the regions and therefore on antibiotic resistance.
+\end{enumerate}
+
+\noindent
+Since the goal was to analyse the impact of mutations in antibiotic resistance genes, in a third step the gene regions in which they occur are computed using the program BEDTools \cite{quinlan2014}. BEDTools is a utility suit for genomic analysis that comes with an intersect tool to find the overlap between two sets of genomic features, in this instance the gene regions for each gene and the mutations. To make use of this tool, the chromosome, start and end positions of the promoter region, coding region and transcription factor binding sites together with the locus tag of each gene are automatically extracted from the database and written into a file in \textit{.bed} format. For the SNPs and indels another \textit{.bed} file is created that contains the chromosome, position of each SNP or indel as the start and position, as well as its ID in the database. The tool is then automatically called as follows:
+\vspace{1em}
+
+\begin{lstlisting}
+	bedtools intersect -a gene_file -b SNP_file -wa -wb
+\end{lstlisting}
+
+\noindent
+This computes the intersection of the \textit{.bed} gene file (file \textit{a}) and the SNP \textit{.bed} file (file \textit{b}), while preserving the locus tag and SNP ID annotation. Figure~\ref{figure:bed_output}  shows an example of an output \textit{.bed} file where BEDTools intersect found four SNPs in the coding region of the gene with locus tag \textit{SAOUHSC\_00001}.
+\par
+Lastly, the result \textit{.bed} file is processed to cross-link the genes and mutations in the database by adding the SNP and indel IDs to the corresponding genes and the locus tags and gene regions to the corresponding mutations. Due to the gene model, it is possible that a mutation is located in several regions of a gene at once, for example when transcription factor binding sites overlap with the promoter region of the gene. It is also possible that the default promoter region of one gene overlaps with the coding region of another gene, so that a mutation can be associated with more than one gene.
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{bed_output.png}
+	\caption[Example output of bedtools intersect.]
+			{Example output of bedtools intersect. The bolded header is not 
+			included in the file and the columns are tab separated.}
+	\label{figure:bed_output}
+\end{figure}
+
+
+\section{Mutations in Coding Regions}
+\label{section:C_methods}
+Mutations in coding regions can impact the amino acid sequence of the respective proteins and with that their function or effectiveness \cite{ito1994, ferrero1995, ng1996, fujimoto2005}. Some SNPs or indels are synonymous and do not change the amino acid sequence. Non-synonymous mutations on the other hand change the amino acid sequence partially or completely. The impact of the mutation also depends on the location in the protein, as non-synonymous mutations that are in vital protein domains such as DNA binding sites or active sites of enzymes likely have a larger effect on the function the protein. If the gene is an antibiotic resistance gene or codes for a MDR efflux pump or a MDR efflux pump regulator, these non-synonymous mutations could therefore affect the antibiotic resistance of the organism (see Section \ref{section:SNP_back} for a more detailed explanation). For this reason the command-line tool was designed to find the protein domain(s) for each coding region mutation and also to automatically compute the effect of coding region mutations on the amino acid sequence and score this change with an amino acid substitution matrix. 
+\vspace{0.3em}
+\par\noindent
+First, the tool iterates over all mutations in coding regions, calculates their position in the protein amino acid sequence in question and then iterates over all protein domains to investigate if the mutation occurs in that domain. If that is the case, the mutation in question is linked to the respective protein domain(s).
+\par
+Second, the mutated amino acid sequence is determined by removing the reference DNA base(s) from the wildtype DNA sequence, replacing it with the DNA base(s) from the mutation and then translating the mutated DNA sequence. Since the DNA sequence is given on the respective strand of the gene whereas the mutations are given on the plus strand, the DNA base(s) of the mutation are converted to the minus strand before generating the mutated DNA sequence, in case the gene in question is on the minus strand.
+\par
+The mutated amino acid sequence is then compared to the reference protein to determine whether the mutation is synonymous or non-synonymous, and if it is non-synonymous also whether it is a missense, nonsense, readthrough or reading-frame shift mutation (see Table \ref{table:SNP_effect_back} for examples). 
+\vspace{1em}
+\par\noindent
+Additionally, the impact of the change in the mutated amino acid sequence is estimated with a score. To accomplish this, a pairwise sequence alignment of the reference and mutated amino acid sequence is computed with the Needleman-Wunsch global alignment algorithm \cite{needleman1970}. Then, a raw score is calculated by summing the entries of each aligned amino acid pair in an amino acid substitution matrix, and finally the raw score is normalised with the minimally and maximally possible scores for the reference sequence.
+\par
+Let $N$ be the length of the aligned two amino acid sequences, $Ref[i]$ and $Mut[i]$ be the $i$-th character in the aligned reference and mutated sequences with $i\in\left \{ 1,...,N \right \}$, and $SM(x, y)$ be the score of substituting $x$ with $y$ in the substitution matrix. Then the raw, minimum, maximum and normalised scores are calculated as follows:
+
+\begin{align*}
+rawScore &= \sum_{i=1}^{N}{SM(Ref[i], Mut[i])} \\
+minScore &= \sum_{i=1}^{N}{\min\left \{ SM(Ref[i], x) \mid x \text{ is amino acid or gap}\right\}} \\
+maxScore &= \sum_{i=1}^{N}{\max\left \{ SM(Ref[i], x) \mid x \text{ is amino acid or gap}\right\}}\\
+\\
+normScore &= \frac{rawScore - minScore}{maxScore - minScore}
+\end{align*}
+
+\paragraph{Example:}
+Let $MARLENI$ be the reference amino acid sequence, $L \rightarrow K$ the missense mutation at position $4$, $MARKENI$ the resulting mutated amino acid sequence, and PAM10 the amino acid substitution matrix (see Figure \ref{figure:PAM10}). Then, $rawScore = 12 + 7 + 9 - 11 + 8 + 9 + 9 = 43$, $minScore = -23 - 23 - 23 - 23 - 23 - 23 - 23 = -161$, $maxScore = 12 + 7 + 9 + 7 + 8 + 9 + 9 = 61$, and $normScore = \frac{43 + 161}{61 + 161} = 0.\overline{918}$.
+\vspace{1em}
+\par\noindent
+The lower the normalised score, the more the mutated amino acid sequence deviates from the reference one and the higher the impact of the mutation. If a mutated sequence has a normalised score of $0$, it deviates as much as possible from the reference sequence. Similarly, the higher the normalised score, the closer the mutated sequence is to the reference one and the smaller the impact of the mutation. A normalised score of $1$ means that the two sequences are identical and that the mutation is synonymous.
+\par
+For this thesis, we chose the PAM10 matrix (see Figure \ref{figure:PAM10}) as the amino acid substitution matrix \cite{dayhoff1978}. PAM10 is a \ac{PAM} matrix where each entry represents the likelihood of an amino acid being replaced by another through a sequence of point accepted mutations. A point accepted mutation is a non-synonymous mutation that has been accepted by the process of natural selection. The number of the matrix indicates how many mutations are assumed per 100 amino acids, in the case of the PAM10 matrix this means 10 mutations per 100 amino acids. PAM10 is a substitution matrix used for sequences that evolutionary closely related with 90\% identity \cite{pearson2013}. As such it was suitable for the purpose of this thesis because the reference and mutated sequences originated from the same protein in the same bacterium, \textit{S. aureus}, and are therefore very closely related, while it still accounts for small differences between different strains. The PAM10 matrix was also used for the protein sequence alignment.
+\vspace{1em}
+\par\noindent
+The Wilcoxon rank-sum test \cite{wilcoxon1945} is used to test if there are statistically significant differences between the scores of missense, nonsense, readthrough and reading-frame shift mutations in antibiotic resistance genes, including MDR efflux pumps and MDR efflux regulators, and mutations in non-antibiotic resistance genes. This particular statistical test was chosen since it does not require the data to be normally distributed. The score distributions are visualised as box plots for antibiotic resistance and non-antibiotic resistance genes. In the plots, distributions with statistically significant p-values $< 0.05$ are marked with '*' and p-values $< 0.001$ with '**'.
+\vspace{1em}
+\par\noindent
+Lastly, protein domain data sets like the ones from UniProtKB might provide information on known mutations and their effect on the protein function and possibly also on antibiotic resistance. If one of these mutations was not part of the mutation data set, knowledge about these known mutations could be useful for further analyses or interpretation. If, on the other hand, one of these mutation was contained in the mutation data set, it could be used to evaluate the effectiveness of the program at identifying mutations with a large potential impact on antibiotic resistance. Therefore, a list of known mutations in antibiotic resistance genes and their regulators is extracted from the protein domain data set.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{PAM10.png}
+	\caption[PAM10 scoring matrix.]{PAM10 scoring matrix (Source: University of Michigan \cite{PAM10}). The higher the score, the more likely the amino acid substitution. Conversely, the lower the score, the less likely the substitution. '*' represents gaps in the sequence.}
+	\label{figure:PAM10}
+\end{figure}
+
+
+\section{Mutations in Transcription Factor Binding Sites}
+\label{section:TFBS_methods}
+Mutations in transcription factor binding sites can increase or decrease the ability of the corresponding transcription factor to interact with the gene \cite{watson2013, grkovic2001}. Depending on the effect of the transcription factor on the transcription of the gene, i.e. activation or repression, this can up- or downregulate gene expression. If the gene in question is a MDR efflux pump or direct MDR efflux regulator or another antibiotic resistance gene, this could affect the antibiotic resistance of the organism (see Section \ref{section:reg_back} and Section \ref{section:SNP_back}). The program computes a score that indicates whether mutations in transcription factor binding sites are likely going to increase or decrease the binding ability of the transcription factor. 
+\vspace{1em}
+\par\noindent
+The idea behind this score is based on a method used in the paper \textit{Recurrent somatic mutations in regulatory regions of human cancer genomes} by \textit{Melton et al., 2015} \cite{melton2015}. Their goal was to study the role of mutations in regulatory regions in cancer. To that end, they used \acfp{PWM} of transcription factor motifs to score mutated binding sites. \acp{PWM} describe how likely a specific DNA base occurs at a specific position in the DNA sequence corresponding to the \ac{PWM}. In order to analyse mutation in transcription factor motifs, \textit{Melton et al.} proceeded as follows:
+
+\begin{enumerate}
+	\item Align the reference binding site sequence to the transcription factor \ac{PWM}.
+	\item Introduce the mutation into the binding site sequence and do the same for randomly generated mutations with the same base conversion probability.
+	\item Calculate a score for the reference, mutated and randomly mutated sequences that represents how well they match the respective \ac{PWM}.
+	\item Compare the mutation score to the reference score, the mutation score to the random score and the random score to the reference score.
+\end{enumerate}
+
+\noindent
+In the study they took the \acp{PWM} from databases for transcription factor binding profiles. However, pre-computed \acp{PWM} are not available for many organisms, including \textit{S. aureus}. The command-line tool was therefore designed to take transcription factor motif sequences as input and subsequently compute the \acp{PWM}. Additionally, transcription factor binding sites are required as input (see Section \ref{section:MPP_methods}). Another difference are the final comparisons and evaluations.
+\vspace{1em}
+\par\noindent
+First, the \acp{PWM} for every transcription factor with available motif sequence alignments are computed. Next, random mutations at random positions for each observed mutation are generated. Thereby, the mutation type is preserved, i.e. if the observed mutation is a transversion then the random mutations are also transversions. The number of random mutations per observed mutation can be specified in a configuration file. For \textit{S. aureus}, we chose a value of 15 since the available transcription factor binding site sequences were relatively short ($17 \pm 3$ bp)  and a higher value would thus result in repetition. The reference, mutated and randomly mutated binding site sequences are then scored using the corresponding \ac{PWM}. Lastly, the scores are compared and evaluated to estimate the impact of the observed mutation on the binding ability of the transcription factor. The random mutations make it possible to assess whether the observed mutations have an unexpected effect on the binding ability.
+\vspace{1em}
+\par\noindent
+The following two subsections explain the \ac{PWM} generation, scoring and comparison in more depth.
+
+\subsection{PWM Generation and PWM Score}
+\label{subsection:TFBS_PWM_methods}
+The \ac{PWM} is initialised with four rows of length $N$, one for each DNA base, where $N$ is the length of the aligned motif sequences. The matrix elements score the probability of a particular DNA base occurring at a certain position in the motif. For example $PWM(A,i)$ is the score of adenine occurring at position $i \in \left \{ 1,...,N \right \}$ in the transcription factor motif.
+\par
+For each position in the motif alignment, the number of times each DNA base appears at that position is counted. It is possible that a DNA base does not occur at a specific position in the alignment and the value in the corresponding entry at that position would have a value of $0$. This situation can arise when there are only relatively few sequences in the alignment and/or when the DNA base in question is very rare at that position. Therefore, a pseudocount is added to every entry in the matrix. Following the recommendation of \textit{Nishida et al.} \cite{nishida2009}, who tested various pseudocount values for a large number of different \acp{PWM} to find the optimal pseudocount, we chose a pseudocount value of $0.8$. 
+\par
+Next, the counts are divided by the number of sequences $m$ in the alignment to obtain the frequency of the DNA bases appearing at the different positions in the motif. The result is a \ac{PFM} Let $Occ(k, i)$ be the number of times DNA base $k \in \left \{ A,C,G,T \right \}$ occurs at position $i \in \left \{ 1,...,N \right \}$ in the motif alignment. After this step, the entries of the \ac{PFM} are as follows:
+
+\begin{equation*}
+	PFM(k,i) = \sum_{i = 1}^{N}{\frac{Occ(k,i)}{m}}
+\end{equation*}
+
+\noindent
+Typically, the frequencies would then simply be transformed into log likelihoods with a background model $b$ such as the frequency of each base in  the DNA. Assuming each base has the same frequency in the DNA, the log likelihoods $LL$ are:
+
+\begin{equation*}
+	LL(k,i) = \log{(\frac{PFM(k,i)}{b})} = \log{(\frac{PFM(k,i)}{0.25})} = \log{(4 * PFM(k,i))}  
+\end{equation*}
+
+\noindent
+However, the authors of MATCH\texttrademark (\textit{Kel et al., 2003} \cite{kel2003}), a tool that uses a \ac{PWM}-based matrix similarity score to find transcription factor binding sites, suggest that considering the conservation of a matrix position leads to a better performance of the score.  To compute the conservation $C(i)$ of position $i$ in the motif, they summed the  frequencies of the DNA bases occurring at position $i$ multiplied with the log likelihood $LL(k, i)$:
+
+\begin{equation*}
+	C(i) = \sum_{k}{PFM(k,i)* LL(k,i)}
+\end{equation*}
+
+\noindent
+The entries of the \ac{PWM} are then calculated by multiplying the conservation with the entries of the \acl{PFM}:
+
+\begin{equation*}
+	PWM(k,i) = C(i) * PFM(k,i)
+\end{equation*}
+
+\noindent
+To score a DNA sequence $S$, which is required to have the same length as the motif, a raw score is computed by summing the \ac{PWM} entries of the corresponding DNA bases at each position $i$ in the sequence. This raw score is then normalised with the minimum and maximum score that is possible for the \ac{PWM}:
+
+\begin{align*}
+	rawScore(S) &= \sum_{i = 1}^{N}{PWM(S[i],i)}\\
+	minScore &= \sum_{i = 1}^{N}{\min_{k} {\left \{ PWM(k,i) \right \}}} \\
+	maxScore &= \sum_{i = 1}^{N}{\max_{k} {\left \{ PWM(k,i) \right \}}} \\
+	\\
+	normScore(S) &= \frac{rawScore(S) - minScore}{maxScore - minScore}
+\end{align*}
+
+\noindent
+A normalised score of $0$ means that the sequence differs as much as possible from the transcription factor motif, whereas a normalised score of $1$ means that the sequence is as similar as possible to the motif. 
+
+\subsection{Comparison and Evaluation}
+\label{subsection:TFBS_C_methods}
+Without a point of reference, the score of an observed mutation in a transcription factor binding site does not indicate whether the mutation increases or decreases the ability of a transcription factor to interact with the binding site. To estimate the change in the binding ability, the normalised score for the reference binding site sequence, the observed mutated sequence and the randomly mutated sequences is computed. Then the difference between the reference score and the score of the observed mutation, as well as the difference between the reference score and the mean of the random mutation scores is calculated.
+\par
+Let $L$ be the number of random mutations per observed mutation, $ref$ the transcription factor binding site of the wildtype, $mut$ the binding site sequence with the observed mutation and $R(i)$ the sequence with the $i$-th randomly generated mutation with $i \in \left \{ 1,...,L \right \}$. Then, the final scores for the observed mutation ($scoreMut$) and the combined randomly generated mutations ($scoreRnd$) are as follows:
+
+\begin{align*}
+	scoreMut &= normSore(ref) - normScore(mut) \\
+	scoreRnd &= \frac{1}{L} * \sum_{i=1}^{L}{(normScore(ref) - normScore(R(i)))}
+\end{align*}
+
+\noindent
+A score $< 0$ means that the mutated score is more similar to the motif than the reference sequence and therefore suggests an increased ability of the transcription factor to bind to the mutated binding site. Similarly, a score $> 0$ suggests a decrease in the binding ability, and if the score is $0$ there is probably no change.
+\vspace{1em}
+\par\noindent
+For mutations in antibiotic resistance and non-antibiotic resistance genes respectively, the final scores of randomly generated mutations ($scoreRnd$) are then statistically compared to the scores of the observed mutations ($scoreMut$) using the Wilcoxon rank-sum test \cite{wilcoxon1945} to analyse if there are significant differences in their impact on the binding ability of the transcription factors. Additionally, the same statistical test is used to assess the difference between the effect of the observed mutations in the transcription factor binding sites of antibiotic resistance and non-antibiotic resistance genes. These comparisons are then summarised and visualised in a single box plot.
+
+
+
+\section{Statistics and Mutation Density in Genes}
+\label{section:SMDG_methods}
+The previous two analysis steps examined individual mutations in coding regions and transcription factor binding sites. In contrast, this step computes general statistics for the collective gene data and investigates the mutation density (number of mutations per 1000bp) to find significant differences between mutations in antibiotic resistance and non-antibiotic resistance genes. 
+\vspace{1em}
+\par\noindent
+First, the genes are divided into four disjoint groups: MDR efflux pumps, direct MDR efflux regulators, the remaining antibiotic resistance genes and non-antibiotic resistance genes. To give an overview over the available data, a table is  computed that for each group gives the number of genes, the number of transcription factor binding sites in these genes, the number of genes that are transcription factors themselves and the number of genes on the plus and minus strands.
+\par
+Then, for each gene the mutation density is computed for mutations in the promoter region, mutations in transcription factor binding sites, and for synonymous, missense, nonsense, readthrough and reading-frame shift mutations in the coding region. For the mutation density in promoter regions the length of the promoter region is used, for transcription factor binding sites the combined length of the binding sites and for the coding region the length of the coding region.
+\vspace{1em}
+\par\noindent
+The Wilcoxon rank-sum test \cite{wilcoxon1945} is again used to test if there are statistically significant differences between the different mutation densities in antibiotic resistance genes, including MDR efflux pumps and MDR efflux regulators, and the mutation densities in non-antibiotic resistance genes. Additionally, the mutation density distributions for antibiotic resistance and non-antibiotic resistance genes are visualised using box plots. In the plots, distributions with statistically significant p-values $< 0.05$ are marked with '*' and $< 0.001$ with '**'.
+\par
+While the overall mutation densities might not differ significantly between antibiotic resistance and non-antibiotic resistance genes, there might be outliers among the antibiotic resistance genes with comparatively high mutation densities. Thus, plots are set up that visualise the frequency of mutation densities in non-antibiotic resistance genes. The mutation densities of the individual antibiotic resistance genes are then plotted on top of that frequency distribution. Outliers are antibiotic resistance genes whose mutation density has a low frequency in non-antibiotic resistance genes. This is done for mutations in promoter regions, transcription factor binding sites, and synonymous and non-synonymous mutations in coding regions.
+
+
+
+\section{Mutation Statistics}
+\label{section:MS_methods}
+Similar to the approach in Section \ref{section:SMDG_methods} above, this step computes general statistics for the collective mutation data to investigate if there are significant differences between mutations in antibiotic resistance and non-antibiotic resistance genes. 
+\vspace{1em}
+\par\noindent
+First, the mutations are divided into four disjoint groups: mutations that occur in MDR efflux pumps, in direct MDR efflux regulators, in the remaining antibiotic resistance genes and in non-antibiotic resistance genes. A table is calculated with the number of mutations in coding regions, promoter regions and transcription factor binding sites for each group to give an overview of the sample size(s).
+\par
+Next, the frequency of transitions, transversions and indels in antibiotic resistance and non-antibiotic resistance genes is examined. Again a table with the number of transversions, transitions and indels as well as their frequencies is computed. Furthermore, for both groups the percentage of mutations that are in promoter regions or transcription factor binding sites, as well as the percentage of synonymous, missense, nonsense, readthrough and reading-frame shift mutations are calculated. The comparisons are further visualised in bar plots. Additionally, the statistical difference between the distributions of the different mutation types, their effects and their location in antibiotic resistance and non-antibiotic resistance genes is tested, using the Wilcoxon rank-sum test \cite{wilcoxon1945}. 
+\vspace{1em}
+\par\noindent
+Note that it is possible that a mutation is associated with multiple genes, as the mutation can be located in the promoter region of an operon. In addition, the promoter region of a gene can overlap with the coding region of another gene. When dividing the mutations into different groups depending on the antibiotic resistance of the gene(s) in which they occur, mutations that appear both in antibiotic resistance and non-antibiotic resistance genes were categorised as both antibiotic resistance and non-antibiotic resistance mutations. In these cases, only mutation information associated with gene regions in antibiotic resistance genes is considered for the antibiotic resistance distributions and stats. Additionally, it is possible that a mutation occurs in several gene regions, for example, when transcription factor binding sites and promoter regions overlap.
+
+
+
+\section{Gene Regulatory Network}
+\label{section:GRN_methods}
+This section deals with the global effect of the aforementioned mutations. In general, gene expression is typically regulated by various factors, including other genes that code for transcription factors \cite{dejong2002}. MDR efflux pumps are especially tightly regulated, as they play an important role in the antibiotic resistance of the bacterium, but can also extrude more than antibiotics and thus unbalance the bacterial metabolism if they are over-expressed \cite{grkovic2001, sun2014}. Mutations in regulators or their binding sites can impact the gene itself, as well as the expression of genes in that particular regulatory chain in the gene regulatory network (see Section \ref{section:reg_back} and Section \ref{section:SNP_back}).
+\vspace{1em}
+\par\noindent
+For that reason, the gene regulatory network of the bacterium is constructed from the available regulatory data (see Section \ref{subsection:input} for the input specifications, and Table \ref{table:regulation_source_appendix} for an example). Some of the groundwork, such as storing the regulators and regulated genes for each gene as well as the type of the regulation, was already accomplished during the preprocessing. To build the complete gene regulatory network, we defined the genes as network nodes and for every gene an edge for each regulated gene is added.
+\par
+The complete gene regulatory network can be very large, and parts of it might not be relevant for the antibiotic resistance. Therefore, an additional regulatory sub-network that is solely focused on antibiotic resistance is built. The basis of this sub-network are the antibiotic resistance genes, including MDR efflux pumps and direct MDR efflux regulators. To also include indirect regulation of antibiotic resistance genes, a gene is added as a node to the sub-network if it regulates a gene in the sub-network, and an edge if it represents a regulation between genes in the sub-network.
+\vspace{1em}
+\par\noindent
+For both the complete network and the antibiotic resistance sub-network, the nodes representing the genes also contain information on the number of non-synonymous mutations in the coding region, as well as the number of mutations in the promoter region and the transcription factor binding sites. When visualising the networks, this allows to quickly identify genes with mutations that directly or indirectly regulate antibiotic resistance genes. Both networks are saved in \textit{.gml} format, which can be processed and visualised by different programs. In this thesis, we applied the widely used Cytoscape framework \cite{smoot2011} for further, manual analyses.
+
+
+\newpage
+\section{Command-Line Tool Implementation}
+\label{section:impl}
+The program was implemented as a Python 3.4.3 \cite{Python} command-line tool. This section first outlines general requirements, the configuration and the Python packages used. Then, the input and output files and formats are outlined, as well as the command-line parameters.
+
+
+
+\subsection{General Information}
+\label{subsection:GI}
+The command-line tool requires BEDTools to be installed. BEDTools is a Unix based program and is automatically called on the command line by the program. On non-Unix based operating systems like Windows it is therefore mandatory to install a UNIX-environment in order for the program to function. 
+\par
+It comes with a configuration file that allows to customise input and output paths, file names, the column names of the individual input and output files. Additionally, the configuration contains the path to the BEDTools executable and the default relative promoter start. Errors that occur during the runtime of the program due to invalid or not supported input are listed in  a warning log.
+\par
+To create the various plots, the Python package \textit{matplotlib} was used. The database is built with the \textit{sqlite3} package and the \textit{scipy} package was used to conduct the statistical tests. The configuration file is handled with the \textit{yaml} package.
+
+
+\subsection{Input Files}
+\label{subsection:input}
+To make automatic processing of the data sets feasible (see Section \ref{section:APP_methods}), the program accepts simple tab separated (\textit{.tsv}) files with an equally tab separated header line containing the column names. It takes a file each for general gene data, antibiotic resistance information, regulatory data, transcription factor binding sites, protein domains and mutations. The column names for each file can be customised in a simple configuration file. An exception is the \textit{.fasta} file with the sequences for the position weight matrices of the transcription factors. Figure \ref{figure:input_formats} shows an example for each file. Another tab separated input file is an amino acid substitution matrix to score mutations in coding regions, which is explained in more detail in Section \ref{section:C_methods}. 
+\vspace{1em}
+\par\noindent
+All file paths can be set and saved in the configuration file. The following lists further specifies the input files:
+
+\begin{enumerate}
+	\item Unknown fields are either empty or marked with '-', '*', '?' or '/'.
+	\item The positions in the genome and the proteins are all assumed to be 1-based. A position of $\leq 0$ in an input file therefore denotes an unknown position.
+	\item The DNA sequences are given on the respective strand of the gene. On the minus strand that is the reverse of the complement of the sequence on the plus strand. The reference and alternative DNA bases of mutations are given on the plus strand.
+	\item When it comes to the antibiotic resistance of a gene, the program supports \textit{MDR efflux transporter}, \textit{MDR efflux regulator} and \textit{antibiotic resistance}.
+	\item Supported regulation description are \textit{transcription} or \textit{transcription factor}, \textit{repressor}, \textit{activator}, \textit{effector} and \textit{operon}.
+	\item In operons the individual genes are either separated by '\textgreater' or '\textless', which indicate the order of the genes in the operon.
+	\item In the \textit{.fasta} file with the sequence alignments of the transcription factors, the sequences belonging to one transcription factor must have the same length.
+\end{enumerate}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth, angle=90, origin=c, scale=1.4]{input_formats.png}
+	\caption[Examples of the different input files and their formats.]
+			{Examples of the different input files and their formats. As the name suggests, 
+			the \textit{.tsv} files are tab separated. Each \textit{.tsv} file has a header row
+			that allows to access the different columns by name. The other rows each represent
+			a cohesive piece of information. For example, each row in the general gene information
+			\textit{.tsv} file represents information on one gene. The TF alignment \textit{.fasta} file
+			contains for each transcription factor the DNA sequence alignments of the DNA-binding domain.
+			\textit{start\_rel} means that the start position is relative to the gene start, whereas 
+			\textit{start\_abs} means that the start is given as the position in the genome. All 
+			positions are 1-based.}
+	\label{figure:input_formats}
+\end{figure}
+
+
+
+\subsection{Command-Line}
+\label{subsection:CL}
+The tool accepts several parameters on the command line, such as the various file paths (see Subsection \ref{subsection:input}). Other parameters allow to set default values, for example the default relative promoter start that is used in case no information on the promoter region(s) is given. It is possible to call the tool without any parameters, in which case the program relies completely on the settings in the configuration file. Table \ref{table:parameters} describes all supported parameters. Below is an example:
+\vspace{1em}
+
+\begin{lstlisting}
+	python asa.py	-g 	general_gene_information.tsv
+				   	-m 	mutation.tsv
+				  	-a 	antibiotic_resistance.tsv
+				  	-gr regulation.tsv
+				 	-pd protein_domain.tsv
+					-t 	TFBS.tsv
+					-tf tf_alignment.fasta
+					-sm substitution_matrix.tsv
+					-b 	path_to_bedtools
+\end{lstlisting}
+
+
+\begin{table}
+	\centering
+	\begin{tabularx}{\textwidth}{l X}
+	\toprule
+	\textbf{Parameter} 			& \textbf{Description} \\
+	\toprule
+	
+	-a, -{}-antibiotic-resistance	& antibiotic resistance information \textit{.tsv} file\\
+	-b, -{}-bedtools				& path to the bedtools executable\\
+	-g, -{}-genes 					& general gene information \textit{.tsv} file\\
+	-gr, -{}-gene-regulation		& gene regulation \textit{.tsv} file \\
+	-h, -{}-help					& list the list of parameters\\
+	-m, -{}-mutations				& mutation \textit{.tsv} file\\
+	-o, -{}-output					& path to output directory \\
+	-pd, -{}-protein-domains		& protein domain \textit{.tsv} file path\\
+	-ps, -{}-promoter-start			& default relative promoter start, integer\\
+	-r, -{}-random					& number of random mutations for the TFBS analysis 
+			 						  (Section \ref{section:TFBS_methods}), integer\\
+	-s, -{}-save 					& save the current parameters to the configuration
+			  						  file\\
+	-sm, -{}-substitution-matrix	& substitution matrix \textit{.tsv} file\\
+	-tf, -{}-tf-alignment			& transcription factor alignment \textit{.fasta} file \\
+	-t, -{}-tfbs					& transcription factor binding site \textit{.tsv} file\\
+	\bottomrule
+	\end{tabularx}
+	\caption[Parameters for the command-line tool.]
+			{Long and short form of the command-line parameters. All parameters are optional.}
+	\label{table:parameters}
+\end{table}
+
+
+\subsection{Output}
+\label{subsection:output}
+So far, the different sections explained and detailed the methodology of the various analyses steps. This section describes how the results of these steps are output and presented for further analysis or interpretation by the user. 
+\vspace{1em}
+\par\noindent
+The results of the statistical tests are written into \textit{.txt} files, as are the tables of steps \ref{section:MPP_methods} and \ref{section:MS_methods}. The plots are all saved as \textit{.pdf} files. The gene regulatory network and the antibiotic resistance regulatory sub-network are presented in \textit{.gml} format. The list of known mutations in the protein domain data set is written as a \textit{.tsv} file with columns for the locus tag, gene name, resistance, position of the mutation in the protein and a description of its effect.
+\par
+The antibiotic resistance regulatory sub-network is further used to compile a comprehensive list in \textit{.tsv} format of all antibiotic resistance genes and their direct or indirect regulators, and the results from the analyses steps. For each such gene, the list contains information on regulators and regulated genes, as well as all non-synonymous mutations with their positions, types, effects, scores (see Section \ref{section:C_methods} and Section \ref{section:TFBS_methods}) and the protein domains it occurs in.
+\par
+Finally, the internal data-structures that contain the information of the processed and merged data sets is written into a SQLite database. This database encompasses a table for the mutations with information on their position in the genome, type, reference and alternative DNA base, the genes and gene regions they occur in and the scores (see Section \ref{section:C_methods} and Section \ref{section:TFBS_methods}). In addition, there is a second table for the genes in the database that gives information on locus tags, gene names, antibiotic resistance, regulation, gene regions, protein domains, mutations and accession numbers in various online databases. Table \ref{table:gene_table_db_methods} and Table \ref{table:SNP_table_db_methods} show the set-up of the gene and mutation table with brief descriptions for each column, respectively.
+
+
+\begin{table}
+	\centering
+	\resizebox{!}{.35\paperheight}{%
+	\begin{tabularx}{\textwidth}{l X l}
+		\toprule
+		\textbf{Column} & \textbf{Description} 								& \textbf{Step}  \\
+    	\toprule
+		
+		locus tag 		& locus tag of the gene, unique primary key 		& \ref{section:APP_methods}\\[-0.4em]
+		gene name 		& name of the gene 									& \ref{section:APP_methods}\\[-0.4em]
+		resistance 		& antibiotic resistance of the gene 				& \ref{section:APP_methods}\\[-0.4em]
+		description 	& function of the gene/protein 						& \ref{section:APP_methods}\\[-0.4em]
+		strand 			& the DNA strand the gene is on 					& \ref{section:APP_methods}\\[-0.4em]
+		gene start 		& 1-based start of the coding region 				& \ref{section:APP_methods}\\[-0.4em]
+		gene end 		& 1-based position of the last base in the sequence & \ref{section:APP_methods}\\[-0.4em]
+		gene length 	& length of the coding region 						& \ref{section:APP_methods}\\[-0.4em]
+		DNA 			& DNA sequence on the respective strand 			& \ref{section:APP_methods}\\[-0.4em]
+		protein length 	& length of the amino acid sequence 				& \ref{section:APP_methods}\\[-0.4em]
+		protein 		& amino acid sequence of the protein 				& \ref{section:APP_methods}\\[0.6em]
+		
+		operon 			& locus tags of the genes in the operon 			& \ref{section:APP_methods}\\[-0.4em]
+		regulated genes & locus tag, gene name, regulation for each one 	& \ref{section:APP_methods}\\[-0.4em]
+		regulators 		& locus tag, gene name, regulation for each one 	& \ref{section:APP_methods}\\[-0.4em]
+		TFs 			& locus tags of TFs with binding sites in the gene 	& \ref{section:APP_methods}\\[0.6em]
+		
+		\multicolumn{3}{l}{\underline{TFBS:}}\\[-0.2em]
+		start relative 	& start of the TFBSs relative to the gene start 	& \ref{section:APP_methods}\\[-0.4em]
+		start absolute 	& 1-based start of the TFBSs  						& \ref{section:APP_methods}\\[-0.4em]
+		end absolute 	& 1-based positions of the last bases in the TFBSs	& \ref{section:APP_methods}\\[-0.4em]
+		sequence 		& sequences of the TFBSs 							& \ref{section:APP_methods}\\[-0.4em]
+		score 			& scores of the TFBSs 								& \ref{section:APP_methods}\\[0.6em]
+		
+		\multicolumn{3}{l}{\underline{promoter:}}\\[-0.2em]
+		start relative 	& start relative to the gene start 					& \ref{section:APP_methods}\\[-0.4em]
+		start absolute 	& 1-based start in the genome 						& \ref{section:APP_methods}\\[-0.4em]
+		end absolute 	& 1-based position of the last base in the promoter & \ref{section:APP_methods}\\[-0.4em]
+		length 			& number of bases in the promoter region 			& \ref{section:APP_methods}\\[0.6em]
+		
+		\multicolumn{3}{l}{\underline{protein domain:}}\\[-0.2em]
+		start 			& 1-based start of the domain in the protein 		& \ref{section:APP_methods}\\[-0.4em]
+		end 			& 1-based end of the domain in the protein 			& \ref{section:APP_methods}\\[-0.4em]
+		type 			& type of the domain, i.e. helix 					& \ref{section:APP_methods}\\[-0.4em]
+		description 	& further information on the protein domain 		& \ref{section:APP_methods}\\[0.6em]
+		
+		\multicolumn{3}{l}{\underline{SNP density:}}\\[-0.2em]
+		synonymous 		& synonymous SNPs / kbp 							& \ref{section:SMDG_methods}\\[-0.4em]
+		non-synonymous 	& non-synonymous SNPs / kbp 						& \ref{section:SMDG_methods}\\[-0.4em]
+		missense 		& missense SNPs / kbp 								& \ref{section:SMDG_methods}\\[-0.4em]
+		nonsense 		& nonsense SNPs / kbp 								& \ref{section:SMDG_methods}\\[-0.4em]
+		readthrough 	& readthrough SNPs / kbp 							& \ref{section:SMDG_methods}\\[-0.4em]
+		RF-shift 		& reading-frame shift SNPs / kbp 					& \ref{section:SMDG_methods}\\[-0.4em]
+		TFBS 			& SNPs in TFBSs / kbp 								& \ref{section:SMDG_methods}\\[-0.4em]
+		promoter 		& SNPs in the promoter / 100bp 						& \ref{section:SMDG_methods}\\[0.6em]
+		
+		SNP IDs 		& IDs of all mutations that occur in the gene 		& \ref{section:APP_methods}\\[0.6em]
+		
+		Genbank 		& accession number of the gene in NCBI Genbank 		& \ref{section:APP_methods}\\[-0.4em]
+		PFAM 			& accession number of the protein in PFAM 			& \ref{section:APP_methods}\\[-0.4em]
+		UniProt 		& accession number of the protein in UniProt 		& \ref{section:APP_methods}\\[-0.4em]
+		pubmed 			& pubmed IDs associated with the gene or protein 	& \ref{section:APP_methods}\\
+		\bottomrule	
+	\end{tabularx}}
+	\caption[Layout of the gene table in the database.]
+			{Layout of the gene table in the database that specifies the columns and details in 
+			which program step the information was added. Each row in the gene table of the database 
+			represents a gene in the genome and its information.} 
+	\label{table:gene_table_db_methods}
+\end{table}
+
+
+\begin{table}
+	\centering
+	\begin{tabularx}{\textwidth}{l X l}
+		\toprule
+		\textbf{Column} 		& \textbf{Description} 								& \textbf{Step}  \\
+    	\toprule
+    	
+		ID 						& ID in the database, primary key 					& \ref{section:APP_methods}\\[-0.4em]
+		position 				& 1-based position in the genome 					& \ref{section:APP_methods}\\[-0.4em]
+		reference 				& reference DNA base, on + strand 					& \ref{section:APP_methods}\\[-0.4em]
+		alternative 			& alternative DNA base, on + strand 				& \ref{section:APP_methods}\\[-0.4em]
+		type 					& type of the base change, i.e. transversion 		& \ref{section:APP_methods}\\[0.6em]
+		
+		locus tags 				& locus tag(s) of gene(s) it occurs in 				& \ref{section:APP_methods}\\[-0.4em]
+		resistance 				& resistance of gene(s) it occurs in				& \ref{section:APP_methods}\\[-0.4em]
+		location 				& gene regions it occurs in, i.e. promoter 			& \ref{section:APP_methods}\\[0.6em]
+		
+		TFBS score 				& score of TFBSs it occurs in 						& \ref{section:TFBS_methods}\\[0.6em]
+		
+		amino acid change 		& if the mutation occurs in a coding region 		& \ref{section:C_methods}\\[-0.4em]
+		amino acid change score & substitution score of the change 					& \ref{section:C_methods}\\[-0.4em]
+		effect on the protein 	& e.g. synonymous or missense						& \ref{section:C_methods}\\[-0.4em]
+		protein domains 		& protein domains the mutation occurs in 			& \ref{section:C_methods}\\
+		\bottomrule
+	\end{tabularx}
+	\caption[Layout of the SNP table in the database.]
+			{Layout of the SNP table in the database that specifies the columns 
+			and details in which program step the information was added. Each row in 
+			the SNP table of the database represents a SNP or indel in the genome 
+			and its information.} 
+	\label{table:SNP_table_db_methods}
+\end{table}

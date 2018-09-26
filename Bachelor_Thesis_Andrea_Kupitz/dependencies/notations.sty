@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{notations}[06/18/2002 v1.1 Notations]
+\RequirePackage{array}
+\def\notation#1#2#3{\label{#3}%
+  \write\@auxout{\string\@writefile{not}{\string\notationitem{#1}{#2}{#3}}}
+}%
+
+\newcommand\notationitem[3]{#1 & #2 & \ref{#3} \\
+}
+\newcommand\printnotations{%
+
+  \begingroup%
+  \makeatletter%
+    \section*{List of Notations}
+    \addcontentsline{toc}{chapter}{List of Notations}
+  
+  \small{%
+  \renewcommand\arraystretch{1.1}%
+   \begin{longtable}{llr}%
+   \caption[]{List of mathematical symbols used in Section \ref{section:predictinginteractionsbetweenproteinbindingsites} (Prediction) and Section \ref{section:scoring} (Scoring). The numbers on the right indicate the corresponding definitions.}\\%
+   \@input{\jobname.not}%
+   \end{longtable}%
+   \renewcommand\arraystretch{1.0}%
+   }%
+   \normalsize%
+  \if@filesw%
+  \newwrite\tf@not%
+  \immediate\openout\tf@not=\jobname.not\relax%
+  \fi%
+}%
+%
+\endinput%

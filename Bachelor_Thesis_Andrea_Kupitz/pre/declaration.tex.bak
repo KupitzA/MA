@@ -1,0 +1,28 @@
+\newpage
+\pagestyle{empty}
+\vfill
+\vspace{10cm}
+\noindent {\bf Hollander, Markus}\\
+\emph{Automated SNP Analysis in S. aureus}\\
+Bachelor's Thesis in Bioinformatics\\ 
+Universit\"at des Saarlandes\\
+Saarbr\"ucken, Germany\\ 
+October 4, 2013
+\newpage
+
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\section*{Declaration}
+\emph{I hereby confirm that this thesis is my own work and that I have documented all sources used. \bigskip \\
+I hereby declare that the submitted digital and hardcopy versions of this thesis correspond to each other. I give permission to the Universit\"at des Saarlandes to duplicate and publish this work.}\\
+\vspace{1cm}
+
+\noindent Saarbr\"ucken, on October 4, 2013
+\vspace{2cm}
+
+\noindent Markus Hollander
+\vfill
+\newpage
+\mbox{}
+\newpage

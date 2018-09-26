@@ -1,0 +1,37 @@
+\chapter*{List of Abbreviations}
+
+\begin{acronym}[UniProtKB ] % S. aureus = longest acronym in list
+	\acro{A}{adenine}
+	\acro{ABC}{ATP-binding cassette}
+	\acro{AR}{antibiotic resistance}
+	\acro{ARDB}{Antibiotic Resistance Genes Database}
+	\acro{CARD}{Comprehensive Antibiotic Resistance Database}
+	\acro{C}{cytosine}
+	\acro{DNA}{deoxyribonucleic acid}
+	\acro{G}{guanine}
+	\acro{GRN}{gene regulatory network}
+	\acro{ID}{identification}
+	\acro{indel}{insertion or deletion}
+	\acrodefplural{indel}[indels]{insertions or deletions}
+	\acro{MATE}{multi antimicrobial extrusion}
+	\acro{MDR}{multidrug resistance}
+	\acro{MFS}{major facilitator superfamily}
+	\acro{MRSA}{methicillin-resistant \textit{Staphylococcus aureus}}
+	\acro{NCBI}{National Center for Biotechnology Information}
+	\acro{PAM}{point accepted mutation}
+	\acro{PATRIC}{Pathosystems Resource Integration Center}
+	\acro{Pfam}{protein families}
+	\acro{PWM}{position weight matrix}
+	\acrodefplural{PWM}[PWMs]{position weight matrices}
+	\acro{RF-shift}{reading-frame shift}
+	\acro{RNA}{ribonucleic acid}
+	\acro{RND}{resistance-nodulation-cell division}
+	\acro{SMR}{small multidrug resistance}
+	\acro{SNP}{single nucleotide polymorphism}
+	\acro{S. aureus}{\textit{Staphylococcus aureus}}
+	\acro{T}{thymine}
+	\acro{TF}{transcription factor}
+	\acro{TFBS}{transcription factor binding site}
+	\acro{UniProtKB}{Universal Protein Resource Knowledgebase}
+	\acro{WGS}{whole genome sequencing}
+\end{acronym}

@@ -1,0 +1,148 @@
+\chapter{Biological Background}
+\label{chapter:background}
+This chapter serves as an introduction for the basic biological concepts necessary to understand the purpose, methodology and results of this thesis. The goal was to design a program that automatically analyses the impact of mutations on antibiotic resistance and then apply the program to the bacterium \textit{S. aureus}. First, the history of antibiotics, antibiotic mechanisms and antibiotic resistance mechanisms are described. Then, \textit{S. aureus} is introduced and the significance of its increasing antibiotic resistance is explained. That is followed by two sections that give an explanation of genes, transcription, translation, gene regulation and mutations, as well as their potential impact.
+
+
+
+\section{Antibiotic Resistance}
+\label{section:AR_back}
+Many bacteria are harmless or even beneficial for humans and animals and for example occur in great concentrations in our guts where they fulfil many important functions such as digestion and immunity \cite{guinane2013}. However, there also many bacteria that are detrimental for the health of other organisms and can even be lethal. For example, certain strains of the bacterium \textit{Staphylococcus aureus}, which was the focus of this thesis and is going to be introduced in depth in the next section, can cause a variety of illnesses ranging from skin infections to pneumonia \cite{rubinstein2008, tong2015}.
+\par
+Antibiotics are drugs that can kill bacteria or inhibit their growth and are used to treat or prevent bacterial infections. The widespread use of antibiotics to prevent and defeat infections started in the early 20th century when the Scottish biologist Sir Alexander Fleming discovered the antibiotic penicillin in the fungus \textit{Penicillium rubens} that was later mass-produced to treat bacterial infections \cite{aminov2010}. There are different families of antibiotics with different mechanisms of action. Antibiotics like penicillin inhibit cell wall synthesis, whereas tetracyclines or macrolides inhibit protein synthesis olones can also interfere with DNA synthesis and antibiotics like rifamycins with RNA synthesis \cite{levy2004, kohanski2010, davies2010}. Moreover, antibiotics like fluoroquinolones can also interfere with DNA synthesis and antibiotics like rifamycins with RNA synthesis \cite{levy2004, kohanski2010, davies2010}. 
+\par
+However, some bacteria are antibiotic resistant. Antibiotic resistance describes the ability of bacteria to resist the effects of a specific antibiotic or groups of antibiotics. Just as there are different mechanisms of action for antibiotics, there are different mechanisms of antibiotic resistance. Some antibiotic resistance mechanisms target the antibiotic itself by either degrading it outright or by modifying it in such a way that it loses its antibiotic function \cite{levy2004, webber2003, sun2014}. Other mechanisms change the target of the antibiotic in the cell, so that an antibiotic that is specific to the non-altered target can no longer inhibit said target and thus loses its antibiotic function \cite{levy2004, webber2003, sun2014}. Additionally, the permeability of the cell wall can be decreased and thus prevent the entry of the antibiotic. It is also possible that the antibiotic is transported out of the bacterium via efflux pumps in the bacterium’s cell wall and therefore never reaches its target \cite{levy2004, webber2003, sun2014}.
+\par
+Efflux pumps that confer resistance against multiple (classes of) antibiotics are called \acf{MDR} efflux pumps. There are five families of MDR efflux pumps: The \acf{ABC} superfamily efflux pumps that use ATP hydrolysis for active extrusion of antibiotics, and four secondary multidrug transporters families that use a proton or sodium gradient to transport the drugs out of the cell \cite{sun2014, webber2003, blanco2016, costa2013, putman2000}. The secondary multidrug transporter families are the \acf{MFS} efflux transporters with 12 to 14 transmembrane helices, the \acf{SMR} family that are the smallest known drug efflux proteins, the \acf{RND} superfamily that allows drug transport across the inner and outer membrane, and the \acf{MATE} protein family that similar to the MFS transporters that have 12 transmembrane helices \cite{sun2014, webber2003, blanco2016, costa2013, putman2000}. Figure \ref{figure:MDR_efflux_pumps} shows the five MDR efflux pump families (Blanco et al.,  2016 \cite{blanco2016}).
+\par
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{MDR_efflux_pumps.png}
+	\caption[MDR efflux pumps.]
+				   {The five MDR efflux transporter families (Blanco et al., 2016 \cite{blanco2016}). 
+				   RND = resistance-nodulation-cell division superfamily, SMR = small multidrug resistance 
+				   family, MFS = major facilitator superfamily, MATE = multi antimicrobial extrusion family ABC
+				   = ATP-binding cassette superfamily, OM = outer membrane, IM = inner membrane, OMP =
+				   outer membrane protein.}
+	\label{figure:MDR_efflux_pumps}
+\end{figure}
+
+MDR efflux transporters and other antibiotic resistance mechanisms have a genetic basis and can therefore be inherited and also transferred among bacteria, for example via plasmids \cite{davies2010, levy2004, lyon1987, jensen2009}. Antibiotic treatment creates an environment that selects for bacteria that are resistant to that particular antibiotic. If the antibiotic dosage is too low or the treatment too short to defeat the infection, antibiotic resistant bacteria survive without competition, leading to the emergence of antibiotic resistant strains \cite{aminov2010}. Today, these antibiotic resistant strains are an enormous problem in medicine that claim many thousand victims each year \cite{davies2010, aminov2010, levy2004, lyon1987, koeck2010}.  
+	
+\section{Staphylococcus aureus}
+\label{section:SA_back}
+\textit{S. aureus} is a prokaryotic, gram-positive bacterium that was first discovered in 1880 \cite{lowy1998, wertheim2005}. It is a commensal bacterium, meaning it occurs on body surfaces that are exposed to the external environments like the skin, nasal passages and respiratory tract \cite{lowy1998, kluytmans1997, chambers2001, wertheim2005}. It is estimated that 20\% of the human population are permanent, asymptomatic carriers and roughly 40-60\% are intermittent carriers \cite{lowy1998, kluytmans1997, chambers2001, wertheim2005}. Being such a carrier of \textit{S. aureus} increases the risk of an invasive infection \cite{lowy1998, kluytmans1997, chambers2001, wertheim2005}. 
+\par
+Not all \textit{S. aureus} strains are pathogenic, but those that are can cause a variety of illnesses. It can infect the bloodstream in the form of \textit{S. aureus} bacteremia (SAB) with a ~20\% case fatality rate \cite{lowy1998, tong2015, lemoing2015}. In the Western world this bacterium is the most frequent cause of infective endocarditis, with the percentage increasing to 32\% in 2009 and with a mortalitity rate of 22-66\% \cite{ lowy1998, tong2015, lemoing2015}. Additionally, \textit{S. aureus} can infect skin and soft tissues with differing severity, some of which can be life-threatening such as necrotising fasciitis \cite{ lowy1998, tong2015}. It can further cause bone and joint infections, as well as infections of prothetic devices \cite{ lowy1998, tong2015}. Lastly, \textit{S. aureus} can infect the respiratory tract and is responsible for over 40\% of cases of pneumonia acquired in hospitals \cite{ lowy1998, tong2015, rubinstein2008}.
+\par
+At first, \textit{S. aureus} infections were easily treatable with \textbeta-lactam antibiotics such as penicillin \cite{aminov2010}. Unfortunately, there are more and more strains emerging that are resistant to a broad range of antibiotics and are often multidrug resistant. Especially well known are \acf{MRSA} strains that are resistant to most \textbeta-lactam antibiotics and are responsible for 20-40\% of hospital-acquired pneumonia \cite{rubinstein2008}. Today, roughly 40-60\% of \textit{S. aureus} strains that originate in hospitals in the United States are multidrug resistant MRSA \cite{levy2004, chambers2001} and in Europe 5-50\% of nosocomical \textit{S. aureus} isolates are MRSA depending on the country \cite{koeck2010}. Additionally, there is an increasing trend of MRSA infections and MRSA is responsible for 44\% of nosocomical infections \cite{koeck2010, tong2015, rubinstein2008}.
+\par
+When MRSA first emerged, it was mostly acquired in health care settings, but increasingly there are community-associated MRSA strains \cite{lowy1998, chua2001, chambers2001, chambers2009, koeck2010, davies2010}. Typically these strains are resistant to \textbeta-lactam antibiotics, but in contrast to nosocomical MRSA strains are not multidrug resistant due to the lower antibiotic selection pressure in the community compared to hospitals \cite{lowy1998, chua2001, chambers2001, chambers2009, koeck2010, davies2010}. However, these community-associated MRSA strains tend to be more virulent and can cause especially severe infections such as necrotising fasciitis or necrotising pneumonia with a lethality of up to 75\% \cite{lowy1998, chua2001, chambers2001, chambers2009, koeck2010, davies2010}.
+\par
+\textit{S. aureus} and especially MRSA cause a substantial disease and financial burden world wide \cite{seybold2006, koeck2010, lemoing2015}. In the US there are annually an estimated 600,000 new cases of \textit{S. aureus} bacteremia and in France up to 125,000 new cases \cite{lemoing2015}. Roughly 150,000 patients in the European Union suffer from MRSA infections each year and cause a corresponding hospital cost of €340 million annually \cite{koeck2010}. 
+
+
+
+\section{Genes and Gene Regulation}
+\label{section:reg_back}
+As explained in Section \ref{section:AR_back}, antibiotic resistance has a genetic basis and this section serves to give a brief introduction on DNA, genes, proteins and gene regulation in bacteria such as \textit{S. aureus}. These concepts are explained more thoroughly in textbooks about genetics such as \textit{Molecular Biology of the Gene} \cite{watson2013}, which has entire chapters devoted to the DNA, genes, proteins, transcription, translation and regulation.
+\vspace{1em}
+\par\noindent
+Most of a living organism's genetic information is encoded on \acf{DNA}. Each strand of DNA is built from nucleotides that consist of a phosphate group, a deoxyribose sugar and a nitrogenous base. In the DNA this nitrogenous base is either one of the two purine bases \acf{A} and guanine \acf{G}, or one of the two pyrimidine bases \acf{T} and \acf{C}. The DNA typically exists in double stranded form where the nitrogenous bases form base pairs with bases of the other strand via hydrogen bonds, while the phosphate and deoxyribose form the backbone of each strand.
+\par
+The binding is not arbitrary, as the purine base adenine only binds to the pyrimidine base thymine by two hydrogen bonds, and the purine base guanine only binds to the pyrimidine base cytosine by three hydrogen bonds. As a result, the two DNA strands are complementary so that each strand contains the full genetic information and can be reconstructed from the other, which is vital for many processes involving the DNA such as DNA replication or transcription. 
+\par
+When working with a genome, one of these two strands is named the plus strand and the other the minus strand. These strands are each read from the end with a phosphate group (5'-end) to the end with a hydroxyl group (3'-end). Since the strands are complementary, if one strand is directed from left to right the other, complementary one is directed from right to left \cite{watson1953}. Figure \ref{figure:dna_double_strand} shows a DNA double strand (University of Leicester \cite{dna_double_strand}). 
+\bigskip
+\par
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{dna_double_strand.jpg}
+	\caption[DNA double strand.]
+			{DNA double strand of nucleotides, showing the base pairing and the 5'-3' direction of the two strands (University of Leicester \cite{dna_double_strand}).}
+	\label{figure:dna_double_strand}
+\end{figure}
+
+Genes are hereditary sections of the DNA sequence that code for \acf{RNA}, which is similar to DNA with a ribose sugar instead of deoxyribose and the nitrogenous base uracil instead of thymine. Some genes are located on the plus strand and other genes on the minus strand, which needs to be considered when analysing a gene. The process of copying genetic information to single stranded RNA is called transcription. The RNA can for example play a role in gene regulation, or it can serve as an intermediate product that is then translated into proteins.
+\vspace{1em}
+\par\noindent
+Proteins are large molecules that consist of amino acid chains. Each amino acid is encoded by a base triplet, called codon, on the DNA and the subsequent mRNA. There are 20 different amino acids and 64 ($= 4^3$) codons, so that there are multiple codons for one amino acid, which is called codon degeneracy. Depending on the amino acid sequence, the amino acid chains form three-dimensional structures that determine the protein function and ability to bind other molecules, including other proteins and DNA. Different proteins fulfil many functions in the cell: They catalyse chemical reactions, are involved in cell signalling, and are components of membranes that transport substances from one side to the other. The coding region of a gene is transcribed into messenger RNA (mRNA), which is then translated into the corresponding protein. When a gene is used to synthesise functional products like proteins we speak of gene expression.
+\vspace{1em}
+\par\noindent
+The expression of genes is tightly regulated to ensure that an organism can function and adapt to environmental changes. Effector proteins bind to the so called promoter region of a gene, which are typically located upstream near the transcription start, and initiate the transcription. The promoter start can be given relative to the coding region start, for example a promoter start of -100 means that the promoter begins 100 DNA bases upstream of the coding region. These effector proteins are mainly the RNA polymerase that performs the actual transcription, and \acfp{TF} that can activate or repress the transcription and with that the expression of the gene. Transcription factors can bind to small DNA sequences in the promoter region which are called \acfp{TFBS} \cite{dejong2002}. Some genes are organised close to each other in functional units, termed operons, that are controlled by a single promoter. This promoter turns all genes in the operon on or off at the same time \cite{broekesmits2010}. Figure \ref{figure:gene_model} visualises the gene model used in this thesis.
+\newpage
+\par
+The \acf{GRN} of an organism describes which genes and their products regulate which other genes, and by which genes they are in turn regulated \cite{dejong2002}. In this thesis the nodes of this GRN are the genes of \textit{S. aureus} and the edges connecting the nodes represent the regulatory relationship of the genes. 
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{gene_model.png}
+	\caption[Gene model.]
+			{Gene model consisting of a coding region that encodes the protein, a promoter 
+			region upstream of the gene start and transcription factor binding sites upstream of the 
+			gene start that can overlap with the promoter region. The intergenic regions 
+			are located between genes and their promoter regions.}
+	\label{figure:gene_model}
+\end{figure}
+
+
+\section{SNPs and Indels}
+\label{section:SNP_back}
+Already in the 1990s, mutations in antibiotic resistance genes were shown to impact the antibiotic resistance \cite{ito1994, ferrero1995, ng1996, fujimoto2005}. For instance, in \textit{S. aureus} certain point mutations in the gyrase genes \textit{gyrA} and \textit{gyrB}  can cause resistance against quinolones such as norfloxacin or sparfloxacin \cite{ito1994, ferrero1995, ng1996, levy2004, fujimoto2005}. Gyrase is a protein that plays a crucial role in DNA replication and prokaryotic transcription, and is the secondary target of quinolones whose antibiotic mechanism is to inhibit DNA synthesis. The mutations alter the gyrase in such a way that the quinolones cannot interact with the gyrase-DNA complex and thus lose some of their effectiveness \cite{ito1994, ferrero1995, ng1996, levy2004, fujimoto2005}. This section serves to introduce different types of mutations and the variety of ways in which they can impact antibiotic resistance. The aforementioned textbook \textit{Molecular Biology of the Gene} \cite{watson2013} explains these concepts in more depth and detail than is possible here.
+\vspace{1em}
+\par\noindent
+Point mutations of the DNA sequence that replace a single DNA base with another DNA base are called \acfp{SNP}. SNPs are either transversions, in which case a purine base (adenine or guanine) is replaced by pyrimidine base (cytosine or thymine) or vice versa, or they are transitions where a purine base is substituted by another purine base or a pyrimidine base is substituted by another pyrimidine base.
+\par
+Other mutations of the DNA sequence are \acfp{indel}, but in contrast to SNPs they can concern more than one nucleotide and change the length of the DNA sequence. In the case of insertions one or more DNA bases are inserted into the DNA sequence at a given position, whereas in the case of deletions one or more DNA bases are removed from the DNA sequence at that position. In this thesis, indel refers to either a deletion, an insertion or a mutation where an insertion and deletion occur at the same position.
+\vspace{1em}
+\par\noindent
+SNPs and indels can affect an organism in a multitude of ways depending on their location in the genome and the precise change in the DNA sequence. Mutations that occur in the coding region of a gene can change the amino acid sequence of the encoded protein and thus potentially its function in the organism. As explained in Section \ref{section:reg_back}, multiple codons code for the same amino acid or the translation stop. As a consequence, it is possible that a SNP or indel changes the codon but not the resulting amino acid or translation stop, which in turn means that the amino acid sequence of the protein does not change. If that is the case the mutation is synonymous. Transitions are more likely to be synonymous than transversions, as a DNA base is replaced by the same type of DNA base (pyrimidine or purine) instead of a different one and therefore often result in a similar codon that codes for the same amino acid.
+\par
+Mutations that affect the codons in a way that changes the amino acid sequence are called non-synonymous, and there are four groups of non-synonymous mutations. \textit{Missense mutations} only change the amino acid at the position they occur and only affect a single amino acid. If an amino acid codon becomes a stop codon, the mutation is a \textit{nonsense mutation}, whereas a mutation that leads to a stop codon becoming an amino acid codon is called a \textit{readthrough mutation}. Nonsense mutations cause the protein to be shorter and readthrough mutations make it longer. 
+\par
+Because codons are read one after the other in the so called reading-frame, indels can affect more than just the codon(s) in which they occur. If the change in the length of the DNA sequence is not divisible by three, the reading-frame shifts, meaning that starting from the indel's position completely different codons are read. These mutations are therefore called \textit{\ac{RF-shift} mutations} and can result in completely different amino acid sequences as well as shorter or longer proteins. Table~\ref{table:SNP_effect_back} presents an overview of the mutation groups in coding regions.
+\vspace{1em}
+\par\noindent
+Different amino acids have different chemical and physical properties that affect their individual interaction with other molecules, the structural conformation of an amino acid sequence and functional regions in the amino acid sequence. This in turn affects the properties and functionality of the resulting proteins, which play a vital role in  an organism, and a non-synonymous mutation can thus affect the protein function. The potential impact of a non-synonymous mutation is especially high if the mutation occurs in a protein domain that is important for the protein function.
+\par
+For instance, a non-synonymous mutation in the transmembrane helix of a MDR efflux pump could remove its ability to transport antibiotics out of the cell and therefore reduce the cell's antibiotic resistance. Or, a mutation in the DNA-binding domain of a regulator could affect its ability to up- or downregulate antibiotic resistance genes and affect antibiotic resistance that way \cite{grkovic2001}.
+\par
+Mutations that occur in the promoter region or the binding site of a regulatory or effector protein, such as a transcription factor, can increase or decrease the ability of that protein to bind and interact with the gene. This can lead to an increased or decreased expression of that gene, which in turn can impact the organism's antibiotic resistance if the gene in question is an antibiotic resistance gene or MDR efflux pump \cite{grkovic2001}. 
+
+
+\begin{table}
+	\centering
+	\begin{tabularx}{\textwidth}{l >{\hsize=1.4\hsize}X >{\raggedright\arraybackslash\hsize=0.6\hsize}X}
+		\toprule
+		\textbf{Effect} 	& \textbf{Description} 							& \textbf{Example} \\
+		\toprule
+		synonymous 			& the mutated codon codes for the same amino 
+							  acid, resulting in no change in the amino  
+							  acid sequence 								& MAR\underline{L}ENI
+							  												  \textrightarrow 
+							  												  { MAR\underline{L}ENI}  \\
+		missense 			& the mutated codon codes for a different amino
+							  acid, resulting in a single change in the
+							  amino acid sequence							& MAR\underline{L}ENI 
+																			  \textrightarrow 
+																			  { MAR\underline{K}ENI} \\
+		nonsense 			& the mutated codon codes for a translation
+							  stop instead of an amino acid, resulting in a
+							  shorter protein							 	& MAR\underline{L}ENI
+																			  \textrightarrow  
+																			  { MAR} \\
+		readthrough 		& the mutated codon codes for an amino acid
+							  instead of a translation stop, resulting in a
+							  longer protein								& MARLENI
+																			  \textrightarrow 
+																			  { MARLENI\underline{L}YRA} \\
+		reading-frame shift & an indel whose change is not divisible by 3
+							  shifts the reading-frame of the translation,
+							  resulting in a completely different protein	& MA\underline{R}LENI
+							  												  \textrightarrow 
+							  												  { MA\underline{AYRLAGKR}}\\
+		\bottomrule
+	\end{tabularx}
+	\caption[Effect of mutations in coding regions.]
+			{Overview of mutations in coding regions categorised by their effect on the amino acid sequence of the protein.}
+	\label{table:SNP_effect_back}
+\end{table}

@@ -1,0 +1,58 @@
+\pagenumbering{alph}
+\def\supervisorIname{Professor Dr. Volkhard Helms}
+\def\advisorIname{Kerstin Reuter}
+
+	\def\university{Universit\"{a}t des Saarlandes}
+	\def\institute{Center for Bioinformatics}
+	\def\projectname{Automated SNP Analysis in Staphylococcus aureus} 
+	\def\author{Markus Hollander} \def\date{bla 2011}
+
+
+\begin{titlepage}
+
+  \begin{minipage}{\textwidth}
+    \begin{center}
+    { \large Saarland University \\ 
+    Center for Bioinformatics \\ 
+    Bachelor's Program in Bioinformatics\\}
+	\vspace{0.5cm}
+    \includegraphics[width=2cm]{pic/uds.png}\\
+    \vspace{1cm}
+    { \large Bachelor's Thesis\\}
+    \vspace{0.5cm}
+    {\Large\textbf{\color{Blue}{\projectname}}}\\
+\vspace{1cm}
+    { \large submitted by}\\
+	\vspace{0.5cm}
+    {\large\textbf{\author}}\\
+    \vspace{0.5cm}
+    {\large on {October 4, 2013}}\\
+    \vspace{1cm}
+    \end{center}
+  \end{minipage}
+    
+    \begin{minipage}{\textwidth}
+        \begin{center}
+        \begin{minipage}{\textwidth}
+        \begin{center}
+		    \textbf{\emph{Supervisor}}\\
+    		  \supervisorIname      \\
+		   \vspace{1cm}
+		   \textbf{\emph{Advisor}}\\
+		   \advisorIname      \\
+    		  \vspace{1cm}
+		  \textbf{\emph{Reviewers}}\\
+		  \supervisorIname \\
+		  reviewer2\\
+		  \vspace{1.5cm}
+    		  Zentrum f\"ur Bioinformatik\\
+    		  \vspace{0.6cm}
+              \includegraphics[width=6cm]{pic/zbi.png}			          
+    		  \end{center}
+        \end{minipage}
+		\hfill
+     
+        \end{center}
+    \end{minipage}
+
+\end{titlepage}
