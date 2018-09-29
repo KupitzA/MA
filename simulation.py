@@ -191,7 +191,7 @@ class Simulation:
     def dist(self, patterns):
         """
         distance function for ABC, distance of to distributions is sum over weighted distances of all relative distances
-        between the pairwise patterns from each ditribution
+        between the pairwise patterns from each distribution
         :param patterns: pattern distribution of simulation
         :return: distance between pattern distribution of simulation and pattern distribution of KO-file
         """
@@ -209,11 +209,13 @@ class Simulation:
         :return: weight w
         """
         w = 0.0
-        while keyKO != 0:
+        while keyKO != 0 and keySim != 0:
             modKO = keyKO % 4
             modSim = keySim % 4
-            if modKO != modSim:
-                w += 1
+            if modKO+modSim == 3: #then the methylation state at both strands is complementary
+                w += 2.0
+            elif modKO == modSim: #one position of methylation pattern different
+                w += 1.0
             keyKO = (keyKO-modKO) / 4
             keySim = (keySim-modSim) / 4
         return (w/self.L)
@@ -290,15 +292,15 @@ sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
 #likelihood computation
 #sim.minimizeLH(sim.probabilities[0])
 #sim.minimizeLH(sim.probabilities[1])
-sim.minimizeLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
+#sim.minimizeLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
 
 #plot likelihood
 #sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
 #sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
 
 #ABC
-#abc = ABC()
-#abc.abc(sim.computePatternDistribution, sim.distanceFunction, 0.8)
+abc = ABC()
+abc.abc(sim.computePatternDistribution, sim.dist, 0.6)
 #plt.plot(sim.distributionKO)
 #plt.xlabel('pattern value')
 #plt.ylabel('distribution value')

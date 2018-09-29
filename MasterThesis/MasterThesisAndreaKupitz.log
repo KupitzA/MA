@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  25 SEP 2018 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  26 SEP 2018 11:56
 entering extended mode
 **./MasterThesisAndreaKupitz.tex
 (MasterThesisAndreaKupitz.tex
@@ -1582,7 +1582,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
 
  []
 
-[2] [1]) (pre/abstract.tex [2] [3]) (pre/acknowledge.tex)
+[2] [1]) (pre/abstract.tex
+Package acronym Info: Label `acro:CpG' newly defined as it shall be overridden
+although it is yet undefined on input line 3.
+Package acronym Info: Label `acro:DNMTs' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 3.
+Package acronym Info: Label `acro:MCMC' newly defined as it shall be overridden
+
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:MLE' newly defined as it shall be overridden
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:ABC' newly defined as it shall be overridden
+although it is yet undefined on input line 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+[2] [3]) (pre/acknowledge.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 2--260
 
  []
@@ -1658,10 +1676,10 @@ Package logreq Info: Writing requests to 'MasterThesisAndreaKupitz.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 287.
  ) 
 Here is how much of TeX's memory you used:
- 21711 strings out of 492973
- 344091 string characters out of 3126249
- 792554 words of memory out of 3000000
- 25236 multiletter control sequences out of 15000+200000
+ 21746 strings out of 492973
+ 344410 string characters out of 3126249
+ 792938 words of memory out of 3000000
+ 25261 multiletter control sequences out of 15000+200000
  9127 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,6n,38p,1171b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1674,9 +1692,9 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
 rs/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
 10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti10.pfb>
-Output written on MasterThesisAndreaKupitz.pdf (24 pages, 244666 bytes).
+Output written on MasterThesisAndreaKupitz.pdf (24 pages, 252355 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

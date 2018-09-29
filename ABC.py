@@ -8,7 +8,7 @@ class ABC:
 
     def __init__(self):
         self.thetas = []
-        self.dists = [] #distances between distributions of simulation and given data
+        self.distances = [] #distances between distributions of simulation and given data
         self.simData = [] #accepted simulated distributions
 
     def abc(self, simulation, distFunc, eps, sampleSize=10000, numParam=4, prior=np.random.uniform):
@@ -22,15 +22,19 @@ class ABC:
         :param prior: prior distribution for sampling theta
         :return:
         '''
-        for i in range(sampleSize):
-            param = prior(size=numParam)
-            simData = simulation(param)
-            dist = distFunc(simData)
-            if dist <= eps:
-                self.thetas.append(param)
-                self.dists.append(dist)
-                self.simData.append(simData)
-                print(dist, param)
+        for i in range(10):
+            for j in range(int(sampleSize/10)):
+                if i == 0:
+                    param = prior(size=numParam)
+                else:
+                    param = self.ownPrior(numParam, self.thetas[i*(sampleSize/10):(i+1)*(sampleSize/10)])
+                simData = simulation(param)
+                dist = distFunc(simData)
+                if dist <= eps:
+                    self.thetas.append(param)
+                    self.distances.append(dist)
+                    self.simData.append(simData)
+                    print(dist, param)
         #compute mean theta and distribution if data accepted
         if len(self.simData) != 0:
             theta = []
@@ -38,14 +42,14 @@ class ABC:
                 theta.append(np.mean([t[i] for t in self.thetas]))
             print(theta)
             #compute mean distribution
-            accumulated = self.meanDistri()
-            lists = sorted(accumulated.items()) # sorted by key, return a list of tuples
-            x, y = zip(*lists) # unpack a list of pairs into two tuples
-            plt.plot(x, y)
-            plt.xlabel('pattern value')
-            plt.ylabel('distribution value')
-            plt.title('pattern distribution of simulation')
-            plt.show()
+            #accumulated = self.meanDistri()
+            #lists = sorted(accumulated.items()) # sorted by key, return a list of tuples
+            #x, y = zip(*lists) # unpack a list of pairs into two tuples
+            #plt.plot(x, y)
+            #plt.xlabel('pattern value')
+            #plt.ylabel('distribution value')
+            #plt.title('pattern distribution of simulation')
+            #plt.show()
 
     def meanDistri(self):
         accumulated = dict()
@@ -54,3 +58,11 @@ class ABC:
                 accumulated[k] = accumulated.get(k, 0) + v
         accumulated = {x: float(y/(len(self.simData)*10000)) for x, y in accumulated.items()}
         return accumulated
+
+    def ownPrior(self, numParam, thetas):
+        prior = []
+        for i in range(numParam):
+            m = np.mean(thetas[:][i])
+            sd = np.std(thetas[:][i])
+            prior.append(np.random.normal(m, sd))
+        return prior

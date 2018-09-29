@@ -5,4 +5,4 @@
 -die erzeugte Patterndistribution aus der Simulation vergleichen, indem wir die Distanzfunktion von dem ABC benutzen
 -ABC validieren für Simulation, deren echte Parameter wir kennen
 -ABC iteration verbessern, indem Parameter nicht mehr zufällig gezogen werden (hier evtl. Rücksprache mit Michael halten) oder Python Pakage verwenden
--Abstract Masterarbeit
+-Abstract Masterarbeit #
