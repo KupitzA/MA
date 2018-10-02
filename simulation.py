@@ -8,7 +8,6 @@ from itertools import product
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize, basinhopping
 from distribution import createDistri
-from ABC import ABC
 
 class Simulation:
     """
@@ -22,7 +21,8 @@ class Simulation:
     distributionKO = [] #pattern distribution in KO-file
     patternDistriKO = [] # number of occurrences of each pattern in DNMT KO data for comparison with outcome of
     # simulation
-    DNMT1KO = True
+    DNMT1KO = False
+    DNMT3KO = False
     #               rho             tau             mhy          delta
     #           (disassociation   (association  (maintenance   (de novo methyl
     #               prob)           prob)        methyl prob)       prob)
@@ -30,7 +30,7 @@ class Simulation:
                      [0.5,          0.5,          0,              1],   #DNMT3d (daughter strand)
                      [0.5,          0.5,          0,                1]]     #DNMT3p (parent strand)
 
-    def __init__(self, WTfile, KOfile, distances, DNMT1KO=True):
+    def __init__(self, WTfile, KOfile, distances, DNMT1KO=False, DNMT3KO=False):
         distributionWT, self.L, numOfPatterns = createDistri(WTfile) # distribution of methylation patterns for wildtype
         self.distributionKO, self.L, numOfPatterns = createDistri(KOfile) # distribution of methylation patterns after DNMT KO
         self.create_initial_distr(distributionWT) # create initial distribution from WT
@@ -38,6 +38,7 @@ class Simulation:
         self.patternDistriKO = [i*numOfPatterns for i in self.distributionKO]
         self.distances = distances # distances between CpGs
         self.DNMT1KO = DNMT1KO
+        self.DNMT3KO = DNMT3KO
 
     def create_initial_distr(self, distribution):
         """
@@ -109,7 +110,7 @@ class Simulation:
         '''
         rho = probs[0]
         tau = probs[1]
-        mhy = 0
+        mhy = probs[2]
         delta = probs[3]
         bound = False
         CpG = True #if current position is a CpG
@@ -144,12 +145,16 @@ class Simulation:
             allProbs.append([])
             allProbs.append(probabilities)
             allProbs.append(probabilities)
+        elif self.DNMT3KO:
+            allProbs.append(probabilities)
         else:
-           allProbs.append(probabilities)
+            allProbs.append(probabilities[:4].tolist())
+            allProbs.append(probabilities[4:].tolist())
+            allProbs.append(probabilities[4:].tolist())
         patterns = dict()
         #perform multiple iterations and store resulting patterns
         for i in range(10000):
-            upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not self.DNMT1KO, DNMT3=self.DNMT1KO)
+            upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not self.DNMT1KO, DNMT3=not self.DNMT3KO)
             pattern = 0
             for l in range(self.L):
                 pattern += 4 ** (self.L - l - 1) * (upperStrand[l] + lowerStrand[l]*2)
@@ -176,50 +181,6 @@ class Simulation:
         print(likelihood, probabilities)
         return -likelihood
 
-    def distanceFunction(self, patterns):
-        '''
-        A distance function for an ABC-algorithm, computes the distance of two distributions as sum of differences
-        between all counts of patterns
-        :param patterns: pattern distribution of simulation
-        :return: distance between pattern distribution of simulation and pattern distribution of KO-file
-        '''
-        dist = 0
-        for k, v in enumerate(self.distributionKO):
-            dist += abs(patterns[k]-v) if k in patterns else v
-        return dist
-
-    def dist(self, patterns):
-        """
-        distance function for ABC, distance of to distributions is sum over weighted distances of all relative distances
-        between the pairwise patterns from each distribution
-        :param patterns: pattern distribution of simulation
-        :return: distance between pattern distribution of simulation and pattern distribution of KO-file
-        """
-        dist = 0
-        for k, v in enumerate(self.distributionKO):
-            for key, value in patterns.items():
-                dist += self.w(k, key) * (v - value)**2
-        return dist
-
-    def w(self, keyKO, keySim):
-        """
-        computes a weight relative to two patterns
-        :param keyKO: pattern from KO-file
-        :param keySim: pattern from simulation
-        :return: weight w
-        """
-        w = 0.0
-        while keyKO != 0 and keySim != 0:
-            modKO = keyKO % 4
-            modSim = keySim % 4
-            if modKO+modSim == 3: #then the methylation state at both strands is complementary
-                w += 2.0
-            elif modKO == modSim: #one position of methylation pattern different
-                w += 1.0
-            keyKO = (keyKO-modKO) / 4
-            keySim = (keySim-modSim) / 4
-        return (w/self.L)
-
     def minimizeLH(self, probabilities):
         '''
         use parameter optimization to minimize likelihood
@@ -227,7 +188,7 @@ class Simulation:
         '''
         # extra arguments passed to the objective function and its derivatives
         # bounds for parameter space
-        bnds = ((0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
+        bnds = ((0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
         # use method L-BFGS-B because the problem is smooth and bounded
         #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', bounds=bnds, options={'disp': True})
         minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, options={'disp': True})
@@ -285,25 +246,18 @@ class Simulation:
 
 
 #DNMT1KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
 #DNMT3KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False)
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
+#WT:
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])
 
 #likelihood computation
 #sim.minimizeLH(sim.probabilities[0])
 #sim.minimizeLH(sim.probabilities[1])
+#sim.minimizeLH(sim.probabilities[0:2])
 #sim.minimizeLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
 
 #plot likelihood
 #sim.plotLH([0.89366031, 0.27623855, 0.78160997, 0.99999686])
 #sim.plotParam(3, [0.23422344, 0.99999997, 0.73645811, 0.42643627])
-
-#ABC
-abc = ABC()
-abc.abc(sim.computePatternDistribution, sim.dist, 0.6)
-#plt.plot(sim.distributionKO)
-#plt.xlabel('pattern value')
-#plt.ylabel('distribution value')
-#plt.title('pattern distribution of data')
-#plt.show()
-#print(sim.dist(sim.computePatternDistribution([0.5,          0.5,          0,              1])))
