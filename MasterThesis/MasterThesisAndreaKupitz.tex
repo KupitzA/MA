@@ -27,7 +27,8 @@
 \usepackage{colortbl}
 % text symbols
 \usepackage{textcomp}
-
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 % GRAPHICS CONFIGURATION
 % set the path to the image folder
@@ -43,6 +44,7 @@
 \definecolor{MyPurple}{RGB}{128, 100, 162}
 
 % colour section, subsection and subsubsection headings blue
+\usepackage{subcaption}
 \makeatletter
 \renewcommand\section{
 \@startsection{section}{1}
@@ -228,12 +230,13 @@
 
 % define project name and type
 \def\projectname{Design and calibration of stochastic models for DNA methylation patterns} 
-\def\projectType{Master Thesis in Bioinformatics}
+\def\projectType{Master's Thesis in Bioinformatics}
 
 % define names
-\def\supervisorIname{Professor Dr. Verena Wolf}
-\def\advisorIname{Alexander L\"{u}ck}
-\def\reviewerName{Professor Dr. Volkhard Helms}
+\def\supervisorIname{Prof. Dr. Verena Wolf}
+\def\advisorIname{M.Sc. Alexander L\"{u}ck}
+\def\advisorIIname{Dipl.Biol. Pascal Giehr}
+\def\reviewerName{Prof. Dr. Volkhard Helms}
 \def\authorFirstName{Andrea}
 \def\authorLastName{Kupitz}
 

@@ -1974,6 +1974,16 @@
     <bcf:datasource type="file" datatype="bibtex">bib/bib.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">Epigenetics</bcf:citekey>
+    <bcf:citekey order="2">DNAMethylation</bcf:citekey>
+    <bcf:citekey order="3">Handbook</bcf:citekey>
+    <bcf:citekey order="4">DNAMethylation</bcf:citekey>
+    <bcf:citekey order="5">Walter</bcf:citekey>
+    <bcf:citekey order="6">DNAMethylation</bcf:citekey>
+    <bcf:citekey order="7">DNAMethylation</bcf:citekey>
+    <bcf:citekey order="8">DNMT2</bcf:citekey>
+    <bcf:citekey order="9">DNAMethylation</bcf:citekey>
+    <bcf:citekey order="10">DNAMethylation</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

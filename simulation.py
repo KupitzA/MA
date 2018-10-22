@@ -188,7 +188,7 @@ class Simulation:
         '''
         # extra arguments passed to the objective function and its derivatives
         # bounds for parameter space
-        bnds = ((0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
+        bnds = ((0, 1), (0, 1), (0, 1), (0, 1))#, (0, 1), (0, 1), (0, 1), (0, 1))  # here 4 parameters bound between 0 and 1
         # use method L-BFGS-B because the problem is smooth and bounded
         #sol = minimize(self.computeLH, probabilities, method='L-BFGS-B', bounds=bnds, options={'disp': True})
         minimizer_kwargs = dict(method="L-BFGS-B", bounds=bnds, options={'disp': True})

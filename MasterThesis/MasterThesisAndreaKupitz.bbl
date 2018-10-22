@@ -1,0 +1,140 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Epigenetics}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ba43e7e6eed54e38c2f284ea6231e76b}{%
+           family={Weinhold},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{fullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{bibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authorbibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authornamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authorfullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment Health Perspective}
+      \field{number}{3}
+      \field{title}{Epigenetics: The Science of Change}
+      \field{volume}{114}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1289/ehp.114-a160
+      \endverb
+    \endentry
+    \entry{DNAMethylation}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6fae76324144753af774e0393a82709e}{%
+           family={Jin\bibnamedelimb et\bibnamedelima al.},
+           familyi={J\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6fae76324144753af774e0393a82709e}
+      \strng{fullhash}{6fae76324144753af774e0393a82709e}
+      \strng{bibnamehash}{6fae76324144753af774e0393a82709e}
+      \strng{authorbibnamehash}{6fae76324144753af774e0393a82709e}
+      \strng{authornamehash}{6fae76324144753af774e0393a82709e}
+      \strng{authorfullhash}{6fae76324144753af774e0393a82709e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Genes Cancer}
+      \field{number}{6}
+      \field{title}{DNA Methylation}
+      \field{volume}{2}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1177/1947601910393957
+      \endverb
+    \endentry
+    \entry{Handbook}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=a936107480f1700edf8a027a828384c0}{%
+           family={Janitz},
+           familyi={J\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=10434484e9487985be6b0090a0797001}{%
+           family={Janitz},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{183037f3136161ffbd777ecc9ca784a1}
+      \strng{fullhash}{183037f3136161ffbd777ecc9ca784a1}
+      \strng{bibnamehash}{183037f3136161ffbd777ecc9ca784a1}
+      \strng{authorbibnamehash}{183037f3136161ffbd777ecc9ca784a1}
+      \strng{authornamehash}{183037f3136161ffbd777ecc9ca784a1}
+      \strng{authorfullhash}{183037f3136161ffbd777ecc9ca784a1}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{chapter}{12}
+      \field{title}{Handbook of Epigenetics}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-375709-8.00012-5
+      \endverb
+    \endentry
+    \entry{Walter}{article}{}
+      \name{author}{2}{}{%
+        {{hash=be97b0af7350759ba0567feac2f4d273}{%
+           family={Reik},
+           familyi={R\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=41ed289586812c84e5edf4fe3caf72b1}{%
+           family={Walter},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \strng{fullhash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \strng{bibnamehash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \strng{authorbibnamehash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \strng{authornamehash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \strng{authorfullhash}{9f6b0af9585d6f752d5dc65907ea54e7}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Reviews Genetics}
+      \field{title}{Genomic imprinting: parental influence on the genome}
+      \field{volume}{2}
+      \field{year}{2001}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

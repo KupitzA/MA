@@ -28,13 +28,15 @@ class ABC:
         :param prior: prior distribution for sampling theta
         :return:
         '''
+        k = 10
         improvements = 1000 #number of improvements, where drawing of thetas is improved by mean of accepted thetas
         for i in range(improvements):
             for j in range(int(sampleSize/improvements)):
-                if i == 0:
+                if i == 0 or len(self.thetas) <= k:
                     param = prior(size=numParam)
                 else:
-                    param = self.ownPrior(numParam, self.thetas)
+                    eps = min(self.distances)
+                    param = self.ownPrior(numParam, self.thetas, k)
                 distributionSim = self.computePatternDistribution(param)
                 dist = distFunc(self.distributionData, distributionSim)
                 if dist < eps:
@@ -42,7 +44,9 @@ class ABC:
                     self.distances.append(dist)
                     self.distribution.append(distributionSim)
                     print(dist, param)
-            eps /= 2.0
+            #if len(self.thetas)/(i+1) >= k:
+                #eps /= 2.0
+                #eps = min(self.distances)
         #compute mean theta and distribution if data accepted
         if len(self.distribution) != 0:
             theta = []
@@ -67,17 +71,29 @@ class ABC:
         accumulated = {x: float(y/(len(self.distribution)*10000)) for x, y in accumulated.items()}
         return accumulated
 
-    def ownPrior(self, numParam, thetas):
+    def ownPrior(self, numParam, thetas, k):
         prior = []
+        bestk = thetas[-k:]
+        prob = 0.0
+        q = np.random.random()
         for i in range(numParam):
-            if len(thetas) >= 10:
-                tail = 10
-            else:
-                tail = len(thetas)-1
-            m = np.mean(thetas[-tail:][i])
-            sd = np.std(thetas[-tail:][i])
-            prior.append(np.random.normal(m, sd))
-            print(m)
+            Sum = sum(self.distances[-k:])
+            invSum = sum([Sum-self.distances[-l] for l in range(k)])
+            for j in range(k):
+                prob += (Sum - self.distances[-j])/invSum
+                if q <= prob:
+                    break
+            m = bestk[j][i]
+            sd = np.mean([abs(bestk[j][i] - bestk[l][i]) for l in range(k)])
+            #m = np.mean(weightedSum)
+            #sd = np.std(weightedSum)
+            p = np.random.normal(m, sd)
+            if p < 0:
+                p = 0
+            elif p > 1:
+                p = 1
+            prior.append(p)
+            print(m,sd)
         return prior
 
     def distanceFunction(self, distributionData, distributionSim):
@@ -102,7 +118,8 @@ class ABC:
         """
         dist = 0
         for k, v in enumerate(distributionData):
-            for key, value in ditributionSim.items():
+            for key in range(len(distributionData)):
+                value = ditributionSim(key) if key in ditributionSim else 0
                 dist += self.w(k, key) * (v - value)**2
         return dist
 
@@ -142,7 +159,7 @@ distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
 #distriData = sim.computePatternDistribution([[0.1, 0.8, 0.8, 0], [0.5, 0.5, 0, 1]])
 abc = ABC(distriData, sim.computePatternDistribution)
 
-abc.abc(abc.dist, 100000.0)
+abc.abc(abc.dist, 110000.0)
 #plt.plot(sim.distributionKO)
 #plt.xlabel('pattern value')
 #plt.ylabel('distribution value')
