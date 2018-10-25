@@ -32,13 +32,18 @@ A \textbf{Markov chain} is the simplest Markov model. This chain is a sequence o
 Let $X_0$ be the initial distribution of the chain X s.t. $\sum_{x \in X_0}{x} = 1$, then $X_1 = X_0 * P$ is the distribution of X at time t=1. We call $\pi$ the \textbf{equilibrium distribution}; the distribution of X that does not change from one time step to another or formally: $\pi * P = \pi$.\\
 %characteristics of Markov Chain? Ergodic...
 \textbf{\acp{HMM}} are an extension of Markov chains. There are two kinds of states in this model; hidden states S and observable output states O. Similarly, there is a transition probability matrix between the states in S and a matrix of output probabilities B between the hidden and the output states.\newline
-This model is used, when there is information about the output of a process, but no knowledge about the states of the system. Using a simulation, one can determine P and B.\\
+This model is used, when there is information about the output of a process, but no knowledge about the states of the system.\\
 %Viterbi?
 
-In the context of \acp{DNMT}, Markov models are used to simulate the function of the enzymes, making use of results from biological experiments. Here, few is known about the properties of methyltransferases, but the methylation patterns before and after the catabolism of the \acp{DNMT}. Each methylation state (unmethylated, hemimethylated, methylated) of one \ac{CpG} is an output state, whereas the binding state of the \ac{DNMT} at each \ac{CpG} is a hidden state:\newline
+\section{Bayesian statistics} 
+\label{section:Baystat}
+
+\section{Problem} 
+\label{section:Problem}
+In the context of \acp{DNMT}, Markov models are used to simulate the function of the enzymes, making use of results from biological experiments. Here, few is known about the properties of methyltransferases, but the methylation patterns before and after the catabolism of the \acp{DNMT}. Each methylation state (unmethylated, hemimethylated, methylated) of one \ac{CpG} is an output state, whereas the binding state of the \ac{DNMT} at each \ac{CpG} is a hidden state. Thus the traversing probabilities between the hidden states P are equal to the probabilities of the \acp{DNMT} to bind/fall of and the output probabilities represent the different methylation probabilities:\newline
 \begin{align}
 O_i := \text{methylation state of CpG i}\\
-O_i \in \left\{
+O_i = \left\{
 \begin{array}{ll}
 0 & \text{unmethylated} \\
 1 & \text{hemimethylated} \\
@@ -46,15 +51,17 @@ O_i \in \left\{
 3 & \text{unmethylated} \\
 \end{array}
 \right.\\
-B_i := \text{binding state of DNMT at CpG i}\\
-B_i \in \left\{
+S_i := \text{binding state of DNMT at CpG i}\\
+S_i = \left\{
 \begin{array}{ll}
 0 & \text{unbound} \\
 1 & \text{bound} \\
 \end{array}
 \right.
+P := \text{probability of DNMT to change binding state}\\
+B := \text{methylation probabilities}\\
 \end{align}
-Figure \ref{fig:fig} shows the four kind of methylation patterns.
+Figure \ref{fig:fig} shows the four kind of methylation patterns.\\
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -95,7 +102,7 @@ Figure \ref{fig:fig} shows the four kind of methylation patterns.
 \caption{Kind of methylation patterns; each figure shows two opposite CpGs on the parental and the daughter strand; each circle represents one CpG; plane red circles are methylated CpGs; (a) unmehtylated, (b) hemimethylated (upper strand unmethylated, lower strand methylated), (c) hemimethylated (vice versa), (d) fully methylated CpGs}
 \label{fig:fig}
 \end{figure}
-By determining the most likely state sequence given the output sequence, we are able to determine P and B.\\
+Given the output sequence, we are able to determine the most likely sequence of S. Moreover, P and B can be reconstructed by computer simulation of the \ac{DTMC}. $One kind of simulation is \textbf{\ac{MCMC}}.$\\
 
 Recently, different models and computational approaches were studied in order to predict the methylation process. Here we present some of them.\\
 

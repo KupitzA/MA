@@ -30,8 +30,8 @@ class ABC:
         :param prior: prior distribution for sampling theta
         :return:
         '''
-        k = 25 #number of draws from prior
-        improvements = 400 #number of improvements, where drawing of thetas is improved by mean of accepted thetas
+        k = 20 #number of draws from prior
+        improvements = 500 #number of improvements, where drawing of thetas is improved by mean of accepted thetas
         for i in range(improvements):
             for j in range(int(sampleSize/improvements)):
                 #draw k-times from prior
@@ -120,8 +120,10 @@ class ABC:
         :return: distance between pattern distribution of simulation and pattern distribution of given data
         '''
         dist = 0
-        for k, v in enumerate(distributionData):
-            dist += abs(distributionSim[k]-v) if k in distributionSim else v
+        for k in range(4**self.L):
+            keyData = k if k in distributionData else 0
+            keySim = k if k in distributionSim else 0
+            dist += abs(keyData - keySim)
         return dist
 
     def dist(self, distributionData, ditributionSim):
