@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'MasterThesisAndreaKupitz.blg'
-[99] biber-MSWIN64:313> INFO - === 
-[295] Biber.pm:371> INFO - Reading 'MasterThesisAndreaKupitz.bcf'
-[585] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
-[641] Biber.pm:3976> INFO - Processing section 0
-[715] Biber.pm:4136> INFO - Looking for bibtex format file 'bib/bib.bib' for section 0
-[725] bibtex.pm:1500> INFO - LaTeX decoding ...
-[754] bibtex.pm:1316> INFO - Found BibTeX data source 'bib/bib.bib'
-[870] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[871] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[871] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
-[871] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-GB'
-[882] bbl.pm:617> INFO - Writing 'MasterThesisAndreaKupitz.bbl' with encoding 'UTF-8'
-[888] bbl.pm:720> INFO - Output to MasterThesisAndreaKupitz.bbl
+[0] Config.pm:305> INFO - Logfile is 'MasterThesisAndreaKupitz.blg'
+[46] biber-MSWIN64:313> INFO - === 
+[96] Biber.pm:371> INFO - Reading 'MasterThesisAndreaKupitz.bcf'
+[254] Biber.pm:857> INFO - Found 8 citekeys in bib section 0
+[279] Biber.pm:3976> INFO - Processing section 0
+[304] Biber.pm:4136> INFO - Looking for bibtex format file 'bib/bib.bib' for section 0
+[314] bibtex.pm:1500> INFO - LaTeX decoding ...
+[336] bibtex.pm:1316> INFO - Found BibTeX data source 'bib/bib.bib'
+[447] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[447] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[447] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
+[447] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-GB'
+[457] bbl.pm:617> INFO - Writing 'MasterThesisAndreaKupitz.bbl' with encoding 'UTF-8'
+[462] bbl.pm:720> INFO - Output to MasterThesisAndreaKupitz.bbl

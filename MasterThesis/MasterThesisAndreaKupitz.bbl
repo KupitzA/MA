@@ -134,6 +134,115 @@
       \field{volume}{2}
       \field{year}{2001}
     \endentry
+    \entry{DNMT2}{article}{}
+      \name{author}{1}{}{%
+        {{hash=212764b14df55de350c684d3154e2aeb}{%
+           family={Goll\bibnamedelimb et\bibnamedelima al.},
+           familyi={G\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={M.\bibnamedelimi G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{212764b14df55de350c684d3154e2aeb}
+      \strng{fullhash}{212764b14df55de350c684d3154e2aeb}
+      \strng{bibnamehash}{212764b14df55de350c684d3154e2aeb}
+      \strng{authorbibnamehash}{212764b14df55de350c684d3154e2aeb}
+      \strng{authornamehash}{212764b14df55de350c684d3154e2aeb}
+      \strng{authorfullhash}{212764b14df55de350c684d3154e2aeb}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{5759}
+      \field{title}{Methylation of tRNAAsp by the DNA Methyltransferase Homolog Dnmt2}
+      \field{volume}{311}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1126/science.1120976
+      \endverb
+    \endentry
+    \entry{Philosophy}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=97cab85a342445b585fbaa6ec0bddbb7}{%
+           family={Romeijn},
+           familyi={R\bibinitperiod},
+           given={Jan-Willem},
+           giveni={J\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=d9b6284b7816d9e586e8af9a253ba08e}{%
+           family={Zalta},
+           familyi={Z\bibinitperiod},
+           given={Edward\bibnamedelima N.},
+           giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Metaphysics Research Lab, Stanford University}%
+      }
+      \strng{namehash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{fullhash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{bibnamehash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{authorbibnamehash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{authornamehash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{authorfullhash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{editorbibnamehash}{d9b6284b7816d9e586e8af9a253ba08e}
+      \strng{editornamehash}{d9b6284b7816d9e586e8af9a253ba08e}
+      \strng{editorfullhash}{d9b6284b7816d9e586e8af9a253ba08e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Stanford Encyclopedia of Philosophy}
+      \field{edition}{Spring 2017}
+      \field{howpublished}{\url{https://plato.stanford.edu/archives/spr2017/entries/statistics/}}
+      \field{title}{Philosophy of Statistics}
+      \field{year}{2017}
+    \endentry
+    \entry{Introduction}{book}{}
+      \name{author}{1}{}{%
+        {{hash=046f2d52bcfbe041e7da5b150b99f9c0}{%
+           family={Keone},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CreateSpace Independent Publishing Platform}%
+      }
+      \strng{namehash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \strng{fullhash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \strng{bibnamehash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \strng{authorbibnamehash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \strng{authornamehash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \strng{authorfullhash}{046f2d52bcfbe041e7da5b150b99f9c0}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1502424624}
+      \field{title}{Introduction to Statistics}
+      \field{year}{2014}
+    \endentry
+    \entry{BayStat}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b7498140bee0d5b32e9812a9401366de}{%
+           family={Bernardo},
+           familyi={B\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7498140bee0d5b32e9812a9401366de}
+      \strng{fullhash}{b7498140bee0d5b32e9812a9401366de}
+      \strng{bibnamehash}{b7498140bee0d5b32e9812a9401366de}
+      \strng{authorbibnamehash}{b7498140bee0d5b32e9812a9401366de}
+      \strng{authornamehash}{b7498140bee0d5b32e9812a9401366de}
+      \strng{authorfullhash}{b7498140bee0d5b32e9812a9401366de}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bayesian Statistics}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

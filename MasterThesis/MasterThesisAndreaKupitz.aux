@@ -42,12 +42,18 @@
 \newacro{ABC}[\AC@hyperlink{ABC}{ABC}]{Approximative Bayesian Computation}
 \newacro{CGI}[\AC@hyperlink{CGI}{CGI}]{CpG island}
 \newacro{CpG}[\AC@hyperlink{CpG}{CpG}]{cytosine-phosphate-guanine}
+\newacro{CTMC}[\AC@hyperlink{CTMC}{CTMC}]{Continuous-time Markov Chain}
 \newacro{DNMT}[\AC@hyperlink{DNMT}{DNMT}]{DNA Methyltransferase}
 \newacro{DTMC}[\AC@hyperlink{DTMC}{DTMC}]{Discrete-time Markov Chain}
 \newacro{HMM}[\AC@hyperlink{HMM}{HMM}]{Hidden Markov Model}
 \newacro{MCMC}[\AC@hyperlink{MCMC}{MCMC}]{Markov Chain Monte Carlo}
 \newacro{MLE}[\AC@hyperlink{MLE}{MLE}]{Maximum Likelihood Estimation}
+\newacro{PCR}[\AC@hyperlink{PCR}{PCR}]{polymerase chain reaction}
 \newacro{RV}[\AC@hyperlink{RV}{RV}]{Random Variable}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chapter:intro}{{1}{1}{Introduction}{chapter.1}{}}
 \abx@aux@cite{Epigenetics}
 \abx@aux@segm{0}{0}{Epigenetics}
 \abx@aux@cite{DNAMethylation}
@@ -63,80 +69,119 @@
 \abx@aux@segm{0}{0}{DNMT2}
 \abx@aux@segm{0}{0}{DNAMethylation}
 \abx@aux@segm{0}{0}{DNAMethylation}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:introduction}{{1}{1}{Introduction}{chapter.1}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.1}DNA methylation}{1}{section.1.1}}
-\newlabel{section:DNAMeth}{{1.1}{1}{DNA methylation}{section.1.1}{}}
+\newlabel{chapter:background}{{2}{3}{Background}{chapter.2}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.1}DNA methylation}{3}{section.2.1}}
+\newlabel{section:DNAMeth}{{2.1}{3}{DNA methylation}{section.2.1}{}}
 \acronymused{CpG}
 \AC@undonewlabel{acro:CGI}
-\newlabel{acro:CGI}{{1.1}{1}{DNA methylation}{section*.14}{}}
+\newlabel{acro:CGI}{{2.1}{3}{DNA methylation}{section*.14}{}}
 \acronymused{CGI}
 \acronymused{CGI}
 \acronymused{DNMT}
 \acronymused{DNMT}
 \acronymused{CpG}
+\abx@aux@cite{Philosophy}
+\abx@aux@segm{0}{0}{Philosophy}
+\abx@aux@cite{Introduction}
+\abx@aux@segm{0}{0}{Introduction}
 \acronymused{CpG}
 \acronymused{DNMT}
 \acronymused{DNMT}
 \acronymused{CpG}
 \acronymused{DNMT}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.2}Markov models}{2}{section.1.2}}
-\newlabel{section:MM}{{1.2}{2}{Markov models}{section.1.2}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.2}Foundations of statistics}{4}{section.2.2}}
+\newlabel{section:statistics}{{2.2}{4}{Foundations of statistics}{section.2.2}{}}
+\abx@aux@cite{BayStat}
+\abx@aux@segm{0}{0}{BayStat}
 \AC@undonewlabel{acro:RV}
-\newlabel{acro:RV}{{1.2}{2}{Markov models}{section*.15}{}}
+\newlabel{acro:RV}{{5}{5}{Probability Distribution}{section*.15}{}}
+\acronymused{RV}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.3}Markov models}{5}{section.2.3}}
+\newlabel{section:MM}{{2.3}{5}{Markov models}{section.2.3}{}}
 \acronymused{RV}
 \acronymused{RV}
-\AC@undonewlabel{acro:HMM}
-\newlabel{acro:HMM}{{1.2}{2}{Markov models}{section*.16}{}}
-\acronymused{HMM}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.3}Bayesian statistics}{3}{section.1.3}}
-\newlabel{section:Baystat}{{1.3}{3}{Bayesian statistics}{section.1.3}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.4}Problem}{3}{section.1.4}}
-\newlabel{section:Problem}{{1.4}{3}{Problem}{section.1.4}{}}
-\acronymused{DNMT}
-\acronymused{DNMT}
-\acronymused{CpG}
-\acronymused{DNMT}
-\acronymused{CpG}
-\acronymused{DNMT}
+\AC@undonewlabel{acro:CTMC}
+\newlabel{acro:CTMC}{{2.3}{5}{Markov models}{section*.16}{}}
+\acronymused{CTMC}
 \AC@undonewlabel{acro:DTMC}
-\newlabel{acro:DTMC}{{1.4}{3}{Problem}{section*.18}{}}
+\newlabel{acro:DTMC}{{2.3}{5}{Markov models}{section*.17}{}}
 \acronymused{DTMC}
-\acronymused{MCMC}
+\AC@undonewlabel{acro:HMM}
+\newlabel{acro:HMM}{{2.3}{5}{Markov models}{section*.18}{}}
+\acronymused{HMM}
+\acronymused{HMM}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.4}Bayesian statistics}{5}{section.2.4}}
+\newlabel{section:Baystat}{{2.4}{5}{Bayesian statistics}{section.2.4}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces An HMM with eight hidden states(blue) and four emission states(red).\relax }}{6}{figure.caption.19}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:sfig0}{{1.1a}{4}{\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:sfig0}{{a}{4}{\relax }{figure.caption.17}{}}
-\newlabel{fig:sfig1}{{1.1b}{4}{\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:sfig1}{{b}{4}{\relax }{figure.caption.17}{}}
-\newlabel{fig:sfig2}{{1.1c}{4}{\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:sfig2}{{c}{4}{\relax }{figure.caption.17}{}}
-\newlabel{fig:sfig3}{{1.1d}{4}{\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:sfig3}{{d}{4}{\relax }{figure.caption.17}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Kind of methylation patterns; each figure shows two opposite CpGs on the parental and the daughter strand; each circle represents one CpG; plane red circles are methylated CpGs; (a) unmehtylated, (b) hemimethylated (upper strand unmethylated, lower strand methylated), (c) hemimethylated (vice versa), (d) fully methylated CpGs\relax }}{4}{figure.caption.17}}
-\newlabel{fig:fig}{{1.1}{4}{Kind of methylation patterns; each figure shows two opposite CpGs on the parental and the daughter strand; each circle represents one CpG; plane red circles are methylated CpGs; (a) unmehtylated, (b) hemimethylated (upper strand unmethylated, lower strand methylated), (c) hemimethylated (vice versa), (d) fully methylated CpGs\relax }{figure.caption.17}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.5}Related work}{4}{section.1.5}}
-\newlabel{section:RelWork}{{1.5}{4}{Related work}{section.1.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {2}Methods}{5}{chapter.2}}
+\newlabel{HMM}{{2.1}{6}{An HMM with eight hidden states(blue) and four emission states(red).\relax }{figure.caption.19}{}}
+\acronymused{MLE}
+\acronymused{MCMC}
+\acronymused{ABC}
+\acronymused{MCMC}
+\abx@aux@cite{ABC}
+\abx@aux@segm{0}{0}{ABC}
+\newlabel{MCMC}{{\caption@xref {MCMC}{ on input line 178}}{7}{Bayesian statistics}{figure.caption.20}{}}
+\acronymused{ABC}
+\acronymused{MCMC}
+\acronymused{ABC}
+\abx@aux@cite{Genereaux}
+\abx@aux@segm{0}{0}{Genereaux}
+\newlabel{ABC}{{\caption@xref {ABC}{ on input line 191}}{8}{Bayesian statistics}{figure.caption.21}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.5}Problem}{8}{section.2.5}}
+\newlabel{section:Problem}{{2.5}{8}{Problem}{section.2.5}{}}
+\acronymused{DNMT}
+\acronymused{DNMT}
+\acronymused{CpG}
+\acronymused{DNMT}
+\acronymused{CpG}
+\acronymused{DNMT}
+\abx@aux@segm{0}{0}{Genereaux}
+\newlabel{fig:sfig0}{{2.2a}{9}{\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:sfig0}{{a}{9}{\relax }{figure.caption.22}{}}
+\newlabel{fig:sfig1}{{2.2b}{9}{\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:sfig1}{{b}{9}{\relax }{figure.caption.22}{}}
+\newlabel{fig:sfig2}{{2.2c}{9}{\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:sfig2}{{c}{9}{\relax }{figure.caption.22}{}}
+\newlabel{fig:sfig3}{{2.2d}{9}{\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:sfig3}{{d}{9}{\relax }{figure.caption.22}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Kind of methylation patterns; each figure shows a CpG/CpG-dyad on the parental and the daughter strand; each circle represents one CpG; plane red circles are methylated CpGs; (a) unmehtylated, (b) hemimethylated (upper strand unmethylated, lower strand methylated), (c) hemimethylated (vice versa), (d) fully methylated CpGs\relax }}{9}{figure.caption.22}}
+\newlabel{fig:methylationpatterns}{{2.2}{9}{Kind of methylation patterns; each figure shows a CpG/CpG-dyad on the parental and the daughter strand; each circle represents one CpG; plane red circles are methylated CpGs; (a) unmehtylated, (b) hemimethylated (upper strand unmethylated, lower strand methylated), (c) hemimethylated (vice versa), (d) fully methylated CpGs\relax }{figure.caption.22}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.6}Related work}{9}{section.2.6}}
+\newlabel{section:RelWork}{{2.6}{9}{Related work}{section.2.6}{}}
+\acronymused{DNMT}
+\AC@undonewlabel{acro:PCR}
+\newlabel{acro:PCR}{{2.6}{9}{Related work}{section*.23}{}}
+\acronymused{PCR}
+\acronymused{CpG}
+\acronymused{CpG}
+\newlabel{UHM}{{2.8}{9}{Related work}{equation.2.6.8}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methods}{11}{chapter.3}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:methods}{{2}{5}{Methods}{chapter.2}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {3}Evaluation}{7}{chapter.3}}
+\newlabel{chapter:methods}{{3}{11}{Methods}{chapter.3}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {4}Evaluation}{13}{chapter.4}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:evaluation}{{3}{7}{Evaluation}{chapter.3}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {4}Discussion}{9}{chapter.4}}
+\newlabel{chapter:evaluation}{{4}{13}{Evaluation}{chapter.4}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{15}{chapter.5}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:discussion}{{4}{9}{Discussion}{chapter.4}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {A}Regulation}{11}{appendix.A}}
+\newlabel{chapter:discussion}{{5}{15}{Discussion}{chapter.5}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {A}Regulation}{17}{appendix.A}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{section:reg_appendix}{{A}{11}{Regulation}{appendix.A}{}}
+\newlabel{section:reg_appendix}{{A}{17}{Regulation}{appendix.A}{}}
 \abx@aux@refcontextdefaultsdone
 \abx@aux@defaultrefcontext{0}{Epigenetics}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{DNAMethylation}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{Handbook}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{Walter}{none/global//global/global}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Bibliography}{13}{appendix.A}}
+\abx@aux@defaultrefcontext{0}{DNMT2}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Philosophy}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Introduction}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{BayStat}{none/global//global/global}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Bibliography}{19}{appendix.A}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  24 OCT 2018 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  1 NOV 2018 17:24
 entering extended mode
 **./MasterThesisAndreaKupitz.tex
 (MasterThesisAndreaKupitz.tex
@@ -738,8 +738,6 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer
-\tikz.sty"
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pg
 f.sty"
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgf
@@ -989,15 +987,11 @@ moduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility
-\pgfcomp-version-0-65.sty"
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen160
-\pgf@nodesepend=\dimen161
-)
-("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility
 \pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer
+\tikz.sty"
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgf
 for.sty"
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgf
@@ -1014,8 +1008,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmat
 h.code.tex")
-\pgffor@iter=\dimen162
-\pgffor@skip=\dimen163
+\pgffor@iter=\dimen160
+\pgffor@skip=\dimen161
 \pgffor@stack=\toks30
 \pgffor@toks=\toks31
 ))
@@ -1027,14 +1021,14 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 gflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count111
-\pgfplotmarksize=\dimen164
+\pgfplotmarksize=\dimen162
 )
-\tikz@lastx=\dimen165
-\tikz@lasty=\dimen166
-\tikz@lastxsaved=\dimen167
-\tikz@lastysaved=\dimen168
-\tikzleveldistance=\dimen169
-\tikzsiblingdistance=\dimen170
+\tikz@lastx=\dimen163
+\tikz@lasty=\dimen164
+\tikz@lastxsaved=\dimen165
+\tikz@lastysaved=\dimen166
+\tikzleveldistance=\dimen167
+\tikzsiblingdistance=\dimen168
 \tikz@figbox=\box40
 \tikz@figbox@bg=\box41
 \tikz@tempbox=\box42
@@ -1061,79 +1055,210 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 er\tikz\libraries\tikzlibrarypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\p
+gflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen169
+))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.code.tex"
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.geometric.code.tex"
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.geometric.code.tex"
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.misc.code.tex"
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.misc.code.tex"
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.symbols.code.tex"
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.symbols.code.tex"
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.arrows.code.tex"
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.arrows.code.tex"
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.callouts.code.tex"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.callouts.code.tex"))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryshapes.multipart.code.tex"
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\s
+hapes\pgflibraryshapes.multipart.code.tex"
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box44
+\pgfnodeparttwobox=\box45
+\pgfnodepartthreebox=\box46
+\pgfnodepartfourbox=\box47
+\pgfnodeparttwentybox=\box48
+\pgfnodepartnineteenbox=\box49
+\pgfnodeparteighteenbox=\box50
+\pgfnodepartseventeenbox=\box51
+\pgfnodepartsixteenbox=\box52
+\pgfnodepartfifteenbox=\box53
+\pgfnodepartfourteenbox=\box54
+\pgfnodepartthirteenbox=\box55
+\pgfnodeparttwelvebox=\box56
+\pgfnodepartelevenbox=\box57
+\pgfnodeparttenbox=\box58
+\pgfnodepartninebox=\box59
+\pgfnodeparteightbox=\box60
+\pgfnodepartsevenbox=\box61
+\pgfnodepartsixbox=\box62
+\pgfnodepartfivebox=\box63
+)))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarysnakes.code.tex"
+File: tikzlibrarysnakes.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.7)
+
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the
+ decoration libraries instead of the snakes library on input line 14.
+
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgf
+moduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen170
+\pgfdecoratedremainingdistance=\dimen171
+\pgfdecoratedinputsegmentcompleteddistance=\dimen172
+\pgfdecoratedinputsegmentremainingdistance=\dimen173
+\pgf@decorate@distancetomove=\dimen174
+\pgf@decorate@repeatstate=\count120
+\pgfdecorationsegmentamplitude=\dimen175
+\pgfdecorationsegmentlength=\dimen176
+)
+\tikz@lib@dec@box=\box64
+)
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\d
+ecorations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\d
+ecorations\pgflibrarydecorations.pathreplacing.code.tex"))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarydecorations.shapes.code.tex"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\d
+ecorations\pgflibrarydecorations.shapes.code.tex")))
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibraryautomata.code.tex"
+File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
+)
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarybackgrounds.code.tex"
+File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
+\pgf@layerbox@background=\box65
+\pgf@layerboxsaved@background=\box66
+)
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarypetri.code.tex"
+File: tikzlibrarypetri.code.tex 2013/07/17 v3.0.1a (rcs-revision 1.3)
+)
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\subcaptio
 n.sty"
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
-\c@subfigure=\count120
-\c@subtable=\count121
+\c@subfigure=\count121
+\c@subtable=\count122
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multirow
 .sty"
 Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
 \multirow@colwidth=\skip48
-\multirow@cntb=\count122
+\multirow@cntb=\count123
 \multirow@dima=\skip49
-\bigstrutjot=\dimen171
+\bigstrutjot=\dimen177
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\multicol.st
 y"
 Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
-\c@tracingmulticols=\count123
-\mult@box=\box44
-\multicol@leftmargin=\dimen172
-\c@unbalance=\count124
-\c@collectmore=\count125
-\doublecol@number=\count126
-\multicoltolerance=\count127
-\multicolpretolerance=\count128
-\full@width=\dimen173
-\page@free=\dimen174
-\premulticols=\dimen175
-\postmulticols=\dimen176
+\c@tracingmulticols=\count124
+\mult@box=\box67
+\multicol@leftmargin=\dimen178
+\c@unbalance=\count125
+\c@collectmore=\count126
+\doublecol@number=\count127
+\multicoltolerance=\count128
+\multicolpretolerance=\count129
+\full@width=\dimen179
+\page@free=\dimen180
+\premulticols=\dimen181
+\postmulticols=\dimen182
 \multicolsep=\skip50
 \multicolbaselineskip=\skip51
-\partial@page=\box45
-\last@line=\box46
-\maxbalancingoverflow=\dimen177
-\mult@rightbox=\box47
-\mult@grightbox=\box48
-\mult@gfirstbox=\box49
-\mult@firstbox=\box50
-\@tempa=\box51
-\@tempa=\box52
-\@tempa=\box53
-\@tempa=\box54
-\@tempa=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\@tempa=\box63
-\@tempa=\box64
-\@tempa=\box65
-\@tempa=\box66
-\@tempa=\box67
-\c@columnbadness=\count129
-\c@finalcolumnbadness=\count130
-\last@try=\dimen178
-\multicolovershoot=\dimen179
-\multicolundershoot=\dimen180
-\mult@nat@firstbox=\box68
-\colbreak@box=\box69
-\mc@col@check@num=\count131
+\partial@page=\box68
+\last@line=\box69
+\maxbalancingoverflow=\dimen183
+\mult@rightbox=\box70
+\mult@grightbox=\box71
+\mult@gfirstbox=\box72
+\mult@firstbox=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\c@columnbadness=\count130
+\c@finalcolumnbadness=\count131
+\last@try=\dimen184
+\multicolovershoot=\dimen185
+\multicolundershoot=\dimen186
+\mult@nat@firstbox=\box91
+\colbreak@box=\box92
+\mc@col@check@num=\count132
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.st
 y"
 Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
-\TX@col@width=\dimen181
-\TX@old@table=\dimen182
-\TX@old@col=\dimen183
-\TX@target=\dimen184
-\TX@delta=\dimen185
-\TX@cols=\count132
+\TX@col@width=\dimen187
+\TX@old@table=\dimen188
+\TX@old@col=\dimen189
+\TX@target=\dimen190
+\TX@delta=\dimen191
+\TX@cols=\count133
 \TX@ftn=\toks32
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.s
@@ -1143,47 +1268,65 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip53
 \LTpre=\skip54
 \LTpost=\skip55
-\LTchunksize=\count133
-\LTcapwidth=\dimen186
-\LT@head=\box70
-\LT@firsthead=\box71
-\LT@foot=\box72
-\LT@lastfoot=\box73
-\LT@cols=\count134
-\LT@rows=\count135
-\c@LT@tables=\count136
-\c@LT@chunks=\count137
+\LTchunksize=\count134
+\LTcapwidth=\dimen192
+\LT@head=\box93
+\LT@firsthead=\box94
+\LT@foot=\box95
+\LT@lastfoot=\box96
+\LT@cols=\count135
+\LT@rows=\count136
+\c@LT@tables=\count137
+\c@LT@chunks=\count138
 \LT@p@ftn=\toks33
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\carlisle\ltxtable
 .sty"
 Package: ltxtable 1995/12/11 v0.2 longtable/tabularx merge (DPC)
 )
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\blkarray\blkarray
+.sty"
+Package: blkarray 2015/02/27 v0.07 Block array (dpc)
+\c@BAenumi=\count139
+\BA@col=\count140
+\BA@block@cnt=\count141
+\BA@final@box=\box97
+\BA@first@box=\box98
+\BA@colsep=\dimen193
+\BA@ftn=\toks34
+\BAextrarowheight=\dimen194
+\BAextraheightafterhline=\dimen195
+\BAarrayrulewidth=\dimen196
+\BAdoublerulesep=\dimen197
+\BAfootskip=\dimen198
+\BA@dashbox=\box99
+\BA@ddashbox=\box100
+)
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\threeparttable\th
 reeparttable.sty"
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box74
+\@tempboxb=\box101
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktabs
 .sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen187
-\lightrulewidth=\dimen188
-\cmidrulewidth=\dimen189
-\belowrulesep=\dimen190
-\belowbottomsep=\dimen191
-\aboverulesep=\dimen192
-\abovetopsep=\dimen193
-\cmidrulesep=\dimen194
-\cmidrulekern=\dimen195
-\defaultaddspace=\dimen196
-\@cmidla=\count138
-\@cmidlb=\count139
-\@aboverulesep=\dimen197
-\@belowrulesep=\dimen198
-\@thisruleclass=\count140
-\@lastruleclass=\count141
-\@thisrulewidth=\dimen199
+\heavyrulewidth=\dimen199
+\lightrulewidth=\dimen256
+\cmidrulewidth=\dimen257
+\belowrulesep=\dimen258
+\belowbottomsep=\dimen259
+\aboverulesep=\dimen260
+\abovetopsep=\dimen261
+\cmidrulesep=\dimen262
+\cmidrulekern=\dimen263
+\defaultaddspace=\dimen264
+\@cmidla=\count142
+\@cmidlb=\count143
+\@aboverulesep=\dimen265
+\@belowrulesep=\dimen266
+\@thisruleclass=\count144
+\@lastruleclass=\count145
+\@thisrulewidth=\dimen267
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.s
 ty"
@@ -1199,53 +1342,53 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.st
 y"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks34
-\ex@=\dimen256
+\@emptytoks=\toks35
+\ex@=\dimen268
 ))
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.st
 y"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen257
+\pmbraise@=\dimen269
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.st
 y"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count142
+\inf@bad=\count146
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count143
-\leftroot@=\count144
+\uproot@=\count147
+\leftroot@=\count148
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count145
-\DOTSCASE@=\count146
+\classnum@=\count149
+\DOTSCASE@=\count150
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box75
-\strutbox@=\box76
-\big@size=\dimen258
+\Mathstrutbox@=\box102
+\strutbox@=\box103
+\big@size=\dimen270
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count147
-\c@MaxMatrixCols=\count148
+\macc@depth=\count151
+\c@MaxMatrixCols=\count152
 \dotsspace@=\muskip10
-\c@parentequation=\count149
-\dspbrk@lvl=\count150
-\tag@help=\toks35
-\row@=\count151
-\column@=\count152
-\maxfields@=\count153
-\andhelp@=\toks36
-\eqnshift@=\dimen259
-\alignsep@=\dimen260
-\tagshift@=\dimen261
-\tagwidth@=\dimen262
-\totwidth@=\dimen263
-\lineht@=\dimen264
-\@envbody=\toks37
+\c@parentequation=\count153
+\dspbrk@lvl=\count154
+\tag@help=\toks36
+\row@=\count155
+\column@=\count156
+\maxfields@=\count157
+\andhelp@=\toks37
+\eqnshift@=\dimen271
+\alignsep@=\dimen272
+\tagshift@=\dimen273
+\tagwidth@=\dimen274
+\totwidth@=\dimen275
+\lineht@=\dimen276
+\@envbody=\toks38
 \multlinegap=\skip57
 \multlinetaggap=\skip58
-\mathdisplay@stack=\toks38
+\mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
@@ -1264,37 +1407,37 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.sty
 "
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
 \thm@preskip=\skip59
 \thm@postskip=\skip60
 \thm@headsep=\skip61
-\dth@everypar=\toks44
+\dth@everypar=\toks45
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings
 .sty"
-\lst@mode=\count154
-\lst@gtempboxa=\box77
-\lst@token=\toks45
-\lst@length=\count155
-\lst@currlwidth=\dimen265
-\lst@column=\count156
-\lst@pos=\count157
-\lst@lostspace=\dimen266
-\lst@width=\dimen267
-\lst@newlines=\count158
-\lst@lineno=\count159
-\lst@maxwidth=\dimen268
+\lst@mode=\count158
+\lst@gtempboxa=\box104
+\lst@token=\toks46
+\lst@length=\count159
+\lst@currlwidth=\dimen277
+\lst@column=\count160
+\lst@pos=\count161
+\lst@lostspace=\dimen278
+\lst@width=\dimen279
+\lst@newlines=\count162
+\lst@lineno=\count163
+\lst@maxwidth=\dimen280
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.
 sty"
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count160
-\lst@skipnumbers=\count161
-\lst@framebox=\box78
+\c@lstnumber=\count164
+\lst@skipnumbers=\count165
+\lst@framebox=\box105
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings
 .cfg"
@@ -1302,7 +1445,28 @@ File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
 
-("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithmicx\algp
+seudocode.sty"
+Package: algpseudocode 
+
+("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithmicx\algo
+rithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count166
+\c@ALG@rem=\count167
+\c@ALG@nested=\count168
+\ALG@tlm=\skip62
+\ALG@thistlm=\skip63
+\c@ALG@Lnr=\count169
+\c@ALG@blocknr=\count170
+\c@ALG@storecount=\count171
+\c@ALG@tmpcounter=\count172
+\ALG@tmplength=\skip64
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -1364,9 +1528,9 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 s.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen269
-\Hy@linkcounter=\count162
-\Hy@pagecounter=\count163
+\@linkdim=\dimen281
+\Hy@linkcounter=\count173
+\Hy@pagecounter=\count174
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.d
 ef"
@@ -1374,7 +1538,7 @@ File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count164
+\Hy@SavedSpaceFactor=\count175
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref
 .cfg"
@@ -1409,12 +1573,12 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count165
+\c@Hy@tempcnt=\count176
 LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen270
-\Fld@menulength=\count166
-\Field@Width=\dimen271
-\Fld@charsize=\dimen272
+\XeTeXLinkMargin=\dimen282
+\Fld@menulength=\count177
+\Field@Width=\dimen283
+\Fld@charsize=\dimen284
 Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
@@ -1424,17 +1588,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count167
-\c@Item=\count168
-\c@Hfootnote=\count169
+\Hy@abspage=\count178
+\c@Item=\count179
+\c@Hfootnote=\count180
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.
 def"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count170
-\c@bookmark@seq@number=\count171
+\Fld@listcount=\count181
+\c@bookmark@seq@number=\count182
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfil
 echeck.sty"
@@ -1442,14 +1606,14 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip62
+\Hy@SectionHShift=\skip65
 )
 
 Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 183.
+(hyperref)                setting the option has no effect on input line 185.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 183.
-Package hyperref Info: Option `breaklinks' set `true' on input line 183.
+Package hyperref Info: Option `colorlinks' set `true' on input line 185.
+Package hyperref Info: Option `breaklinks' set `true' on input line 185.
 
 Package hyperref Warning: Option `pagecolor' is not available anymore.
 
@@ -1465,31 +1629,31 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count172
-\c@Blindtext=\count173
-\c@blind@countparstart=\count174
-\blind@countxx=\count175
-\blindtext@numBlindtext=\count176
-\blind@countyy=\count177
-\c@blindlist=\count178
-\c@blindlistlevel=\count179
-\c@blindlist@level=\count180
-\blind@listitem=\count181
-\c@blind@listcount=\count182
-\c@blind@levelcount=\count183
-\blind@mathformula=\count184
-\blind@Mathformula=\count185
-\c@blind@randomcount=\count186
-\c@blind@randommax=\count187
-\c@blind@pangramcount=\count188
-\c@blind@pangrammax=\count189
+\c@blindtext=\count183
+\c@Blindtext=\count184
+\c@blind@countparstart=\count185
+\blind@countxx=\count186
+\blindtext@numBlindtext=\count187
+\blind@countyy=\count188
+\c@blindlist=\count189
+\c@blindlistlevel=\count190
+\c@blindlist@level=\count191
+\blind@listitem=\count192
+\c@blind@listcount=\count193
+\c@blind@levelcount=\count194
+\blind@mathformula=\count195
+\blind@Mathformula=\count196
+\c@blind@randomcount=\count197
+\c@blind@randommax=\count198
+\c@blind@pangramcount=\count199
+\c@blind@pangrammax=\count266
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\filecontents\file
 contents.sty"
 Package: filecontents 2018/05/30 v1.4 Create an external file from within a LaT
 eX document
 )
-\c@paranum=\count190
+\c@paranum=\count267
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\acronym\acronym.s
 ty"
@@ -1504,19 +1668,19 @@ ty"
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xstring\xstring
 .tex"
 \@xs@message=\write5
-\integerpart=\count191
-\decimalpart=\count192
+\integerpart=\count268
+\decimalpart=\count269
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\AC@clearlist=\toks46
+\AC@clearlist=\toks47
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\appendix\appendix
 .sty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count193
-\c@@ppsavesec=\count194
-\c@@ppsaveapp=\count195
+\c@@pps=\count270
+\c@@ppsavesec=\count271
+\c@@ppsaveapp=\count272
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex
 .sty"
@@ -1525,68 +1689,68 @@ Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox
 .sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count196
+\etb@tempcnta=\count273
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
 "
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count197
+\lrq@indent=\count274
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
 "
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count198
-\c@listtotal=\count199
-\c@listcount=\count266
-\c@liststart=\count267
-\c@liststop=\count268
-\c@citecount=\count269
-\c@citetotal=\count270
-\c@multicitecount=\count271
-\c@multicitetotal=\count272
-\c@instcount=\count273
-\c@maxnames=\count274
-\c@minnames=\count275
-\c@maxitems=\count276
-\c@minitems=\count277
-\c@citecounter=\count278
-\c@savedcitecounter=\count279
-\c@uniquelist=\count280
-\c@uniquename=\count281
-\c@refsection=\count282
-\c@refsegment=\count283
-\c@maxextratitle=\count284
-\c@maxextratitleyear=\count285
-\c@maxextradate=\count286
-\c@maxextraalpha=\count287
-\c@abbrvpenalty=\count288
-\c@highnamepenalty=\count289
-\c@lownamepenalty=\count290
-\c@maxparens=\count291
-\c@parenlevel=\count292
-\blx@tempcnta=\count293
-\blx@tempcntb=\count294
-\blx@tempcntc=\count295
-\blx@maxsection=\count296
-\blx@maxsegment@0=\count297
-\blx@notetype=\count298
-\blx@parenlevel@text=\count299
-\blx@parenlevel@foot=\count300
-\blx@sectionciteorder@0=\count301
-\labelnumberwidth=\skip63
-\labelalphawidth=\skip64
-\biblabelsep=\skip65
-\bibitemsep=\skip66
-\bibnamesep=\skip67
-\bibinitsep=\skip68
-\bibparsep=\skip69
-\bibhang=\skip70
+\c@tabx@nest=\count275
+\c@listtotal=\count276
+\c@listcount=\count277
+\c@liststart=\count278
+\c@liststop=\count279
+\c@citecount=\count280
+\c@citetotal=\count281
+\c@multicitecount=\count282
+\c@multicitetotal=\count283
+\c@instcount=\count284
+\c@maxnames=\count285
+\c@minnames=\count286
+\c@maxitems=\count287
+\c@minitems=\count288
+\c@citecounter=\count289
+\c@savedcitecounter=\count290
+\c@uniquelist=\count291
+\c@uniquename=\count292
+\c@refsection=\count293
+\c@refsegment=\count294
+\c@maxextratitle=\count295
+\c@maxextratitleyear=\count296
+\c@maxextradate=\count297
+\c@maxextraalpha=\count298
+\c@abbrvpenalty=\count299
+\c@highnamepenalty=\count300
+\c@lownamepenalty=\count301
+\c@maxparens=\count302
+\c@parenlevel=\count303
+\blx@tempcnta=\count304
+\blx@tempcntb=\count305
+\blx@tempcntc=\count306
+\blx@maxsection=\count307
+\blx@maxsegment@0=\count308
+\blx@notetype=\count309
+\blx@parenlevel@text=\count310
+\blx@parenlevel@foot=\count311
+\blx@sectionciteorder@0=\count312
+\labelnumberwidth=\skip66
+\labelalphawidth=\skip67
+\biblabelsep=\skip68
+\bibitemsep=\skip69
+\bibnamesep=\skip70
+\bibinitsep=\skip71
+\bibparsep=\skip72
+\bibhang=\skip73
 \blx@bcfin=\read2
 \blx@bcfout=\write6
-\c@mincomprange=\count302
-\c@maxcomprange=\count303
-\c@mincompwidth=\count304
+\c@mincomprange=\count313
+\c@maxcomprange=\count314
+\c@mincompwidth=\count315
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1598,88 +1762,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count305
-\c@savedafterword=\count306
-\c@annotator=\count307
-\c@savedannotator=\count308
-\c@author=\count309
-\c@savedauthor=\count310
-\c@bookauthor=\count311
-\c@savedbookauthor=\count312
-\c@commentator=\count313
-\c@savedcommentator=\count314
-\c@editor=\count315
-\c@savededitor=\count316
-\c@editora=\count317
-\c@savededitora=\count318
-\c@editorb=\count319
-\c@savededitorb=\count320
-\c@editorc=\count321
-\c@savededitorc=\count322
-\c@foreword=\count323
-\c@savedforeword=\count324
-\c@holder=\count325
-\c@savedholder=\count326
-\c@introduction=\count327
-\c@savedintroduction=\count328
-\c@namea=\count329
-\c@savednamea=\count330
-\c@nameb=\count331
-\c@savednameb=\count332
-\c@namec=\count333
-\c@savednamec=\count334
-\c@translator=\count335
-\c@savedtranslator=\count336
-\c@shortauthor=\count337
-\c@savedshortauthor=\count338
-\c@shorteditor=\count339
-\c@savedshorteditor=\count340
-\c@labelname=\count341
-\c@savedlabelname=\count342
-\c@institution=\count343
-\c@savedinstitution=\count344
-\c@lista=\count345
-\c@savedlista=\count346
-\c@listb=\count347
-\c@savedlistb=\count348
-\c@listc=\count349
-\c@savedlistc=\count350
-\c@listd=\count351
-\c@savedlistd=\count352
-\c@liste=\count353
-\c@savedliste=\count354
-\c@listf=\count355
-\c@savedlistf=\count356
-\c@location=\count357
-\c@savedlocation=\count358
-\c@organization=\count359
-\c@savedorganization=\count360
-\c@origlocation=\count361
-\c@savedoriglocation=\count362
-\c@origpublisher=\count363
-\c@savedorigpublisher=\count364
-\c@publisher=\count365
-\c@savedpublisher=\count366
-\c@language=\count367
-\c@savedlanguage=\count368
-\c@origlanguage=\count369
-\c@savedoriglanguage=\count370
-\c@pageref=\count371
-\c@savedpageref=\count372
-\shorthandwidth=\skip71
-\shortjournalwidth=\skip72
-\shortserieswidth=\skip73
-\shorttitlewidth=\skip74
-\shortauthorwidth=\skip75
-\shorteditorwidth=\skip76
-\locallabelnumberwidth=\skip77
-\locallabelalphawidth=\skip78
-\localshorthandwidth=\skip79
-\localshortjournalwidth=\skip80
-\localshortserieswidth=\skip81
-\localshorttitlewidth=\skip82
-\localshortauthorwidth=\skip83
-\localshorteditorwidth=\skip84
+\c@afterword=\count316
+\c@savedafterword=\count317
+\c@annotator=\count318
+\c@savedannotator=\count319
+\c@author=\count320
+\c@savedauthor=\count321
+\c@bookauthor=\count322
+\c@savedbookauthor=\count323
+\c@commentator=\count324
+\c@savedcommentator=\count325
+\c@editor=\count326
+\c@savededitor=\count327
+\c@editora=\count328
+\c@savededitora=\count329
+\c@editorb=\count330
+\c@savededitorb=\count331
+\c@editorc=\count332
+\c@savededitorc=\count333
+\c@foreword=\count334
+\c@savedforeword=\count335
+\c@holder=\count336
+\c@savedholder=\count337
+\c@introduction=\count338
+\c@savedintroduction=\count339
+\c@namea=\count340
+\c@savednamea=\count341
+\c@nameb=\count342
+\c@savednameb=\count343
+\c@namec=\count344
+\c@savednamec=\count345
+\c@translator=\count346
+\c@savedtranslator=\count347
+\c@shortauthor=\count348
+\c@savedshortauthor=\count349
+\c@shorteditor=\count350
+\c@savedshorteditor=\count351
+\c@labelname=\count352
+\c@savedlabelname=\count353
+\c@institution=\count354
+\c@savedinstitution=\count355
+\c@lista=\count356
+\c@savedlista=\count357
+\c@listb=\count358
+\c@savedlistb=\count359
+\c@listc=\count360
+\c@savedlistc=\count361
+\c@listd=\count362
+\c@savedlistd=\count363
+\c@liste=\count364
+\c@savedliste=\count365
+\c@listf=\count366
+\c@savedlistf=\count367
+\c@location=\count368
+\c@savedlocation=\count369
+\c@organization=\count370
+\c@savedorganization=\count371
+\c@origlocation=\count372
+\c@savedoriglocation=\count373
+\c@origpublisher=\count374
+\c@savedorigpublisher=\count375
+\c@publisher=\count376
+\c@savedpublisher=\count377
+\c@language=\count378
+\c@savedlanguage=\count379
+\c@origlanguage=\count380
+\c@savedoriglanguage=\count381
+\c@pageref=\count382
+\c@savedpageref=\count383
+\shorthandwidth=\skip74
+\shortjournalwidth=\skip75
+\shortserieswidth=\skip76
+\shorttitlewidth=\skip77
+\shortauthorwidth=\skip78
+\shorteditorwidth=\skip79
+\locallabelnumberwidth=\skip80
+\locallabelalphawidth=\skip81
+\localshorthandwidth=\skip82
+\localshortjournalwidth=\skip83
+\localshortserieswidth=\skip84
+\localshorttitlewidth=\skip85
+\localshortauthorwidth=\skip86
+\localshorteditorwidth=\skip87
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1693,13 +1857,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex
 .def"
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count373
-\c@textcitetotal=\count374
-\c@textcitemaxnames=\count375
-\c@biburlnumpenalty=\count376
-\c@biburlucpenalty=\count377
-\c@biburllcpenalty=\count378
-\c@smartand=\count379
+\c@textcitecount=\count384
+\c@textcitetotal=\count385
+\c@textcitemaxnames=\count386
+\c@biburlnumpenalty=\count387
+\c@biburlucpenalty=\count388
+\c@biburllcpenalty=\count389
+\c@smartand=\count390
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1713,8 +1877,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stan
 dard.bbx"
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count380
-\c@bbx:relatedtotal=\count381
+\c@bbx:relatedcount=\count391
+\c@bbx:relatedtotal=\count392
 ))
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
@@ -1722,8 +1886,8 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\nume
 ric-comp.cbx"
 File: numeric-comp.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count382
-\c@cbx@tempcntb=\count383
+\c@cbx@tempcnta=\count393
+\c@cbx@tempcntb=\count394
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -1760,59 +1924,59 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count384
-\@quotereset=\count385
+\@quotelevel=\count395
+\@quotereset=\count396
 (MasterThesisAndreaKupitz.aux)
 \openout1 = `MasterThesisAndreaKupitz.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 250.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 250.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 252.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 252.
 
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\cbfonts-fd\lgrcmr
 .fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 250.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 250.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 252.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 252.
 
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
 kii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count386
-\scratchdimen=\dimen273
-\scratchbox=\box79
-\nofMPsegments=\count387
-\nofMParguments=\count388
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count389
-\MPscratchDim=\dimen274
-\MPnumerator=\count390
-\makeMPintoPDFobject=\count391
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count397
+\scratchdimen=\dimen285
+\scratchbox=\box106
+\nofMPsegments=\count398
+\nofMParguments=\count399
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count400
+\MPscratchDim=\dimen286
+\MPnumerator=\count401
+\makeMPintoPDFobject=\count402
+\everyMPtoPDFconversion=\toks49
 )
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf
 -base.sty"
@@ -1841,9 +2005,9 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-\c@lstlisting=\count392
-\AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring ON on input line 250.
+\c@lstlisting=\count403
+\AtBeginShipoutBox=\box107
+Package hyperref Info: Link coloring ON on input line 252.
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.
 sty"
@@ -1853,11 +2017,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 lestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count393
+\c@section@level=\count404
 )
-LaTeX Info: Redefining \ref on input line 250.
-LaTeX Info: Redefining \pageref on input line 250.
-LaTeX Info: Redefining \nameref on input line 250.
+LaTeX Info: Redefining \ref on input line 252.
+LaTeX Info: Redefining \pageref on input line 252.
+LaTeX Info: Redefining \nameref on input line 252.
  (MasterThesisAndreaKupitz.out) (MasterThesisAndreaKupitz.out)
 \@outlinefile=\write7
 \openout7 = `MasterThesisAndreaKupitz.out'.
@@ -1871,10 +2035,10 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'MasterThesisAndreaKupitz.bbl' found.
 
 (MasterThesisAndreaKupitz.bbl)
-Package biblatex Info: Reference section=0 on input line 250.
-Package biblatex Info: Reference segment=0 on input line 250.
+Package biblatex Info: Reference section=0 on input line 252.
+Package biblatex Info: Reference segment=0 on input line 252.
  (pre/title.tex
-<images/uds.png, id=41, 72.27pt x 80.7015pt>
+<images/uds.png, id=57, 72.27pt x 80.7015pt>
 File: images/uds.png Graphic file (type png)
 <use images/uds.png>
 Package pdftex.def Info: images/uds.png  used on input line 12.
@@ -1893,7 +2057,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 4--37
 []$[]$ 
  []
 
-<images/zbi.png, id=42, 593.21625pt x 164.615pt>
+<images/zbi.png, id=58, 593.21625pt x 164.615pt>
 File: images/zbi.png Graphic file (type png)
 <use images/zbi.png>
 Package pdftex.def Info: images/zbi.png  used on input line 60.
@@ -1918,6 +2082,11 @@ although it is yet undefined on input line 3.
 Package acronym Info: Label `acro:DNMT' newly defined as it shall be overridden
 
 although it is yet undefined on input line 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
 Package acronym Info: Label `acro:MCMC' newly defined as it shall be overridden
 
 although it is yet undefined on input line 5.
@@ -1925,24 +2094,13 @@ Package acronym Info: Label `acro:MLE' newly defined as it shall be overridden
 although it is yet undefined on input line 5.
 Package acronym Info: Label `acro:ABC' newly defined as it shall be overridden
 although it is yet undefined on input line 5.
-
-Overfull \hbox (10.38956pt too wide) in paragraph at lines 3--7
-\OT1/cmr/m/n/10 gene ex-pres-sion is in-ac-tiv-ated by bind-ing of methyl-group
-s to a [][][]cytosine-phosphate-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
-
- []
-
 [2] [3]) (pre/acknowledge.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 2--263
+Underfull \hbox (badness 10000) in paragraph at lines 2--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--263
+Underfull \hbox (badness 10000) in paragraph at lines 2--265
 
  []
 
@@ -1961,19 +2119,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--263
 
 [7] [8
 
-] (MasterThesisAndreaKupitz.lof)
+] (MasterThesisAndreaKupitz.lof
+Overfull \hbox (8.88844pt too wide) in paragraph at lines 8--8
+ [][] [][][]\OT1/cmr/m/n/10 An HMM with eight hid-den states(blue) and four emi
+s-sion states(red).[][] [][]  
+ []
+
+)
 \tf@lof=\write10
 \openout10 = `MasterThesisAndreaKupitz.lof'.
 
  [9] [10
 
-] (pre/abbreviations.tex)
-[11
+] (pre/abbreviations.tex) [11
 
 ] [12
 
 ] (main/intro.tex
 Chapter 1.
+) (main/background.tex [1
+
+] [2
+
+]
+Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
@@ -1987,100 +2156,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
-LaTeX Warning: Citation 'DNMT2' on page 1 undefined on input line 13.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 11--16
 
  []
 
-[1
-
-]
+[3]
 Overfull \hbox (17.63956pt too wide) in paragraph at lines 22--23
 []\OT1/cmr/m/n/10 How much de novo and main-ten-ance methyl-a-tion do DNMT1 and
  DNMT3A/B
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
+\c@definition=\count405
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+[4]
 Package acronym Info: Label `acro:RV' newly defined as it shall be overridden
-although it is yet undefined on input line 31.
+although it is yet undefined on input line 48.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+Package acronym Info: Label `acro:CTMC' newly defined as it shall be overridden
+
+although it is yet undefined on input line 59.
+Package acronym Info: Label `acro:DTMC' newly defined as it shall be overridden
+
+although it is yet undefined on input line 59.
 Package acronym Info: Label `acro:HMM' newly defined as it shall be overridden
-although it is yet undefined on input line 34.
+although it is yet undefined on input line 61.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--37
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 66--102
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+[6]
+
+Package caption Warning: \label without proper reference on input line 178.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `MCMC' on page 7 undefined on input line 156.
+
+
+Package caption Warning: \label without proper reference on input line 191.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `ABC' on page 7 undefined on input line 181.
+
+
+LaTeX Warning: Citation 'ABC' on page 7 undefined on input line 181.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--212
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 218--254
 []$ $[]$ 
  []
 
-Package acronym Info: Label `acro:DTMC' newly defined as it shall be overridden
 
-although it is yet undefined on input line 105.
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--106
-
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-[3]) (main/methods.tex [4]
-Chapter 2.
-) (main/evaluation.tex [5
+Package acronym Info: Label `acro:PCR' newly defined as it shall be overridden
+although it is yet undefined on input line 262.
 
-] [6
+LaTeX Warning: Citation 'Genereaux' on page 8 undefined on input line 262.
+
+[8]
+
+LaTeX Warning: Citation 'Genereaux' on page 9 undefined on input line 269.
+
+) (main/methods.tex
+Underfull \hbox (badness 10000) in paragraph at lines 268--1
+
+ []
+
+[9] [10
 
 ]
 Chapter 3.
-) (main/discussion.tex [7] [8
+) (main/evaluation.tex [11] [12
 
 ]
 Chapter 4.
-) (post/appendix.tex [9] [10
+) (main/discussion.tex [13] [14
+
+]
+Chapter 5.
+) (post/appendix.tex [15] [16
 
 ]
 Appendix A.
-) [11] [12
+) [17] [18
 
 ]
-Overfull \hbox (0.38197pt too wide) in paragraph at lines 288--288
+Overfull \hbox (0.38197pt too wide) in paragraph at lines 291--291
 []\OT1/cmr/m/n/10 B. Wein-hold. ``Epi-gen-et-ics: The Sci-ence of Change''. In:
  \OT1/cmr/m/it/10 En-vir-on-ment Health
  []
 
-[13
+[19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
  (MasterThesisAndreaKupitz.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
+Package rerunfilecheck Info: File `MasterThesisAndreaKupitz.out' has not change
+d.
+(rerunfilecheck)             Checksum: 04BAAC461E8EFCBE91F20C5FBACA1860;1472.
 
-
-Package rerunfilecheck Warning: File `MasterThesisAndreaKupitz.out' has changed
-.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `MasterThesisAndreaKupitz.out':
-(rerunfilecheck)             Before: EE4ABADDA888B47B83CECE31ED389C37;945
-(rerunfilecheck)             After:  3073C1E29664484CBD74FB64629F9A5B;1190.
 
 LaTeX Warning: There were undefined references.
 
@@ -2095,45 +2316,45 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'MasterThesisAndreaKupitz.run.xml'.
 \openout1 = `MasterThesisAndreaKupitz.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 31939 strings out of 492973
- 564881 string characters out of 3126249
- 986309 words of memory out of 3000000
- 35197 multiletter control sequences out of 15000+200000
- 15511 words of font info for 56 fonts, out of 3000000 for 9000
+ 36022 strings out of 492973
+ 678074 string characters out of 3126249
+ 1108572 words of memory out of 3000000
+ 39157 multiletter control sequences out of 15000+200000
+ 17682 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,17n,54p,1245b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{DTMC} has been referenced but does not exist, rep
-laced by a fixed one
-
- <C:\Users\Andrea\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\t
-crm1000.pk><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Andrea/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/Andrea/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/User
-s/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc
-10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Andrea/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Andrea/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
+ 48i,17n,80p,1250b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Andrea\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\tcrm1000.pk><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Andrea/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/Andrea/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Us
+ers/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmc
+sc10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmex10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Andrea/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Andrea/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Andre
+a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Andrea/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Andrea/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Andrea/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/U
 sers/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r5.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsl8.pfb><C:/Users/Andrea/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Andrea/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
-ers/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmti10.pfb>
-Output written on MasterThesisAndreaKupitz.pdf (27 pages, 390438 bytes).
+sl8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmss9.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Andrea/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on MasterThesisAndreaKupitz.pdf (33 pages, 452574 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

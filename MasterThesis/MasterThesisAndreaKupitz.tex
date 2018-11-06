@@ -27,9 +27,10 @@
 \usepackage{colortbl}
 % text symbols
 \usepackage{textcomp}
+\usepackage[version=0.96]{pgf}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
-
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 % GRAPHICS CONFIGURATION
 % set the path to the image folder
 \graphicspath{{images/}}
@@ -94,6 +95,7 @@
 \usepackage{ltxtable}
 % extends tabular/array environments and options for column formats
 \usepackage{array}
+\usepackage{blkarray}
 % allows footnotes in tables
 \usepackage{threeparttable}
 % enhanced table quality, optimisation and extra commands
@@ -133,7 +135,7 @@
 
 % CODE PACKAGES
 \usepackage{listings}
-
+\usepackage{algpseudocode}
 
 % CODE CONFIGURATION
 % listing settings
@@ -276,6 +278,7 @@
 % core chapters
 \cleardoublepage
 \input{main/intro}
+\input{main/background}
 \input{main/methods}
 \input{main/evaluation}
 \input{main/discussion}
