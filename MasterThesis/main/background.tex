@@ -24,7 +24,7 @@ So far a lot is known about the function of \acp{DNMT}, but some properties stil
 
 To study the function of \acp{DNMT}, a computational, stochastic model is designed and fitted using real biological data.\\
 
-Todo: bisulfite PCR
+Todo: bisulfite PCR, demethylation, figure CpG
 
 \section{Foundations of statistics} 
 \label{section:statistics}
@@ -273,3 +273,4 @@ Fu et al. used the same model and data from double-stranded DNA to infer the met
 
 Another approach which includes bisulfite conversion errors in its model was introduced by Arand et al..\cite{Wolf} They developed a \ac{HMM} similar to \ac{DTMC} proposed by Sontag, Lorincz and Luebeck.\cite{Sontag} The transition matrix of the Markov Chain is composed of three transition matrix'; one represents the de novo probability, one the maintenance probability and one the strand segregation probabilities. Based on this model, the equilibrium distribution and the methylation level depending on the methylation probability can be computed. Contrary to Sontag, Lorincz and Lubeck, Arand et al. did not compute the maximal methylation probabilities, but the methylation rates and the influence of bisulfite conversion errors using a maximum likelihood approach.\cite{Wolf}\\
 
+Recently, Giehr et al. developed a similar \ac{HMM}, which also includes the hydroxylation probability.TODO... An idea, which we will not enlarge upon in the following.\cite{Giehr}\\

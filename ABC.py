@@ -30,27 +30,28 @@ class ABC:
         :param prior: prior distribution for sampling theta
         :return:
         '''
-        k = 10 #number of draws from prior
-        improvements = 100 #number of improvements, where drawing of thetas is improved by mean of accepted thetas
-        for i in range(improvements):
-            for j in range(int(sampleSize/improvements)):
-                #draw k-times from prior
-                if i == 0 or len(self.thetas) <= k:
-                    param = prior(size=numParam)
-                else:
-                    param = self.ownPrior(numParam, self.thetas, k)
-                distributionSim = self.computePatternDistribution(param)
-                dist = distFunc(self.distributionData, distributionSim)
-                #store values in acceptance region
-                if dist < eps:
-                    #self.thetas.pop(0)
-                    self.thetas.append(param)
-                    #self.distances.pop(0)
-                    self.distances.append(dist)
-                    #self.distribution.pop(0)
-                    self.distribution.append(distributionSim)
-                    print(dist, param)
-            eps = np.mean(self.distances) #resize epsilon
+        k = 20 #number of elements to be accepted
+        for i in range(sampleSize):
+            #draw k-times from prior
+            if len(self.thetas) <= k:
+                param = prior(size=numParam)
+            else:
+                param = self.ownPrior(numParam, self.thetas, k)
+            distributionSim = self.computePatternDistribution(param)
+            dist = distFunc(self.distributionData, distributionSim)
+            #store values in acceptance region
+            if dist < eps:
+                self.thetas.append(param)
+                self.distances.append(dist)
+                self.distribution.append(distributionSim)
+                print(dist, param)
+                #keep only k parameters with lowest distance
+                if len(self.thetas) > k:
+                    todel = self.distances.index(max(self.distances))
+                    self.thetas.pop(todel)
+                    self.distances.pop(todel)
+                    self.distribution.pop(todel)
+                    eps = np.mean(self.distances) #resize epsilon
         #compute mean theta and distribution if data accepted
         if len(self.distribution) != 0:
             theta = []
@@ -58,8 +59,9 @@ class ABC:
                 theta.append(np.mean([t[i] for t in self.thetas[-k:]]))
             print(theta)
             #compute mean distribution
-            accumulated = self.meanDistri(k)
+            accumulated = self.meanDistri(3)
             lists = sorted(accumulated.items()) # sorted by key, return a list of tuples
+            print(lists)
             x, y = zip(*lists) # unpack a list of pairs into two tuples
             plt.plot(x, y)
             plt.xlabel('pattern value')
@@ -73,10 +75,10 @@ class ABC:
         :return: mean value for all parameters
         """
         accumulated = dict()
-        for d in self.distribution[-1:]:
+        for d in self.distribution[-kbest:]:
             for k, v in d.items():
                 accumulated[k] = accumulated.get(k, 0) + v
-        accumulated = {x: float(y/10000) for x, y in accumulated.items()}
+        accumulated = {x: float(y/100) for x, y in accumulated.items()}
         return accumulated
 
     def ownPrior(self, numParam, thetas, k):
@@ -168,19 +170,20 @@ class ABC:
 
 #DNT1KO:
 sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-distriData = sim.computePatternDistribution([0.5,          0.5,          0,              1])
+distriData = sim.computePatternDistribution([0,          1,          0,              1])
 
 #DNMT3KO:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
-#distriData = sim.computePatternDistribution([0.1,          0.8,          0.8,              0])
+#distriData = sim.computePatternDistribution([0,          1,          1,              0])
 
 #WT:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])
 #distriData = sim.computePatternDistribution([[0.1, 0.8, 0.8, 0], [0.5, 0.5, 0, 1]])
 abc = ABC(distriData, sim.computePatternDistribution, sim.L)
 
-abc.abc(abc.dist, 7.0)
+abc.abc(abc.dist, 20.0)
 lists = sorted(distriData.items()) # sorted by key, return a list of tuples
+print(lists)
 x, y = zip(*lists) # unpack a list of pairs into two tuples
 plt.plot(x, y)
 plt.xlabel('pattern value')

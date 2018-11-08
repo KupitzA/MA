@@ -153,13 +153,14 @@ class Simulation:
             allProbs.append(probabilities[4:].tolist())
         patterns = dict()
         #perform multiple iterations and store resulting patterns
-        for i in range(10000):
+        iterations = 100 #number of simulation runs
+        for i in range(iterations):
             upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not self.DNMT1KO, DNMT3=not self.DNMT3KO)
             pattern = 0
             for l in range(self.L):
                 pattern += 4 ** (self.L - l - 1) * (upperStrand[l] + lowerStrand[l]*2)
             patterns[pattern] = patterns.get(pattern, 0) + 1
-        patterns = {k: float(v/10000) for k, v in patterns.items()}
+        patterns = {k: float(v/iterations) for k, v in patterns.items()}
         return patterns
 
     def computeLH(self, probabilities):

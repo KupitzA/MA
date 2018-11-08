@@ -243,7 +243,112 @@
       \field{labeltitlesource}{title}
       \field{title}{Bayesian Statistics}
     \endentry
+    \entry{ABC}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a3b3f1b55403ce33e4ecc4d92d3a5d8b}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={B.M.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7dcdb8ee8a566ee0cf5a4bff1d5f083f}{%
+           family={Van\bibnamedelima Zandt},
+           familyi={V\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{93cc07583915f2dc879c81a740977568}
+      \strng{fullhash}{93cc07583915f2dc879c81a740977568}
+      \strng{bibnamehash}{93cc07583915f2dc879c81a740977568}
+      \strng{authorbibnamehash}{93cc07583915f2dc879c81a740977568}
+      \strng{authornamehash}{93cc07583915f2dc879c81a740977568}
+      \strng{authorfullhash}{93cc07583915f2dc879c81a740977568}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Psychology}
+      \field{title}{A tutorial on approximate Bayesian computation}
+      \field{volume}{56}
+      \field{year}{2012}
+    \endentry
+    \entry{Genereaux}{article}{}
+      \name{author}{1}{}{%
+        {{hash=27115170229bd5b46aa999e81bb424f6}{%
+           family={Genereaux},
+           familyi={G\bibinitperiod},
+           given={D.P.\bibnamedelimi et\bibnamedelima al.},
+           giveni={D\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+      }
+      \strng{namehash}{27115170229bd5b46aa999e81bb424f6}
+      \strng{fullhash}{27115170229bd5b46aa999e81bb424f6}
+      \strng{bibnamehash}{27115170229bd5b46aa999e81bb424f6}
+      \strng{authorbibnamehash}{27115170229bd5b46aa999e81bb424f6}
+      \strng{authornamehash}{27115170229bd5b46aa999e81bb424f6}
+      \strng{authorfullhash}{27115170229bd5b46aa999e81bb424f6}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PNAS}
+      \field{number}{16}
+      \field{title}{A population-epigenetic model to infer site-specific methylation rates from double-stranded DNA methylation patterns}
+      \field{volume}{102}
+      \field{year}{2005}
+    \endentry
+    \entry{Wolf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b7fac1ec66687cfa823e99493ed8d6cd}{%
+           family={Arand},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi et\bibnamedelima al.},
+           giveni={J\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \strng{fullhash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \strng{bibnamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \strng{authorbibnamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \strng{authornamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \strng{authorfullhash}{b7fac1ec66687cfa823e99493ed8d6cd}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos genetics}
+      \field{title}{In Vivo Control of CpG and Non-CpG DNA Methylation by DNA Methyltransferases}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1371/journal.pgen.1002750
+      \endverb
+    \endentry
+    \entry{Giehr}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1d0edc22c3ecbe7a32ca1cefb573e037}{%
+           family={Giehr},
+           familyi={G\bibinitperiod},
+           given={et\bibnamedelima al.},
+           giveni={e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           suffix={P.},
+           suffixi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \strng{fullhash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \strng{bibnamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \strng{authorbibnamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \strng{authornamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \strng{authorfullhash}{1d0edc22c3ecbe7a32ca1cefb573e037}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos computational biology}
+      \field{title}{The Influence of Hydroxylation on Maintaining CpG Methylation Patterns: A Hidden Markov Model Approach}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1004905
+      \endverb
+    \endentry
   \enddatalist
+  \missing{\\}
 \endrefsection
 \endinput
 
