@@ -178,6 +178,8 @@ After initializing the dice, the rolling of the dice is simulated by generating 
 \label{MCMC}
 \end{figure}
 
+TODO:forward-backward algorithm
+
 A second method in computer simulations is \textbf{\ac{ABC}}. In contrast to \ac{MCMC}, \ac{ABC} does not need to evaluate the likelihood function, which may be an advantage because the evaluation is computational costly and sometimes not possible. Instead, the similarity of the observed to the real data is measured with a distance function. Hereby, samples are drawn from the prior distribution. If the distance of the sample to the desired value is greater than a threshold, the sample is rejected, otherwise it is accepted. The posterior distribution results from the set of accepted samples (see figure \ref{ABC} for the pseudo-code).\cite{ABC}
 \begin{figure}[h]
 \begin{algorithmic}
@@ -274,3 +276,23 @@ Fu et al. used the same model and data from double-stranded DNA to infer the met
 Another approach which includes bisulfite conversion errors in its model was introduced by Arand et al..\cite{Wolf} They developed a \ac{HMM} similar to \ac{DTMC} proposed by Sontag, Lorincz and Luebeck.\cite{Sontag} The transition matrix of the Markov Chain is composed of three transition matrix'; one represents the de novo probability, one the maintenance probability and one the strand segregation probabilities. Based on this model, the equilibrium distribution and the methylation level depending on the methylation probability can be computed. Contrary to Sontag, Lorincz and Lubeck, Arand et al. did not compute the maximal methylation probabilities, but the methylation rates and the influence of bisulfite conversion errors using a maximum likelihood approach.\cite{Wolf}\\
 
 Recently, Giehr et al. developed a similar \ac{HMM}, which also includes the hydroxylation probability.TODO... An idea, which we will not enlarge upon in the following.\cite{Giehr}\\
+
+The first of three approaches below, covering not only a single \ac{CpG} at a time for the computation of the methylation parameter, is by Fu et al.. Based on earlier suppositions that the methylation probabilities may rely on neighbouring methylation states, they developed their model to study the processivity of \acp{DNMT}. They call an enzyme to work processively if it methylates multiple \acp{CpG} in a row without disassociating from the DNA. In total, the model uses four parameter\cite{Fu}:
+\begin{align}
+\rho := \text{probability of DNMT to fall off from DNA (disassociation probability)}\\
+\tau := \text{probability of DNMT to bind to DNA (association probability)}\\
+\mu := \text{probability to methylate hemimethylated CpG/CpG-dyad}\notag\\
+		\text{(maintenance methylation probability)}\\
+\delta := \text{probability to methylate unmethylated CpG/CpG-dyad}\notag\\
+		\text{(de novo methylation probability.)}
+\label{parameters}
+\end{align}
+Here, $\rho = 0$ means the enzyme is highly processive, which means it continues its work from one \ac{bp} to another without unbinding. Otherwise, the enzyme can disassociate from the previous \ac{bp} and bind again at any following \ac{bp}. The next binding location may be multiple \acp{bp} apart but may also be the direct neighbour of the position, where the enzyme disassociated. A situation, where the methyltransferase is bound to the DNA at a specific \ac{bp} and the following \ac{bp}, may be caused by one of the following events\cite{Fu}:
+\begin{enumerate}
+\item \ac{DNMT} works processively (probability $1-\rho$)
+\item \ac{DNMT} disassociates but reassociates at next \ac{bp} (probability $\rho * \tau$)
+\end{enumerate}
+The four parameter are identified for DNMT1, DNMT3a and DNMT3b respectively using the forward-backward algorithm for \acp{MCMC}. It is therefore assumed, that DNMT1 works on the daughter strand and DNMT3a/b on the parental as also on the daughter strand.\cite{Fu}\newline
+Additionally included in the model are bisulfite conversion error rates as described in earlier approaches.\cite{Fu}\newline
+In the paper, double-stranded methylation patterns from three loci were used as output states of the \ac{HMM}. The goal was to assemble the sequence of hidden states, modelled as the association state of the \acp{DNMT}. Formally, $P(Q_{ij},D_{ij}\mid M_{ij},R_{ij}^P,R_{ij}^D)$ is computed, where $Q_{ij} and D_{ij}$ are the methylation states of the parent and daughter strand after replication respectively and  $M_{ij},R_{ij}^P and R_{ij}^D$ are the association states of DNMT1, DNMT3 at the parent and daughter strand. The full transition table holds 9x4 states and is a combination of the four parameters from \ref{parameters}.\cite{Fu}\newline
+Two of the three loci used are inactive X (Xi)-linked, namely FMR1 and G6PD. The third locus, LEP, is located on Chromosome seven. In contrast to the autosomal locus, the x-chromosomal loci are highly methylated and consist of large blocks with hemimethylated dyads. The authors suppose that these blocks help to identify the emission probabilities, especially to differentiate between the processive behaviour of the methyltransferases and the disassociation-reassociation event. Consistent to this presumption, in the experiments DNMT1 seems to be highly processive at FMR1 and G6PD, whereas the association parameter are difficult to identify at LEP. Regarding the results of the methylation probabilities, the different loci are conform. DNMT1 performs nearly exclusively maintenance methylation, while no further knowledge max be received from the experiments regarding the methylation probabilities of DNMT3, because the considered confidence intervals of $\mu$ and $\delta$ are equal to the uniform prior.

@@ -69,7 +69,7 @@ class ABC:
             plt.title('pattern distribution of simulation')
             plt.show()
 
-    def meanDistri(self, kbest):
+    def meanDistri(self, kbest=1):
         """
         compute mean value for all parameters
         :return: mean value for all parameters
@@ -78,7 +78,7 @@ class ABC:
         for d in self.distribution[-kbest:]:
             for k, v in d.items():
                 accumulated[k] = accumulated.get(k, 0) + v
-        accumulated = {x: float(y/100) for x, y in accumulated.items()}
+        accumulated = {x: float(y/kbest) for x, y in accumulated.items()}
         return accumulated
 
     def ownPrior(self, numParam, thetas, k):
@@ -126,8 +126,8 @@ class ABC:
         '''
         dist = 0
         for k in range(4**self.L):
-            keyData = k if k in distributionData else 0
-            keySim = k if k in distributionSim else 0
+            keyData = distributionData[k] if k in distributionData else 0
+            keySim = distributionSim[k] if k in distributionSim else 0
             dist += abs(keyData - keySim)
         return dist
 
@@ -169,19 +169,19 @@ class ABC:
 
 
 #DNT1KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-distriData = sim.computePatternDistribution([0,          1,          0,              1])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
+#distriData = sim.computePatternDistribution([0,          1,          0,              1])
 
 #DNMT3KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
-#distriData = sim.computePatternDistribution([0,          1,          1,              0])
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
+distriData = sim.computePatternDistribution([0.1,          0.8,          0.8,              0])
 
 #WT:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])
 #distriData = sim.computePatternDistribution([[0.1, 0.8, 0.8, 0], [0.5, 0.5, 0, 1]])
 abc = ABC(distriData, sim.computePatternDistribution, sim.L)
 
-abc.abc(abc.dist, 20.0)
+abc.abc(abc.distanceFunction, 1.0)
 lists = sorted(distriData.items()) # sorted by key, return a list of tuples
 print(lists)
 x, y = zip(*lists) # unpack a list of pairs into two tuples

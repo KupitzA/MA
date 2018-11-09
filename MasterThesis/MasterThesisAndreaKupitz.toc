@@ -17,12 +17,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Related work}{9}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Methods}{11}{chapter.3}
+\contentsline {chapter}{\numberline {3}Methods}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Evaluation}{13}{chapter.4}
+\contentsline {chapter}{\numberline {4}Evaluation}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Discussion}{15}{chapter.5}
+\contentsline {chapter}{\numberline {5}Discussion}{17}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Regulation}{17}{appendix.A}
+\contentsline {chapter}{\numberline {A}Regulation}{19}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{19}{appendix.A}
+\contentsline {chapter}{Bibliography}{21}{appendix.A}

@@ -347,6 +347,30 @@
       \verb 10.1371/journal.pcbi.1004905
       \endverb
     \endentry
+    \entry{Fu}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b712e28fdb78d8876bbad882829ca621}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={et\bibnamedelima al.},
+           giveni={e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           suffix={A.Q.},
+           suffixi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b712e28fdb78d8876bbad882829ca621}
+      \strng{fullhash}{b712e28fdb78d8876bbad882829ca621}
+      \strng{bibnamehash}{b712e28fdb78d8876bbad882829ca621}
+      \strng{authorbibnamehash}{b712e28fdb78d8876bbad882829ca621}
+      \strng{authornamehash}{b712e28fdb78d8876bbad882829ca621}
+      \strng{authorfullhash}{b712e28fdb78d8876bbad882829ca621}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos one}
+      \field{title}{Statistical Inference of In Vivo Properties of Human DNA Methyltransferases from Double-Stranded Methylation Patterns}
+      \field{year}{2012}
+    \endentry
   \enddatalist
   \missing{\\}
 \endrefsection

@@ -8,3 +8,4 @@
 -Abstract Masterarbeit #
 -testen, ob Parameter besser für mehr CpGs
 -verschiedene Distanzfunktionen vergleichen für ABC
+-Konfidenzintervalle für Parameter

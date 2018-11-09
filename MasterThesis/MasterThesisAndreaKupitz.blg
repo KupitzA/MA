@@ -1,18 +1,18 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'MasterThesisAndreaKupitz.blg'
-[72] biber-MSWIN64:313> INFO - === 
-[165] Biber.pm:371> INFO - Reading 'MasterThesisAndreaKupitz.bcf'
-[377] Biber.pm:857> INFO - Found 14 citekeys in bib section 0
-[417] Biber.pm:3976> INFO - Processing section 0
-[451] Biber.pm:4136> INFO - Looking for bibtex format file 'bib/bib.bib' for section 0
-[460] bibtex.pm:1500> INFO - LaTeX decoding ...
-[509] bibtex.pm:1316> INFO - Found BibTeX data source 'bib/bib.bib'
-[666] Utils.pm:193> WARN - Name "Sontag, L.B., Lorincz, M.C." has too many commas: skipping name
-[687] Utils.pm:193> WARN - I didn't find a database entry for '\\' (section 0)
-[721] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[722] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[722] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
-[722] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-GB'
-[740] bbl.pm:617> INFO - Writing 'MasterThesisAndreaKupitz.bbl' with encoding 'UTF-8'
-[750] bbl.pm:720> INFO - Output to MasterThesisAndreaKupitz.bbl
-[758] Biber.pm:110> INFO - WARNINGS: 2
+[89] biber-MSWIN64:313> INFO - === 
+[270] Biber.pm:371> INFO - Reading 'MasterThesisAndreaKupitz.bcf'
+[506] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
+[548] Biber.pm:3976> INFO - Processing section 0
+[610] Biber.pm:4136> INFO - Looking for bibtex format file 'bib/bib.bib' for section 0
+[627] bibtex.pm:1500> INFO - LaTeX decoding ...
+[694] bibtex.pm:1316> INFO - Found BibTeX data source 'bib/bib.bib'
+[951] Utils.pm:193> WARN - Name "Sontag, L.B., Lorincz, M.C." has too many commas: skipping name
+[984] Utils.pm:193> WARN - I didn't find a database entry for '\\' (section 0)
+[1029] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1029] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1029] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-GB'
+[1029] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-GB'
+[1049] bbl.pm:617> INFO - Writing 'MasterThesisAndreaKupitz.bbl' with encoding 'UTF-8'
+[1062] bbl.pm:720> INFO - Output to MasterThesisAndreaKupitz.bbl
+[1073] Biber.pm:110> INFO - WARNINGS: 2

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  6 NOV 2018 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  9 NOV 2018 11:41
 entering extended mode
 **./MasterThesisAndreaKupitz.tex
 (MasterThesisAndreaKupitz.tex
@@ -2034,7 +2034,15 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'MasterThesisAndreaKupitz.bbl' found.
 
-(MasterThesisAndreaKupitz.bbl)
+(MasterThesisAndreaKupitz.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                \\
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 252.
 Package biblatex Info: Reference segment=0 on input line 252.
  (pre/title.tex
@@ -2220,27 +2228,24 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `MCMC' on page 7 undefined on input line 156.
 
 
-Package caption Warning: \label without proper reference on input line 191.
+Package caption Warning: \label without proper reference on input line 193.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `ABC' on page 7 undefined on input line 181.
-
-
-LaTeX Warning: Citation 'ABC' on page 7 undefined on input line 181.
+LaTeX Warning: Reference `ABC' on page 7 undefined on input line 183.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
+Underfull \hbox (badness 10000) in paragraph at lines 209--214
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 218--254
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 220--256
 []$ $[]$ 
  []
 
@@ -2248,75 +2253,51 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 218--254
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
 Package acronym Info: Label `acro:PCR' newly defined as it shall be overridden
-although it is yet undefined on input line 262.
-
-LaTeX Warning: Citation 'Genereaux' on page 8 undefined on input line 262.
-
+although it is yet undefined on input line 264.
 [8]
-
-LaTeX Warning: Citation 'Genereaux' on page 9 undefined on input line 270.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--271
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
 
  []
 
 
-LaTeX Warning: Citation '\\' on page 9 undefined on input line 272.
+LaTeX Warning: Citation 'Sontag' on page 9 undefined on input line 276.
 
 
-LaTeX Warning: Citation 'Wolf' on page 9 undefined on input line 274.
-
-
-LaTeX Warning: Citation 'Sontag' on page 9 undefined on input line 274.
-
-
-LaTeX Warning: Citation 'Wolf' on page 9 undefined on input line 274.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 [9]
-
-LaTeX Warning: Citation 'Giehr' on page 10 undefined on input line 276.
-
-) (main/methods.tex
-Underfull \hbox (badness 10000) in paragraph at lines 276--1
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-[10]
-Chapter 3.
-) (main/evaluation.tex [11
+Package acronym Info: Label `acro:bp' newly defined as it shall be overridden
+although it is yet undefined on input line 290.
+) (main/methods.tex [10] [11] [12
 
-] [12
+]
+Chapter 3.
+) (main/evaluation.tex [13] [14
 
 ]
 Chapter 4.
-) (main/discussion.tex [13] [14
+) (main/discussion.tex [15] [16
 
 ]
 Chapter 5.
-) (post/appendix.tex [15] [16
+) (post/appendix.tex [17] [18
 
 ]
 Appendix A.
-) [17] [18
+) [19] [20
 
-]
-Overfull \hbox (0.38197pt too wide) in paragraph at lines 291--291
-[]\OT1/cmr/m/n/10 B. Wein-hold. ``Epi-gen-et-ics: The Sci-ence of Change''. In:
- \OT1/cmr/m/it/10 En-vir-on-ment Health
- []
-
-[19
+] [21
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
@@ -2342,10 +2323,10 @@ Package logreq Info: Writing requests to 'MasterThesisAndreaKupitz.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 36022 strings out of 492973
- 678074 string characters out of 3126249
- 1108619 words of memory out of 3000000
- 39157 multiletter control sequences out of 15000+200000
+ 36054 strings out of 492973
+ 678665 string characters out of 3126249
+ 1108885 words of memory out of 3000000
+ 39174 multiletter control sequences out of 15000+200000
  17682 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,17n,80p,1250b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2375,9 +2356,9 @@ msfonts/cm/cmss9.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Andrea/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on MasterThesisAndreaKupitz.pdf (33 pages, 455627 bytes).
+Output written on MasterThesisAndreaKupitz.pdf (35 pages, 471047 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 524 PDF objects out of 1000 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
  127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -153,7 +153,7 @@ class Simulation:
             allProbs.append(probabilities[4:].tolist())
         patterns = dict()
         #perform multiple iterations and store resulting patterns
-        iterations = 100 #number of simulation runs
+        iterations = 1000 #number of simulation runs
         for i in range(iterations):
             upperStrand, lowerStrand = self.simulate(allProbs, DNMT1=not self.DNMT1KO, DNMT3=not self.DNMT3KO)
             pattern = 0
