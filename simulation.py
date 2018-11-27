@@ -87,7 +87,7 @@ class Simulation:
         #select random strand
         upperStrand = self.upperStrand if random.random() <= 0.5 else self.lowerStrand
         #decide about number of cell divisions
-        celldivisions = 1 if DNMT1 and DNMT3 else 41 if DNMT3 else 26
+        celldivisions = 33 if DNMT1 and DNMT3 else 41 if DNMT3 else 26
 
         for c in range(celldivisions):
             lowerStrand = [0]*self.L

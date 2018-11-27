@@ -19,33 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{Epigenetics}{article}{}
-      \name{author}{1}{}{%
-        {{hash=ba43e7e6eed54e38c2f284ea6231e76b}{%
-           family={Weinhold},
-           familyi={W\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \strng{fullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \strng{bibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \strng{authorbibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \strng{authornamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \strng{authorfullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Environment Health Perspective}
-      \field{number}{3}
-      \field{title}{Epigenetics: The Science of Change}
-      \field{volume}{114}
-      \field{year}{2006}
-      \verb{doi}
-      \verb 10.1289/ehp.114-a160
-      \endverb
-    \endentry
     \entry{DNAMethylation}{article}{}
       \name{author}{1}{}{%
         {{hash=6fae76324144753af774e0393a82709e}{%
@@ -60,8 +33,8 @@
       \strng{authorbibnamehash}{6fae76324144753af774e0393a82709e}
       \strng{authornamehash}{6fae76324144753af774e0393a82709e}
       \strng{authorfullhash}{6fae76324144753af774e0393a82709e}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Genes Cancer}
@@ -95,8 +68,8 @@
       \strng{authorbibnamehash}{183037f3136161ffbd777ecc9ca784a1}
       \strng{authornamehash}{183037f3136161ffbd777ecc9ca784a1}
       \strng{authorfullhash}{183037f3136161ffbd777ecc9ca784a1}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{chapter}{12}
@@ -125,14 +98,310 @@
       \strng{authorbibnamehash}{9f6b0af9585d6f752d5dc65907ea54e7}
       \strng{authornamehash}{9f6b0af9585d6f752d5dc65907ea54e7}
       \strng{authorfullhash}{9f6b0af9585d6f752d5dc65907ea54e7}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature Reviews Genetics}
       \field{title}{Genomic imprinting: parental influence on the genome}
       \field{volume}{2}
       \field{year}{2001}
+    \endentry
+    \entry{Genereaux}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7caf5a83384d87a8ef09c2d3ab13c652}{%
+           family={Genereaux\bibnamedelimb et\bibnamedelima al.},
+           familyi={G\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={D.P.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \strng{fullhash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \strng{bibnamehash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \strng{authorbibnamehash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \strng{authornamehash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \strng{authorfullhash}{7caf5a83384d87a8ef09c2d3ab13c652}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PNAS}
+      \field{number}{16}
+      \field{title}{A population-epigenetic model to infer site-specific methylation rates from double-stranded DNA methylation patterns}
+      \field{volume}{102}
+      \field{year}{2005}
+    \endentry
+    \entry{errors}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2e8608500be1f45c765364013fff74c0}{%
+           family={Fu\bibnamedelima et\bibnamedelima al.},
+           familyi={F\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={A.Q.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{fullhash}{2e8608500be1f45c765364013fff74c0}
+      \strng{bibnamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authorbibnamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authornamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authorfullhash}{2e8608500be1f45c765364013fff74c0}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ann Appl Stat}
+      \field{number}{2}
+      \field{title}{STATISTICAL INFERENCE OF TRANSMISSION FIDELITY OF DNA METHYLATION PATTERNS OVER SOMATIC CELL DIVISIONS IN MAMMALS}
+      \field{volume}{4}
+      \field{year}{2010}
+    \endentry
+    \entry{Wolf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f3893377128168e3fd35fed4c8b915c6}{%
+           family={Arand\bibnamedelimb et\bibnamedelima al.},
+           familyi={A\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3893377128168e3fd35fed4c8b915c6}
+      \strng{fullhash}{f3893377128168e3fd35fed4c8b915c6}
+      \strng{bibnamehash}{f3893377128168e3fd35fed4c8b915c6}
+      \strng{authorbibnamehash}{f3893377128168e3fd35fed4c8b915c6}
+      \strng{authornamehash}{f3893377128168e3fd35fed4c8b915c6}
+      \strng{authorfullhash}{f3893377128168e3fd35fed4c8b915c6}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos genetics}
+      \field{title}{In Vivo Control of CpG and Non-CpG DNA Methylation by DNA Methyltransferases}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1371/journal.pgen.1002750
+      \endverb
+    \endentry
+    \entry{Giehr}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0e4281c6ea3c611f2980afbbe52660b7}{%
+           family={Giehr\bibnamedelimb et\bibnamedelima al.},
+           familyi={G\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \strng{fullhash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \strng{bibnamehash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \strng{authorbibnamehash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \strng{authornamehash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \strng{authorfullhash}{0e4281c6ea3c611f2980afbbe52660b7}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos computational biology}
+      \field{title}{The Influence of Hydroxylation on Maintaining CpG Methylation Patterns: A Hidden Markov Model Approach}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1004905
+      \endverb
+    \endentry
+    \entry{Fu}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2e8608500be1f45c765364013fff74c0}{%
+           family={Fu\bibnamedelima et\bibnamedelima al.},
+           familyi={F\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={A.Q.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{fullhash}{2e8608500be1f45c765364013fff74c0}
+      \strng{bibnamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authorbibnamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authornamehash}{2e8608500be1f45c765364013fff74c0}
+      \strng{authorfullhash}{2e8608500be1f45c765364013fff74c0}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos one}
+      \field{title}{Statistical Inference of In Vivo Properties of Human DNA Methyltransferases from Double-Stranded Methylation Patterns}
+      \field{year}{2012}
+    \endentry
+    \entry{Bonello}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7fd67ab5a88a17e36120439befe6a80e}{%
+           family={Bonello\bibnamedelimb et\bibnamedelima al.},
+           familyi={B\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fd67ab5a88a17e36120439befe6a80e}
+      \strng{fullhash}{7fd67ab5a88a17e36120439befe6a80e}
+      \strng{bibnamehash}{7fd67ab5a88a17e36120439befe6a80e}
+      \strng{authorbibnamehash}{7fd67ab5a88a17e36120439befe6a80e}
+      \strng{authornamehash}{7fd67ab5a88a17e36120439befe6a80e}
+      \strng{authorfullhash}{7fd67ab5a88a17e36120439befe6a80e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of theoretical biology}
+      \field{title}{Bayesian inference supports a location and neighbour-dependent model of DNA methylation propagation at the MGMT gene promoter in lung tumours}
+      \field{volume}{336}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1016/j.jtbi.2013.07.019
+      \endverb
+    \endentry
+    \entry{Lueck}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0d37b9696d17843e0aca2f8ee7ac8d7d}{%
+           family={Lueck\bibnamedelimb et\bibnamedelima al.},
+           familyi={L\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=3f29a6d24c3c04cdd8952ae00ef7506f}{%
+           family={Feret\bibnamedelima J.},
+           familyi={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Koeppl\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{fullhash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{bibnamehash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{authorbibnamehash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{authornamehash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{authorfullhash}{0d37b9696d17843e0aca2f8ee7ac8d7d}
+      \strng{editorbibnamehash}{3f29a6d24c3c04cdd8952ae00ef7506f}
+      \strng{editornamehash}{3f29a6d24c3c04cdd8952ae00ef7506f}
+      \strng{editorfullhash}{3f29a6d24c3c04cdd8952ae00ef7506f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computational Methods in Systems Biology. CMSB 2017. Lecture Notes in Computer Science}
+      \field{isbn}{978-3-319-67470-4}
+      \field{title}{A Stochastic Model for the Formation of Spatial Methylation Patterns}
+      \field{volume}{10545}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/978-3-319-67471-1_10
+      \endverb
+    \endentry
+    \entry{Epigenetics}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ba43e7e6eed54e38c2f284ea6231e76b}{%
+           family={Weinhold},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{fullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{bibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authorbibnamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authornamehash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \strng{authorfullhash}{ba43e7e6eed54e38c2f284ea6231e76b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment Health Perspective}
+      \field{number}{3}
+      \field{title}{Epigenetics: The Science of Change}
+      \field{volume}{114}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1289/ehp.114-a160
+      \endverb
+    \endentry
+    \entry{Bisseq}{article}{}
+      \name{author}{2}{}{%
+        {{hash=38fcf426aad9f6b84953f797dca3a801}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5375e2e97cb121dae164f09d3a884cc4}{%
+           family={Tollefsbol},
+           familyi={T\bibinitperiod},
+           given={T.O.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \strng{fullhash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \strng{bibnamehash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \strng{authorbibnamehash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \strng{authornamehash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \strng{authorfullhash}{92f4a28d9226566c5b00300b3e1eaa23}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Methods Mol Biol.}
+      \field{title}{DNA methylation detection: Bisulfite genomic sequencing analysis}
+      \field{volume}{791}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1007%2F978-1-61779-316-5_2
+      \endverb
+    \endentry
+    \entry{5hmC}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4475fe8491c9ca07adbff48a40ec29ab}{%
+           family={Huang\bibnamedelimb et\bibnamedelima al.},
+           familyi={H\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \strng{fullhash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \strng{bibnamehash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \strng{authorbibnamehash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \strng{authornamehash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \strng{authorfullhash}{4475fe8491c9ca07adbff48a40ec29ab}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{plos one}
+      \field{title}{The Behaviour of 5-Hydroxymethylcytosine in Bisulfite Sequencing}
+      \field{year}{2010}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0008888
+      \endverb
+    \endentry
+    \entry{demethyl}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f07bcb92478abbbdd5c8680e4f0634b3}{%
+           family={Shi\bibnamedelimb et\bibnamedelima al.},
+           familyi={S\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={D.-Q.},
+           giveni={D\bibinithyphendelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \strng{fullhash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \strng{bibnamehash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \strng{authorbibnamehash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \strng{authornamehash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \strng{authorfullhash}{f07bcb92478abbbdd5c8680e4f0634b3}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Front Genet.}
+      \field{number}{100}
+      \field{title}{New Insights into 5hmC DNA Modification: Generation, Distribution and Function}
+      \field{volume}{8}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.3389%2Ffgene.2017.00100
+      \endverb
     \endentry
     \entry{DNMT2}{article}{}
       \name{author}{1}{}{%
@@ -148,8 +417,8 @@
       \strng{authorbibnamehash}{212764b14df55de350c684d3154e2aeb}
       \strng{authornamehash}{212764b14df55de350c684d3154e2aeb}
       \strng{authorfullhash}{212764b14df55de350c684d3154e2aeb}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Science}
@@ -163,10 +432,10 @@
     \endentry
     \entry{Philosophy}{incollection}{}
       \name{author}{1}{}{%
-        {{hash=97cab85a342445b585fbaa6ec0bddbb7}{%
+        {{hash=246b03f27997beba4db3c21bbc737360}{%
            family={Romeijn},
            familyi={R\bibinitperiod},
-           given={Jan-Willem},
+           given={J.-W.},
            giveni={J\bibinithyphendelim W\bibinitperiod}}}%
       }
       \name{editor}{1}{}{%
@@ -179,17 +448,17 @@
       \list{publisher}{1}{%
         {Metaphysics Research Lab, Stanford University}%
       }
-      \strng{namehash}{97cab85a342445b585fbaa6ec0bddbb7}
-      \strng{fullhash}{97cab85a342445b585fbaa6ec0bddbb7}
-      \strng{bibnamehash}{97cab85a342445b585fbaa6ec0bddbb7}
-      \strng{authorbibnamehash}{97cab85a342445b585fbaa6ec0bddbb7}
-      \strng{authornamehash}{97cab85a342445b585fbaa6ec0bddbb7}
-      \strng{authorfullhash}{97cab85a342445b585fbaa6ec0bddbb7}
+      \strng{namehash}{246b03f27997beba4db3c21bbc737360}
+      \strng{fullhash}{246b03f27997beba4db3c21bbc737360}
+      \strng{bibnamehash}{246b03f27997beba4db3c21bbc737360}
+      \strng{authorbibnamehash}{246b03f27997beba4db3c21bbc737360}
+      \strng{authornamehash}{246b03f27997beba4db3c21bbc737360}
+      \strng{authorfullhash}{246b03f27997beba4db3c21bbc737360}
       \strng{editorbibnamehash}{d9b6284b7816d9e586e8af9a253ba08e}
       \strng{editornamehash}{d9b6284b7816d9e586e8af9a253ba08e}
       \strng{editorfullhash}{d9b6284b7816d9e586e8af9a253ba08e}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{The Stanford Encyclopedia of Philosophy}
@@ -215,13 +484,69 @@
       \strng{authorbibnamehash}{046f2d52bcfbe041e7da5b150b99f9c0}
       \strng{authornamehash}{046f2d52bcfbe041e7da5b150b99f9c0}
       \strng{authorfullhash}{046f2d52bcfbe041e7da5b150b99f9c0}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1502424624}
       \field{title}{Introduction to Statistics}
       \field{year}{2014}
+    \endentry
+    \entry{Markov}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6621ff3966eae88d84eb6d5742682bae}{%
+           family={Grinstead},
+           familyi={G\bibinitperiod},
+           given={C.M.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=828c354a71b97d4aae6341ae66141f0d}{%
+           family={Snell},
+           familyi={S\bibinitperiod},
+           given={J.L.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Soc.}%
+      }
+      \strng{namehash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \strng{fullhash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \strng{bibnamehash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \strng{authorbibnamehash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \strng{authornamehash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \strng{authorfullhash}{1cb7abb1a2ebf2dc1c5e2d1e758ee12d}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0821807498}
+      \field{title}{Introduction to Probability}
+      \field{year}{1997}
+    \endentry
+    \entry{MC}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=d8fc6a5482d14c430c5b3a6c0a442570}{%
+           family={Gagniuc},
+           familyi={G\bibinitperiod},
+           given={P.A.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {NJ: John Wiley}%
+        {Sons}%
+      }
+      \strng{namehash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \strng{fullhash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \strng{bibnamehash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \strng{authorbibnamehash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \strng{authornamehash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \strng{authorfullhash}{d8fc6a5482d14c430c5b3a6c0a442570}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-119-38755-8}
+      \field{title}{Markov Chains: From Theory to Implementation and Experimentation}
+      \field{year}{2017}
     \endentry
     \entry{BayStat}{book}{}
       \name{author}{1}{}{%
@@ -237,8 +562,8 @@
       \strng{authorbibnamehash}{b7498140bee0d5b32e9812a9401366de}
       \strng{authornamehash}{b7498140bee0d5b32e9812a9401366de}
       \strng{authorfullhash}{b7498140bee0d5b32e9812a9401366de}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Bayesian Statistics}
@@ -262,8 +587,8 @@
       \strng{authorbibnamehash}{93cc07583915f2dc879c81a740977568}
       \strng{authornamehash}{93cc07583915f2dc879c81a740977568}
       \strng{authorfullhash}{93cc07583915f2dc879c81a740977568}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Mathematical Psychology}
@@ -271,108 +596,34 @@
       \field{volume}{56}
       \field{year}{2012}
     \endentry
-    \entry{Genereaux}{article}{}
+    \entry{Sontag}{article}{}
       \name{author}{1}{}{%
-        {{hash=27115170229bd5b46aa999e81bb424f6}{%
-           family={Genereaux},
-           familyi={G\bibinitperiod},
-           given={D.P.\bibnamedelimi et\bibnamedelima al.},
-           giveni={D\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+        {{hash=90dc6a8f259fcbe805e49c1049f57e74}{%
+           family={Sontag\bibnamedelimb et\bibnamedelima al.},
+           familyi={S\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={L.B.},
+           giveni={L\bibinitperiod}}}%
       }
-      \strng{namehash}{27115170229bd5b46aa999e81bb424f6}
-      \strng{fullhash}{27115170229bd5b46aa999e81bb424f6}
-      \strng{bibnamehash}{27115170229bd5b46aa999e81bb424f6}
-      \strng{authorbibnamehash}{27115170229bd5b46aa999e81bb424f6}
-      \strng{authornamehash}{27115170229bd5b46aa999e81bb424f6}
-      \strng{authorfullhash}{27115170229bd5b46aa999e81bb424f6}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \strng{namehash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \strng{fullhash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \strng{bibnamehash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \strng{authorbibnamehash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \strng{authornamehash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \strng{authorfullhash}{90dc6a8f259fcbe805e49c1049f57e74}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{PNAS}
-      \field{number}{16}
-      \field{title}{A population-epigenetic model to infer site-specific methylation rates from double-stranded DNA methylation patterns}
-      \field{volume}{102}
-      \field{year}{2005}
-    \endentry
-    \entry{Wolf}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b7fac1ec66687cfa823e99493ed8d6cd}{%
-           family={Arand},
-           familyi={A\bibinitperiod},
-           given={J.\bibnamedelimi et\bibnamedelima al.},
-           giveni={J\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
-      }
-      \strng{namehash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \strng{fullhash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \strng{bibnamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \strng{authorbibnamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \strng{authornamehash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \strng{authorfullhash}{b7fac1ec66687cfa823e99493ed8d6cd}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{plos genetics}
-      \field{title}{In Vivo Control of CpG and Non-CpG DNA Methylation by DNA Methyltransferases}
-      \field{year}{2012}
+      \field{journaltitle}{journal of theoretical biology}
+      \field{number}{4}
+      \field{title}{Dynamics, stability and inheritance of somatic DNA methylation imprints}
+      \field{volume}{242}
+      \field{year}{2006}
       \verb{doi}
-      \verb 10.1371/journal.pgen.1002750
+      \verb 10.1016/j.jtbi.2006.05.012
       \endverb
-    \endentry
-    \entry{Giehr}{article}{}
-      \name{author}{1}{}{%
-        {{hash=1d0edc22c3ecbe7a32ca1cefb573e037}{%
-           family={Giehr},
-           familyi={G\bibinitperiod},
-           given={et\bibnamedelima al.},
-           giveni={e\bibinitperiod\bibinitdelim a\bibinitperiod},
-           suffix={P.},
-           suffixi={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \strng{fullhash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \strng{bibnamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \strng{authorbibnamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \strng{authornamehash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \strng{authorfullhash}{1d0edc22c3ecbe7a32ca1cefb573e037}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{plos computational biology}
-      \field{title}{The Influence of Hydroxylation on Maintaining CpG Methylation Patterns: A Hidden Markov Model Approach}
-      \field{year}{2016}
-      \verb{doi}
-      \verb 10.1371/journal.pcbi.1004905
-      \endverb
-    \endentry
-    \entry{Fu}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b712e28fdb78d8876bbad882829ca621}{%
-           family={Fu},
-           familyi={F\bibinitperiod},
-           given={et\bibnamedelima al.},
-           giveni={e\bibinitperiod\bibinitdelim a\bibinitperiod},
-           suffix={A.Q.},
-           suffixi={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{b712e28fdb78d8876bbad882829ca621}
-      \strng{fullhash}{b712e28fdb78d8876bbad882829ca621}
-      \strng{bibnamehash}{b712e28fdb78d8876bbad882829ca621}
-      \strng{authorbibnamehash}{b712e28fdb78d8876bbad882829ca621}
-      \strng{authornamehash}{b712e28fdb78d8876bbad882829ca621}
-      \strng{authorfullhash}{b712e28fdb78d8876bbad882829ca621}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{plos one}
-      \field{title}{Statistical Inference of In Vivo Properties of Human DNA Methyltransferases from Double-Stranded Methylation Patterns}
-      \field{year}{2012}
     \endentry
   \enddatalist
-  \missing{\\}
 \endrefsection
 \endinput
 

@@ -1,4 +1,6 @@
+import statistics
 import numpy as np
+import math
 from matplotlib import pyplot as plt
 from simulation import Simulation
 
@@ -19,6 +21,7 @@ class ABC:
         self.thetas = []
         self.distances = [] #distances between distributions of simulation and given data
         self.distribution = [] #accepted simulated distributions
+        self.weights = self.buildWeights()
 
     def abc(self, distFunc, eps, sampleSize=10000, numParam=4, prior=np.random.uniform):
         '''
@@ -33,7 +36,7 @@ class ABC:
         k = 20 #number of elements to be accepted
         for i in range(sampleSize):
             #draw k-times from prior
-            if len(self.thetas) <= k:
+            if len(self.thetas) < k:
                 param = prior(size=numParam)
             else:
                 param = self.ownPrior(numParam, self.thetas, k)
@@ -55,9 +58,12 @@ class ABC:
         #compute mean theta and distribution if data accepted
         if len(self.distribution) != 0:
             theta = []
+            sds = []
             for i in range(numParam):
-                theta.append(np.mean([t[i] for t in self.thetas[-k:]]))
-            print(theta)
+                parami = [t[i] for t in self.thetas[-k:]]
+                theta.append(np.mean(parami))
+                sds.append(statistics.stdev(parami))
+            print(theta, sds)
             #compute mean distribution
             accumulated = self.meanDistri(3)
             lists = sorted(accumulated.items()) # sorted by key, return a list of tuples
@@ -75,9 +81,13 @@ class ABC:
         :return: mean value for all parameters
         """
         accumulated = dict()
-        for d in self.distribution[-kbest:]:
+        distances2 = self.distances
+        for d in range(kbest):
+            minimum = distances2.index(min(distances2))
+            d = self.distribution[minimum]
             for k, v in d.items():
                 accumulated[k] = accumulated.get(k, 0) + v
+            distances2.pop(minimum)
         accumulated = {x: float(y/kbest) for x, y in accumulated.items()}
         return accumulated
 
@@ -141,9 +151,11 @@ class ABC:
         dist = 0
         for keyData in range(4**self.L):
             valueData = distributionData[keyData] if keyData in distributionData else 0
+        #for keyData, valueData in distributionData.items():
             for keySim in range(4**self.L):
                 valueSim = ditributionSim[keySim] if keySim in ditributionSim else 0
-                dist += self.w(keyData, keySim) * (valueData - valueSim)**2
+            #for keySim, valueSim in ditributionSim.items():
+                dist += self.w(keyData, keySim) * (valueData - valueSim+0.00000001)**2
         return dist
 
     def w(self, keyData, keySim):
@@ -154,34 +166,76 @@ class ABC:
         :return: weight w
         """
         w = 0.0
+        iterations = self.L
         while keyData != 0 or keySim != 0:
+            iterations -= 1
             modData = keyData % 4
             modSim = keySim % 4
             if modData+modSim == 3: #then the methylation state at both strands is complementary
-                w += 2.0
+                w += 3.0
             elif modData != modSim: #one position of methylation pattern different
+                w += 2.0
+            else:
                 w += 1.0
             keyData = (keyData-modData) / 4
             keySim = (keySim-modSim) / 4
+        w += iterations
         if self.L != 0:
             w /= self.L
         return w
 
+    def mahalonisDist(self, distributionData, distributionSim):
+        X = [distributionData[k] if k in distributionData else 0 for k in range(4**self.L)]
+        Y = [distributionSim[k] if k in distributionSim else 0 for k in range(4**self.L)]
+        #mhy = np.average(X, weights=range(0,4**self.L))
+        #ny = np.average(Y, weights=range(0,4**self.L))
+        #zipped = zip([x-mhy for x in X], [y-ny for y in Y])
+        zipped = zip(X, Y)
+        cov = np.cov(list(zipped))
+        #inv = self.invert(cov)
+        #cov = self.weights
+        subtr = np.subtract(X, Y)
+        d = np.inner(np.dot(subtr, cov), subtr)
+        return math.sqrt(d)
+
+    def invert(self, cov):
+        try:
+            inv = np.linalg.inv(cov)
+        except np.linalg.LinAlgError:
+            #cov[0][0] += 0.001
+            #self.invert(cov)
+            pass
+        else:
+            pass
+        return cov
+
+    def buildWeights(self):
+        #w = [[1, 2, 2, 4], [2, 1, 3, 2], [2, 3, 1, 2], [4, 2, 2, 1]]
+        cov = np.zeros((4**self.L, 4**self.L))
+        for i in range(0, 4**self.L):
+            for j in range(i, 4**self.L):
+                w = self.w(i, j)
+                cov[i][j] = w
+                cov[j][i] = w
+        return cov
+
 
 #DNT1KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-#distriData = sim.computePatternDistribution([0,          1,          0,              1])
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
+distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
 
 #DNMT3KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
-distriData = sim.computePatternDistribution([0.1,          0.8,          0.8,              0])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
+#distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
 
 #WT:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])
 #distriData = sim.computePatternDistribution([[0.1, 0.8, 0.8, 0], [0.5, 0.5, 0, 1]])
+
+#distriData = {i:sim.distributionKO[i] for i in range(len(sim.distributionKO))}
 abc = ABC(distriData, sim.computePatternDistribution, sim.L)
 
-abc.abc(abc.distanceFunction, 1.0)
+abc.abc(abc.mahalonisDist, 0.1)
 lists = sorted(distriData.items()) # sorted by key, return a list of tuples
 print(lists)
 x, y = zip(*lists) # unpack a list of pairs into two tuples
@@ -190,4 +244,12 @@ plt.xlabel('pattern value')
 plt.ylabel('distribution value')
 plt.title('pattern distribution of data')
 plt.show()
-#print(sim.dist(sim.computePatternDistribution([0.5,          0.5,          0,              1])))
+#lists = sorted(distriSim.items()) # sorted by key, return a list of tuples
+#print(lists)
+#x, y = zip(*lists) # unpack a list of pairs into two tuples
+#plt.plot(x, y)
+#plt.xlabel('pattern value')
+#plt.ylabel('distribution value')
+#plt.title('pattern distribution of sim')
+#plt.show()
+#print(abc.distanceFunction(distriData, distriSim))
