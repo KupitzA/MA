@@ -15,17 +15,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.1}{\ignorespaces A methylation pattern with three CpGs; each circle represents one CpG; plane red circles are methylated CpGs; the pattern code is 28 and is computed as $1*4^2 + 3*4^1 + 0*4^0 = 16 + 12 + 0 = 28$\relax }}{16}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces methylation pattern distribution of a locus with 3 CpGs; each key represents one methylation pattern, the following number the frequency of this pattern; the patterns not listed have frequency zero; assuming, there are 100 samples, the patterns have a absolute frequency of 20, 1, 2, 1, 5, 1, 21, 15, 5 and 2 respectively.\relax }}{16}{figure.caption.32}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces methylation pattern distribution X of a locus with 3 CpGs; each key represents one methylation pattern, the following number the frequency of this pattern; the patterns not listed have frequency zero; assuming, there are 100 samples, the patterns have a absolute frequency of 20, 1, 2, 1, 5, 1, 21, 15, 5 and 2 respectively.\relax }}{16}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Possible transitions between the methylation patterns of a dyad; the numbers represent the methylation patterns m; each transition shows a possible methylation with the probability denoted on the arrow\relax }}{17}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Transitions between the binding states of a DNMT over the DNA; each number represents one bp on the strand; red circles symbolize that DNMT is bound to the DNA at that position, black ones are unbound enzymes; the arrows show possible transitions between the binding states\relax }}{17}{figure.caption.34}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transitions between the binding states of a DNMT over the DNA; each number represents one bp on the strand; red circles symbolize that DNMT is bound to the DNA at that position, black ones are unbound enzymes; the arrows show possible transitions between the binding states\relax }}{18}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Transition probabilities between the methylation states; $m_i$ on the left side is the methylation state before DNMT activity, either unmethylated(0) or methylated on the parent strand(1), the four rightmost columns represent the four possible methylation states after DNMT activity; the other three parameters in the leftmost column are the binding state of the three different DNMTs; B1 - DNMT1, B3p - DNMT3 at parental strand, B3d - DNMT3 on daughter strand, where 0 means disassociated and 1 associated; later disassociation and association rates are not included in the probabilities; $\mu $ is the maintenance methylation probability of DNMT1, $\delta _p$ the de novo methylation probability of DNMT3 on the parental strand and $\delta _d$ on the daughter strand.\relax }}{18}{figure.caption.35}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Transition probabilities between the methylation states; $m_i$ on the left side is the methylation state before DNMT activity, either unmethylated(0) or methylated on the parent strand(1), the four rightmost columns represent the four possible methylation states after DNMT activity; the other three parameters in the leftmost column are the binding state of the three different DNMTs; B1 - DNMT1, B3p - DNMT3 at parental strand, B3d - DNMT3 on daughter strand, where 0 means disassociated and 1 associated; later disassociation and association rates are not included in the probabilities; $\mu $ is the maintenance methylation probability of DNMT1, $\delta _p$ the de novo methylation probability of DNMT3 on the parental strand and $\delta _d$ on the daughter strand.\relax }}{19}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces methylation states before and after cell division; $m_i$ - before cell division, $u_i$ - the upper strand serves as new parental strand, $l_i$ - lower strand is new parental strand.\relax }}{19}{figure.caption.36}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces methylation states before and after cell division; $m_i$ - before cell division, $u_i$ - the upper strand serves as new parental strand, $l_i$ - lower strand is new parental strand.\relax }}{20}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Parameter for minimal negative log-likelihoods of three loci for DNMT1KO.\relax }}{27}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Parameter for minimal negative log-likelihoods of three loci for DNMT3a/bKO.\relax }}{28}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Negative log-likelihood depending on parameter $\delta $; the other three parameter values are fixed.\relax }}{29}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

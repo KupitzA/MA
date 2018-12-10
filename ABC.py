@@ -166,9 +166,10 @@ class ABC:
         :return: weight w
         """
         w = 0.0
-        iterations = self.L
-        while keyData != 0 or keySim != 0:
-            iterations -= 1
+        #iterations = self.L
+        #while keyData != 0 or keySim != 0:
+        for i in range(self.L):
+            #iterations -= 1
             modData = keyData % 4
             modSim = keySim % 4
             if modData+modSim == 3: #then the methylation state at both strands is complementary
@@ -179,10 +180,24 @@ class ABC:
                 w += 1.0
             keyData = (keyData-modData) / 4
             keySim = (keySim-modSim) / 4
-        w += iterations
-        if self.L != 0:
-            w /= self.L
+        #w += iterations
         return w
+
+    def balance(self, pattern):
+        mid = self.L/2
+        r = 0
+        l = 0
+        for i in range(self.L):
+            modP = pattern % 4
+            for j in range(0, modP+2, 2):
+                if i <= mid-1:
+                    l += 1
+                elif i >= mid:
+                    r += 1
+            pattern = pattern // 4
+        b = (r-l)/abs(r-l) if r-l != 0 else r-l
+        return b
+
 
     def mahalonisDist(self, distributionData, distributionSim):
         X = [distributionData[k] if k in distributionData else 0 for k in range(4**self.L)]
@@ -191,9 +206,9 @@ class ABC:
         #ny = np.average(Y, weights=range(0,4**self.L))
         #zipped = zip([x-mhy for x in X], [y-ny for y in Y])
         zipped = zip(X, Y)
-        cov = np.cov(list(zipped))
+        #cov = np.cov(list(zipped))
         #inv = self.invert(cov)
-        #cov = self.weights
+        cov = self.weights
         subtr = np.subtract(X, Y)
         d = np.inner(np.dot(subtr, cov), subtr)
         return math.sqrt(d)
@@ -213,20 +228,23 @@ class ABC:
         #w = [[1, 2, 2, 4], [2, 1, 3, 2], [2, 3, 1, 2], [4, 2, 2, 1]]
         cov = np.zeros((4**self.L, 4**self.L))
         for i in range(0, 4**self.L):
+            balanceI = self.balance(i)
             for j in range(i, 4**self.L):
-                w = self.w(i, j)
+                balanceJ = self.balance(j)
+                balance = abs((balanceI-balanceJ)/2)
+                w = (self.w(i, j) + balance) / self.L
                 cov[i][j] = w
                 cov[j][i] = w
         return cov
 
 
 #DNT1KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
+#distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
 
 #DNMT3KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
-#distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
+distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
 
 #WT:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])

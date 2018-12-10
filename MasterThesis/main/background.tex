@@ -111,6 +111,7 @@ is the squared deviation from the mean. $V(X) = = \sum_{x \in X(\Omega)}{(x-E(X)
 $Cov(X,Y) = E((X-E(X))(Y-E(Y)) = E(XY)-E(X)E(Y)$ is the covariance between two \acp{RV} $X$ and $Y$. If the value of the covariance is positive, there is a linear relationship between the two variables, otherwise, if the covariance is negative, the variables show opposite behaviour. Finally, the covariance is equal to zero if the variables are uncorrelated\cite{ProbDistri}.
 \end{definition}
 Given the definitions one to eight, the data can be described using a stochastic model.\\
+TODO: mean, sd, variance, confidence intervals
 
 \section{Markov models} 
 \label{section:MM}
@@ -185,7 +186,7 @@ Given two events $A$ and $B$ with $P(B) \neq 0$, the conditional probability of 
 Here, $P(A)$ is the prior probability of $A$, so our expectation about the process without the knowledge of additional information. $P(A \mid B)$ is called the posterior probability, the probability of $A$, taking $B$ into account. Finally, $P(B \mid A)$ is the likelihood function; the probability of $B$, given that $A$ is true.\newline
 The likelihood is an important function in Bayesian statistics. By maximizing the likelihood function, the most probable parameter of a model given an observation are decided. The likelihood function, it is defined as 
 \begin{equation}
-L(\Theta \mid x_0,...,x_n) = P_{\Theta}(x_0) ... P_{\Theta}(x_1).
+\mathcal{L}(\Theta \mid x_0,...,x_n) = P_{\Theta}(x_0) ... P_{\Theta}(x_1).
 \end{equation}
 The process of determining the parameter $\Theta$ that maximizes the likelihood function given the data ${x_0,...,x_n}$ is called \textbf{\acf{MLE}}.\\
 

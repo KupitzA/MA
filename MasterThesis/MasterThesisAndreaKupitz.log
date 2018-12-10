@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  27 NOV 2018 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  10 DEC 2018 17:18
 entering extended mode
 **./MasterThesisAndreaKupitz.tex
 (MasterThesisAndreaKupitz.tex
@@ -1906,42 +1906,48 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 LaTeX Warning: Label `ABC' multiply defined.
 
+
+LaTeX Warning: Label `MLE' multiply defined.
+
+
+LaTeX Warning: Label `ABC' multiply defined.
+
 )
 \openout1 = `MasterThesisAndreaKupitz.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 253.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 253.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 252.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 252.
 
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\cbfonts-fd\lgrcmr
 .fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 253.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 253.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 252.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 252.
 
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
 kii"
@@ -1988,7 +1994,7 @@ Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 \c@lstlisting=\count404
 \AtBeginShipoutBox=\box108
-Package hyperref Info: Link coloring ON on input line 253.
+Package hyperref Info: Link coloring ON on input line 252.
 
 ("C:\Users\Andrea\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.
 sty"
@@ -2000,9 +2006,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count405
 )
-LaTeX Info: Redefining \ref on input line 253.
-LaTeX Info: Redefining \pageref on input line 253.
-LaTeX Info: Redefining \nameref on input line 253.
+LaTeX Info: Redefining \ref on input line 252.
+LaTeX Info: Redefining \pageref on input line 252.
+LaTeX Info: Redefining \nameref on input line 252.
  (MasterThesisAndreaKupitz.out) (MasterThesisAndreaKupitz.out)
 \@outlinefile=\write7
 \openout7 = `MasterThesisAndreaKupitz.out'.
@@ -2016,10 +2022,10 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'MasterThesisAndreaKupitz.bbl' found.
 
 (MasterThesisAndreaKupitz.bbl)
-Package biblatex Info: Reference section=0 on input line 253.
-Package biblatex Info: Reference segment=0 on input line 253.
+Package biblatex Info: Reference section=0 on input line 252.
+Package biblatex Info: Reference segment=0 on input line 252.
  (pre/title.tex
-<images/uds.png, id=73, 72.27pt x 80.7015pt>
+<images/uds.png, id=81, 72.27pt x 80.7015pt>
 File: images/uds.png Graphic file (type png)
 <use images/uds.png>
 Package pdftex.def Info: images/uds.png  used on input line 12.
@@ -2038,7 +2044,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 4--37
 []$[]$ 
  []
 
-<images/zbi.png, id=74, 593.21625pt x 164.615pt>
+<images/zbi.png, id=82, 593.21625pt x 164.615pt>
 File: images/zbi.png Graphic file (type png)
 <use images/zbi.png>
 Package pdftex.def Info: images/zbi.png  used on input line 60.
@@ -2076,12 +2082,12 @@ although it is yet undefined on input line 5.
 Package acronym Info: Label `acro:ABC' newly defined as it shall be overridden
 although it is yet undefined on input line 5.
 [2] [3]) (pre/acknowledge.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 2--266
+Underfull \hbox (badness 10000) in paragraph at lines 2--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--266
+Underfull \hbox (badness 10000) in paragraph at lines 2--265
 
  []
 
@@ -2106,13 +2112,12 @@ Overfull \hbox (8.88844pt too wide) in paragraph at lines 12--12
 s-sion states(red).[][] [][]  
  []
 
-)
+[9])
 \tf@lof=\write10
 \openout10 = `MasterThesisAndreaKupitz.lof'.
 
- [9] [10
+ [10] (pre/abbreviations.tex) [11
 
-] (pre/abbreviations.tex) [11
 
 ] [12
 
@@ -2259,66 +2264,61 @@ e uncorrelated[[]].
  []
 
 [5]
-Overfull \hbox (1.98665pt too wide) in paragraph at lines 113--114
+Overfull \hbox (1.98665pt too wide) in paragraph at lines 113--115
 []\OT1/cmr/m/n/10 Given the defin-i-tions one to eight, the data can be de-scri
 bed us-ing a stochastic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+LaTeX Warning: Citation 'Probability' on page 6 undefined on input line 118.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 
-LaTeX Warning: Citation 'Probability' on page 6 undefined on input line 117.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
 Package acronym Info: Label `acro:CTMC' newly defined as it shall be overridden
 
-although it is yet undefined on input line 130.
+although it is yet undefined on input line 131.
 Package acronym Info: Label `acro:DTMC' newly defined as it shall be overridden
 
-although it is yet undefined on input line 130.
+although it is yet undefined on input line 131.
 Package acronym Info: Label `acro:HMM' newly defined as it shall be overridden
-although it is yet undefined on input line 133.
+although it is yet undefined on input line 134.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 249.
+put line 250.
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--254
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
@@ -2326,69 +2326,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--256
 Underfull \vbox (badness 6542) has occurred while \output is active []
 
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 283--287
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 288.
+(Font)              using `OT1/cmr/bx/n' instead on input line 289.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 289--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--325
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 323--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 Package acronym Info: Label `acro:BS-seq' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 330.
+although it is yet undefined on input line 331.
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
 Package acronym Info: Label `acro:bp' newly defined as it shall be overridden
-although it is yet undefined on input line 342.
+although it is yet undefined on input line 343.
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 347--351
+Underfull \hbox (badness 10000) in paragraph at lines 348--352
 
  []
 
 [12]
 Package acronym Info: Label `acro:MGMT' newly defined as it shall be overridden
 
-although it is yet undefined on input line 369.
+although it is yet undefined on input line 370.
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--371
+Underfull \hbox (badness 10000) in paragraph at lines 369--372
 
  []
 
 Package acronym Info: Label `acro:KO' newly defined as it shall be overridden
-although it is yet undefined on input line 374.
+although it is yet undefined on input line 375.
 Package acronym Info: Label `acro:WT' newly defined as it shall be overridden
-although it is yet undefined on input line 374.
+although it is yet undefined on input line 375.
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--376
+Underfull \hbox (badness 10000) in paragraph at lines 373--377
 
  []
 
@@ -2409,6 +2409,10 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+
+
+Package caption Warning: \label without proper reference on input line 46.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `dict' on page 16 undefined on input line 49.
@@ -2435,69 +2439,193 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
  []
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
-[17]
-Overfull \hbox (10.04518pt too wide) in alignment at lines 135--135
+
+Overfull \hbox (11.21178pt too wide) in alignment at lines 135--135
 [][][][][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[18]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 143--146
 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 156--156
+Underfull \hbox (badness 10000) in alignment at lines 155--155
 [][][] 
  []
 
 
-LaTeX Warning: Reference `celldiv' on page 19 undefined on input line 160.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (main/results.tex [19] [20
+
+Package caption Warning: \label without proper reference on input line 157.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `celldiv' on page 18 undefined on input line 206.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+[19]
+Overfull \hbox (12.00256pt too wide) in paragraph at lines 241--242
+[]\OT1/cmr/bx/sc/10 pro-ced-ure \OT1/cmr/m/sc/10 sim-u-la-tion\OT1/cmr/m/n/10 (
+$\OML/cmm/m/it/10 X[]; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 1\OML
+/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/
+m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/
+10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 3)\OML/cmm/m/it/10 ; len; L; sampleSize; c$\OT1/cmr/m/n/10 )
+ []
+
+
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
+ [20]
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+[23]) (main/results.tex [24] [25] [26
 
 ]
 Chapter 4.
-) (main/conclusions.tex [21] [22
+
+Underfull \hbox (badness 10000) in alignment at lines 18--18
+[][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 34--34
+[][][][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `Maximum Likelihood Estimation' on page 27 undefined o
+n input line 41.
+
+
+Package caption Warning: \label without proper reference on input line 20.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT1KO' on page 27 undefined on input line 41.
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 41.
+
+<../likelihoodPlot3DNMT3KO.png, id=705, 462.528pt x 346.896pt>
+File: ../likelihoodPlot3DNMT3KO.png Graphic file (type png)
+<use ../likelihoodPlot3DNMT3KO.png>
+Package pdftex.def Info: ../likelihoodPlot3DNMT3KO.png  used on input line 43.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+Package caption Warning: \label without proper reference on input line 44.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `rangedelta' on page 27 undefined on input line 48.
+
+
+Package caption Warning: \label without proper reference on input line 20.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT1KO' on page 27 undefined on input line 48.
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 48.
+
+
+Package caption Warning: \label without proper reference on input line 36.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 48.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--49
+
+ []
+
+[27]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28])
+(main/conclusions.tex [29 <../likelihoodPlot3DNMT3KO.png>] [30
 
 ]
 Chapter 5.
-) (post/appendix.tex [23] [24
+) (post/appendix.tex [31] [32
 
 ]
 Appendix A.
-) [25] [26
+) [33] [34
 
 ]
-Overfull \hbox (6.52834pt too wide) in paragraph at lines 292--292
+Overfull \hbox (6.52834pt too wide) in paragraph at lines 291--291
 \OT1/cmr/m/n/10 DEL-ITY OF DNA METHYL-A-TION PAT-TERNS OVER SO-MATIC CELL
  []
 
-[27
+[35
 
 ]
-Overfull \hbox (2.75899pt too wide) in paragraph at lines 292--292
+Overfull \hbox (2.75899pt too wide) in paragraph at lines 291--291
 []\OT1/cmr/m/n/10 C.M. Grinstead and J.L. Snell. \OT1/cmr/m/it/10 In-tro-duc-ti
 on to Prob-ab-il-ity\OT1/cmr/m/n/10 . Amer-ican Math-
  []
 
-[28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
+[36]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
  (MasterThesisAndreaKupitz.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `MasterThesisAndreaKupitz.out' has not change
 d.
-(rerunfilecheck)             Checksum: DF98B3A5CDB553AE53A632539A7FBB0A;1791.
+(rerunfilecheck)             Checksum: 99B3464AF31A61B17A86FBBC72B383FC;2527.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2516,16 +2644,16 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'MasterThesisAndreaKupitz.run.xml'.
 \openout1 = `MasterThesisAndreaKupitz.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 35609 strings out of 492973
- 656271 string characters out of 3126249
- 1103765 words of memory out of 3000000
- 38691 multiletter control sequences out of 15000+200000
+ 35662 strings out of 492973
+ 657054 string characters out of 3126249
+ 1115653 words of memory out of 3000000
+ 38729 multiletter control sequences out of 15000+200000
  18282 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,17n,68p,1340b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,17n,68p,2401b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Andrea\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/f
@@ -2537,30 +2665,31 @@ sc10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmex10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Andrea/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Andrea/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Andre
-a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Andre
+a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
 :/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Andrea/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Andrea/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Andrea/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsl8.pfb><C:/Users/Andrea/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Andrea/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
-ers/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MasterThesisAndreaKupitz.pdf (43 pages, 588965 bytes).
+/cmmi7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Andrea/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Andrea/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Andrea
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
+Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr6.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Andrea/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl8.pfb><C:/Users/Andrea/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Use
+rs/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Andrea/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MasterThesisAndreaKupitz.pdf (51 pages, 668669 bytes).
 PDF statistics:
- 793 PDF objects out of 1000 (max. 8388607)
- 175 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 188 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
