@@ -165,23 +165,32 @@ class ABC:
         :param keySim: pattern from simulation
         :return: weight w
         """
-        w = 0.0
+        w = []
+        blocksData = []
+        blocksSim = []
+        mismatches = []
         #iterations = self.L
         #while keyData != 0 or keySim != 0:
         for i in range(self.L):
             #iterations -= 1
             modData = keyData % 4
             modSim = keySim % 4
-            if modData+modSim == 3: #then the methylation state at both strands is complementary
-                w += 3.0
-            elif modData != modSim: #one position of methylation pattern different
-                w += 2.0
+            if modData == modSim:
+                w.append(1.0)
             else:
-                w += 1.0
+                mismatches.append(i)
+                if modData+modSim == 3: #then the methylation state at both strands is complementary
+                    w.append(3.0)
+                elif modData != modSim: #one position of methylation pattern different
+                    w.append(2.0)
+            if modData != 0:
+                blocksData.append(i)
+            if modSim != 0:
+                blocksSim.append(i)
             keyData = (keyData-modData) / 4
             keySim = (keySim-modSim) / 4
         #w += iterations
-        return w
+        return w, blocksData, blocksSim, mismatches
 
     def balance(self, pattern):
         mid = self.L/2
@@ -198,6 +207,27 @@ class ABC:
         b = (r-l)/abs(r-l) if r-l != 0 else r-l
         return b
 
+    def blocks(self, blocksData, blocksSim):
+        c = 0
+        if len(blocksData) != 0:
+            for i in blocksSim:
+                mini = min([j - i for j in blocksData])
+                c += mini**2
+        return c/self.L
+
+    def c(self, mismatches):
+        if len(mismatches) == self.L:
+            return [self.L]*self.L
+        else:
+            indices = [i for i in range(self.L)]
+            c = []
+            matches = [j for j in indices if j not in mismatches]
+            for i in range(self.L):
+                if i in mismatches:
+                    c.append(min([abs(i - j) for j in matches])+1)
+                else:
+                    c.append(1)
+            return c
 
     def mahalonisDist(self, distributionData, distributionSim):
         X = [distributionData[k] if k in distributionData else 0 for k in range(4**self.L)]
@@ -209,7 +239,7 @@ class ABC:
         #cov = np.cov(list(zipped))
         #inv = self.invert(cov)
         cov = self.weights
-        subtr = np.subtract(X, Y)
+        subtr = abs(np.subtract(X, Y))
         d = np.inner(np.dot(subtr, cov), subtr)
         return math.sqrt(d)
 
@@ -228,11 +258,16 @@ class ABC:
         #w = [[1, 2, 2, 4], [2, 1, 3, 2], [2, 3, 1, 2], [4, 2, 2, 1]]
         cov = np.zeros((4**self.L, 4**self.L))
         for i in range(0, 4**self.L):
-            balanceI = self.balance(i)
+            #balanceI = self.balance(i)
             for j in range(i, 4**self.L):
-                balanceJ = self.balance(j)
-                balance = abs((balanceI-balanceJ)/2)
-                w = (self.w(i, j) + balance) / self.L
+                #balanceJ = self.balance(j)
+                #balance = abs((balanceI-balanceJ)/2)
+                w, blocksData, blocksSim, mismatches = self.w(i, j)
+                #c = self.c(mismatches)
+                #w = [x*y for x, y in zip(w, c)]
+                #w = sum(w) / self.L
+                #w = (w + balance) / self.L
+                w = (sum(w) + self.blocks(blocksData, blocksSim)) / self.L
                 cov[i][j] = w
                 cov[j][i] = w
         return cov
@@ -240,11 +275,13 @@ class ABC:
 
 #DNT1KO:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-#distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
+sim = Simulation("Daten/IAPWTJ1C.txt", "Daten/IAPDnmt3abKO.txt", [2, 6, 3, 35, 7], True)
+distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
 
 #DNMT3KO:
-sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
-distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
+#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT3abKO.txt", [13, 14], False, True)
+#sim = Simulation("Daten/IAPWTJ1C.txt", "Daten/IAPDnmt3abKO.txt", [2, 6, 3, 35, 7], False, True)
+#distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
 
 #WT:
 #sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatWTJ1C.txt", [13, 14])
@@ -253,7 +290,7 @@ distriData = sim.computePatternDistribution([0.1, 0.8, 0.8, 0])
 #distriData = {i:sim.distributionKO[i] for i in range(len(sim.distributionKO))}
 abc = ABC(distriData, sim.computePatternDistribution, sim.L)
 
-abc.abc(abc.mahalonisDist, 0.1)
+abc.abc(abc.mahalonisDist, 3.0)
 lists = sorted(distriData.items()) # sorted by key, return a list of tuples
 print(lists)
 x, y = zip(*lists) # unpack a list of pairs into two tuples

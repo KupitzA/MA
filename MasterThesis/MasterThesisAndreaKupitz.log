@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  10 DEC 2018 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.25)  17 DEC 2018 16:33
 entering extended mode
 **./MasterThesisAndreaKupitz.tex
 (MasterThesisAndreaKupitz.tex
@@ -1912,6 +1912,9 @@ LaTeX Warning: Label `MLE' multiply defined.
 
 LaTeX Warning: Label `ABC' multiply defined.
 
+
+LaTeX Warning: Label `WT33' multiply defined.
+
 )
 \openout1 = `MasterThesisAndreaKupitz.aux'.
 
@@ -2025,7 +2028,7 @@ Package biblatex Info: ... file 'MasterThesisAndreaKupitz.bbl' found.
 Package biblatex Info: Reference section=0 on input line 252.
 Package biblatex Info: Reference segment=0 on input line 252.
  (pre/title.tex
-<images/uds.png, id=81, 72.27pt x 80.7015pt>
+<images/uds.png, id=97, 72.27pt x 80.7015pt>
 File: images/uds.png Graphic file (type png)
 <use images/uds.png>
 Package pdftex.def Info: images/uds.png  used on input line 12.
@@ -2044,7 +2047,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 4--37
 []$[]$ 
  []
 
-<images/zbi.png, id=82, 593.21625pt x 164.615pt>
+<images/zbi.png, id=98, 593.21625pt x 164.615pt>
 File: images/zbi.png Graphic file (type png)
 <use images/zbi.png>
 Package pdftex.def Info: images/zbi.png  used on input line 60.
@@ -2112,7 +2115,13 @@ Overfull \hbox (8.88844pt too wide) in paragraph at lines 12--12
 s-sion states(red).[][] [][]  
  []
 
-[9])
+[9]
+Overfull \hbox (2.25984pt too wide) in paragraph at lines 30--30
+ [][] [][][]\OT1/cmr/m/n/10 Three methyl-a-tion pat-terns with five CpG/CpG-dya
+ds; each circle 
+ []
+
+)
 \tf@lof=\write10
 \openout10 = `MasterThesisAndreaKupitz.lof'.
 
@@ -2513,17 +2522,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
-[23]) (main/results.tex [24] [25] [26
 
-]
+Underfull \hbox (badness 10000) in alignment at lines 324--324
+[][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
+
+ []
+
+[23]
+
+Package caption Warning: \label without proper reference on input line 325.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `w' on page 24 undefined on input line 337.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24]
+
+Package caption Warning: \label without proper reference on input line 357.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `sfig:0' on page 25 undefined on input line 401.
+
+
+Package caption Warning: \label without proper reference on input line 373.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `sfig:1' on page 25 undefined on input line 401.
+
+
+Package caption Warning: \label without proper reference on input line 357.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `sfig:0' on page 25 undefined on input line 401.
+
+
+Package caption Warning: \label without proper reference on input line 389.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `sfig:2' on page 25 undefined on input line 401.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
+
+ []
+
+) (main/results.tex [25] [26]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in alignment at lines 18--18
+Underfull \hbox (badness 10000) in alignment at lines 22--22
 [][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 34--34
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 42--42
 [][][][][][][] 
  []
 
@@ -2532,84 +2605,93 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: Reference `Maximum Likelihood Estimation' on page 27 undefined o
-n input line 41.
+n input line 50.
 
 
-Package caption Warning: \label without proper reference on input line 20.
+Package caption Warning: \label without proper reference on input line 24.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `DNMT1KO' on page 27 undefined on input line 41.
+LaTeX Warning: Reference `DNMT1KO' on page 27 undefined on input line 50.
 
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 41.
-
-<../likelihoodPlot3DNMT3KO.png, id=705, 462.528pt x 346.896pt>
-File: ../likelihoodPlot3DNMT3KO.png Graphic file (type png)
-<use ../likelihoodPlot3DNMT3KO.png>
-Package pdftex.def Info: ../likelihoodPlot3DNMT3KO.png  used on input line 43.
-(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
 Package caption Warning: \label without proper reference on input line 44.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `rangedelta' on page 27 undefined on input line 48.
+LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 50.
 
+<../likelihoodPlot3DNMT3KO.png, id=748, 462.528pt x 346.896pt>
+File: ../likelihoodPlot3DNMT3KO.png Graphic file (type png)
+<use ../likelihoodPlot3DNMT3KO.png>
+Package pdftex.def Info: ../likelihoodPlot3DNMT3KO.png  used on input line 53.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+[27
 
-Package caption Warning: \label without proper reference on input line 20.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DNMT1KO' on page 27 undefined on input line 48.
-
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 48.
-
-
-Package caption Warning: \label without proper reference on input line 36.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DNMT3KO' on page 27 undefined on input line 48.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--49
-
- []
-
-[27]
+]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package caption Warning: \label without proper reference on input line 54.
+See the caption package documentation for explanation.
 
- [28])
-(main/conclusions.tex [29 <../likelihoodPlot3DNMT3KO.png>] [30
+
+LaTeX Warning: Reference `rangedelta' on page 28 undefined on input line 59.
+
+
+Package caption Warning: \label without proper reference on input line 24.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT1KO' on page 28 undefined on input line 59.
+
+
+Package caption Warning: \label without proper reference on input line 44.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT3KO' on page 28 undefined on input line 59.
+
+
+Package caption Warning: \label without proper reference on input line 44.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `DNMT3KO' on page 28 undefined on input line 63.
+
+[28]
+Underfull \vbox (badness 6808) has occurred while \output is active []
+
+ [29 <../likelihoodPlot3DNMT3KO.png>]
+Overfull \hbox (12.82341pt too wide) in alignment at lines 96--96
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (13.5179pt too wide) in alignment at lines 115--115
+[][][][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (main/conclusions.tex [30] [31] [32
 
 ]
 Chapter 5.
-) (post/appendix.tex [31] [32
+) (post/appendix.tex [33] [34
 
 ]
 Appendix A.
-) [33] [34
+) [35] [36
 
 ]
 Overfull \hbox (6.52834pt too wide) in paragraph at lines 291--291
 \OT1/cmr/m/n/10 DEL-ITY OF DNA METHYL-A-TION PAT-TERNS OVER SO-MATIC CELL
  []
 
-[35
+[37
 
 ]
 Overfull \hbox (2.75899pt too wide) in paragraph at lines 291--291
@@ -2617,7 +2699,7 @@ Overfull \hbox (2.75899pt too wide) in paragraph at lines 291--291
 on to Prob-ab-il-ity\OT1/cmr/m/n/10 . Amer-ican Math-
  []
 
-[36]
+[38]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
  (MasterThesisAndreaKupitz.aux)
@@ -2625,7 +2707,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `MasterThesisAndreaKupitz.out' has not change
 d.
-(rerunfilecheck)             Checksum: 99B3464AF31A61B17A86FBBC72B383FC;2527.
+(rerunfilecheck)             Checksum: 1CDEBF26A8D8B0D23DAE9104AD2CCA02;2839.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2647,13 +2729,13 @@ Package logreq Info: Writing requests to 'MasterThesisAndreaKupitz.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 35662 strings out of 492973
- 657054 string characters out of 3126249
- 1115653 words of memory out of 3000000
- 38729 multiletter control sequences out of 15000+200000
+ 35689 strings out of 492973
+ 657375 string characters out of 3126249
+ 1117566 words of memory out of 3000000
+ 38746 multiletter control sequences out of 15000+200000
  18282 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,17n,68p,2401b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,17n,68p,1465b,2179s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Andrea\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/f
@@ -2687,9 +2769,9 @@ sfonts/cm/cmsy7.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Andrea/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Andrea/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MasterThesisAndreaKupitz.pdf (51 pages, 668669 bytes).
+Output written on MasterThesisAndreaKupitz.pdf (53 pages, 687355 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 188 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 960 PDF objects out of 1000 (max. 8388607)
+ 198 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 

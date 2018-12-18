@@ -312,12 +312,100 @@ d(i) &:= \text{distance of distribution i to measured data}
 \end{algorithm}
 The pseudo-code in \ref{posterior} visualizes the new posterior.\\
 
+\begin{figure}[h]
+\centering
+\begin{tabularx}{\textwidth}{l|c|c|c|c}
+&	0&	1&	2&	3\\
+\hline
+0&	1&	2&	2&	3\\
+1&	2&	1&	3&	2\\
+2&	2&	3&	1&	2\\
+3&	3&	2&	2&	1
+\end{tabularx}
+\label{w}
+\caption{Distances between two methylation states; each row and column represents one methylation state.}
+\end{figure}
+
 We use different distance functions to measure the similarity of the simulated to the given data. The first possibility is to define the distance of to pattern distributions as the absolute value of the difference of the relative frequency of each  methylation pattern:
-\[d = \sum^{4^L}_{M=0}{\mid f_{data}(i) - f_{sim}(i) \mid}\]
-Hereby, the relative frequency $f$ of a methylation pattern $M$ is the number of occurrences of this pattern over the total number of methylation patterns.\newline
+\[dist = \sum^{4^L}_{M=0}{\mid f_{data}(i) - f_{sim}(i) \mid}\]
+Hereby, the relative frequency $f$ of a methylation pattern $M$ is the number of occurrences of this pattern over the total number of methylation patterns.\\
+
 The absolute distance function is compared to another function, which is similar to the Mahalanobis distance function. The Mahalanobis function takes into account that a distribution might have different standard deviations along the different axes because the deviation might be egg-shaped instead of ball-shaped around the center of the distribution. Thus, where the absolute distance and the euclidean distance take the difference of the frequencies, the Mahalanobis distance takes the covariance into account:
-\[d = \sqrt{(\vec{f}_{data}-\vec{f}_{sim})^T C^{-1} (\vec{f_{data}}-\vec{f_{sim}})},\]
-where $C$ is the covariance matrix and $\vec{f}$ is a vector over all relative frequencies of a distribution.
+\[dist = \sqrt{(\vec{f}_{data}-\vec{f}_{sim})^T C^{-1} (\vec{f}_{data}-\vec{f}_{sim})},\]
+where $C$ is the covariance matrix and $\vec{f}$ is a vector over all relative frequencies of a distribution.\newline
+Instead of the covariance matrix, we define a matrix of weights. Each entry in this matrix measures the similarity of two methylation patterns. We define the distance $d_M,N$ as a combination of the horizontal and vertical distance of two methylation patterns $M$ and $N$.\newline
+First, the vertical distance $W$ is defined as the sum over all distances of methylation states. The matrix in figure \ref{w} represents the similarity of all combinations of methylation states. In this matrix, each entry is equal to the edit distance of the two methylation states, $m$ and $n$, plus one, where the edit distance counts the number of mismatching methylations. E.g. if $m$ is equal to three and $n$ to zero, one dyad is fully methylated and one unmethylated, thus the number of mismatches is two. Otherwise, if $m$ is three and $n$ is two, one dyad is fully methylated and the other hemi-methylated. Then the edit distance is one.
+\[w_{m,n} = EditDist(m,n)+1\]
+Therefore, the distance W of two methylation patterns is
+\[W_{M,N} = \sum^{L-1}_{i=0}{w_{M_i,N_i}}.\]
+
+\begin{figure}[h]
+\begin{subfigure}{\textwidth}
+\centering
+\begin{tikzpicture}
+  \draw[red, fill=red](-1,0)circle(2ex);
+  \draw[red](-1,-0.8)circle(2ex);
+  \draw[red](0,0)circle(2ex);
+  \draw[red](0,-0.8)circle(2ex);
+  \draw[red](1,0)circle(2ex);
+  \draw[red](1,-0.8)circle(2ex);
+  \draw[red](2,0)circle(2ex);
+  \draw[red](2,-0.8)circle(2ex);
+  \draw[red](3,0)circle(2ex);
+  \draw[red](3,-0.8)circle(2ex);
+\end{tikzpicture}
+\label{sfig:0}
+\caption{}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\begin{tikzpicture}
+  \draw[red](-1,0)circle(2ex);
+  \draw[red](-1,-0.8)circle(2ex);
+  \draw[red, fill=red](0,0)circle(2ex);
+  \draw[red](0,-0.8)circle(2ex);
+  \draw[red](1,0)circle(2ex);
+  \draw[red](1,-0.8)circle(2ex);
+  \draw[red](2,0)circle(2ex);
+  \draw[red](2,-0.8)circle(2ex);
+  \draw[red](3,0)circle(2ex);
+  \draw[red](3,-0.8)circle(2ex);
+\end{tikzpicture}
+\label{sfig:1}
+\caption{}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\begin{tikzpicture}
+  \draw[red](-1,0)circle(2ex);
+  \draw[red](-1,-0.8)circle(2ex);
+  \draw[red](0,0)circle(2ex);
+  \draw[red](0,-0.8)circle(2ex);
+  \draw[red](1,0)circle(2ex);
+  \draw[red](1,-0.8)circle(2ex);
+  \draw[red](2,0)circle(2ex);
+  \draw[red](2,-0.8)circle(2ex);
+  \draw[red, fill=red](3,0)circle(2ex);
+  \draw[red](3,-0.8)circle(2ex);
+\end{tikzpicture}
+\label{sfig:2}
+\caption{}
+\end{subfigure}
+\caption{Three methylation patterns with five CpG/CpG-dyads; each circle represents one CpG; plane red circles are methylated CpGs.}
+\label{fig:vertical}
+\end{figure}
+An additional function measures the horizontal distance. Where the vertical distance takes care of the similarity of the single methylation states, the goal of the horizontal distance is to be able to compare pairs of methylation patterns with the same vertical distance. E.g. in figure \ref{fig:vertical} one can see three different methylation patterns. If the horizal distance of the leftmost pattern and the one in the center is compared to the one of the left- and the rightmost, we see that the value is equal, namely six. Nevertheless, the first pair seems to be more similar than the second pair because the methylation of the centred patterns is nearer to the one of the leftmost. Different approaches are compared to measure this similarity.\newline
+%b_0 -> balance
+The simplest function is called the balance function $b_0$. $b_0$ computes weather the methylation of a strand is biased, which means if the majority of methylations is either on the left or right of the center of the strand. Otherwise, if the amount of methylations on the right side is equal to the one on the left, we say that the methylations are balanced. In the following the balance of the reference pattern is compared to the one resulting from our simulation. We define the distance of two patterns that are biased to the same side as zero and if they are biased to the opposite sides as 1. Otherwise, the distance is 0.5. The vertical and the horizontal distances are combined in the following way:
+\[d(M,N) = \dfrac{b_0(M,N) + W(M,N)}{L}\]
+In this way, considering our example in figure \ref{fig:vertical} again, the total distance of figure \ref{sfig:0} to figure \ref{sfig:1} is six because both patterns are biased to the left. Whereas \ref{sfig:0} and \ref{sfig:2} have distance seven.\newline
+%b_1 -> blocks
+Another method to compare methylation patterns is to measure the distance of each methylated \ac{CpG}-dyad at the non-reference strand to the nearest methylation at the reference strand. We call this method block distance $b_1$ and define d as:
+\[d(M,N) = \dfrac{\dfrac{(b_1(M,N))^2}{L} + W(M,N)}{L}\]
+Thereby, the distance of the pattern in a) and b) in figure \ref{fig:vertical} is $\dfrac{6 + \dfrac{1^2}{5}{5} = \dfrac{6 + \dfrac{1}{5}}{5} = \dfrac{\dfrac{31}{5}}{5} = \dfrac{31}{25} = 1 + \dfrac{6}{25} = 1.24$. Further, the distance of a) and c) is $\dfrac{6 + \dfrac{5^2}{5}}{5} = \dfrac{6 + \dfrac{25}{5}}{5} = \dfrac{11}{5} = 2 + \dfrac{1}{5} = 2.2$.
+%c -> matrix
+TODO:c,b,d/L\\
+TODO:example\\
 
 \begin{algorithm}
 \begin{algorithmic}
@@ -349,4 +437,4 @@ where $C$ is the covariance matrix and $\vec{f}$ is a vector over all relative f
 \caption{\label{Code:ABC} Function that iplements ABC for DNMT simulation}
 \end{algorithm}
 
-Once, k samples were accepted, $\epsilon$ is refined by setting its new value to the mean distance of k accepted samples and the sample with the worst distance is discarded. After one more simulation value was accepted, we recompute $\epsilon$ again and reject another worse sample such that there are always k accepted samples (see pseudo-code \ref{Code:ABC}). Given k distributions with the lowest distance to the measured distribution, the parameter confidence intervals can be computed by the mean parameter values and their standard deviations.
+We sample from our prior distribution and use either of our distance function to evaluate our sampling. Once, k samples were accepted, $\epsilon$ is refined by setting its new value to the mean distance of k accepted samples and the sample with the worst distance is discarded. After one more simulation value was accepted, we recompute $\epsilon$ again and reject another worse sample such that there are always k accepted samples (see pseudo-code \ref{Code:ABC}). Given k distributions with the lowest distance to the measured distribution, the parameter confidence intervals can be computed by the mean parameter values and their standard deviations.
