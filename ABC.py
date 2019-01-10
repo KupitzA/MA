@@ -211,7 +211,7 @@ class ABC:
         c = 0
         if len(blocksData) != 0:
             for i in blocksSim:
-                mini = min([j - i for j in blocksData])
+                mini = min([abs(j - i) for j in blocksData])
                 c += mini**2
         return c/self.L
 
@@ -221,12 +221,15 @@ class ABC:
         else:
             indices = [i for i in range(self.L)]
             c = []
+            mid = int(self.L/2)+0.5
             matches = [j for j in indices if j not in mismatches]
             for i in range(self.L):
                 if i in mismatches:
-                    c.append(min([abs(i - j) for j in matches])+1)
+                    #c.append(min([abs(i - j) for j in matches])+1)
+                    c.append(2+int(abs(i-mid)))
                 else:
                     c.append(1)
+            c = [ci/sum(c) for ci in c]
             return c
 
     def mahalonisDist(self, distributionData, distributionSim):
@@ -274,8 +277,8 @@ class ABC:
 
 
 #DNT1KO:
-#sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
-sim = Simulation("Daten/IAPWTJ1C.txt", "Daten/IAPDnmt3abKO.txt", [2, 6, 3, 35, 7], True)
+sim = Simulation("Daten/ySatWTJ1C.txt", "Daten/ySatDNMT1KO.txt", [13, 14], True)
+#sim = Simulation("Daten/IAPWTJ1C.txt", "Daten/IAPDnmt3abKO.txt", [2, 6, 3, 35, 7], True)
 distriData = sim.computePatternDistribution([0.5, 0.5, 0, 1])
 
 #DNMT3KO:
